@@ -22,9 +22,9 @@ title = "Galanou Consulting"
 
 [params.logo]
   mobile = "images/logo/logo-mobile.svg"
-  mobile_height = "52px"
+  mobile_height = "64px"
   desktop = "images/logo/logo.svg"
-  desktop_height = "58px"
+  desktop_height = "88px"
   alt = "Galanou Consulting"
 
   [params.fonts]
