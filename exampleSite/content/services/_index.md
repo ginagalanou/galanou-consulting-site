@@ -1,11 +1,13 @@
 ---
-title: 'Services'
-description: 'We offer a range of services to help your business'
+title: "Services"
+description: "Advisory services for healthcare organizations navigating transformation, emerging technology, stakeholder complexity, and growth."
 intro_image: "images/illustrations/reading.svg"
 intro_image_absolute: true
 intro_image_hide_on_mobile: false
 ---
 
-# Services that grow with your business
+# Services
 
-Aliquam erat volutpat. Morbi nisl tortor, dignissim eget efficitur vel, auctor non felis. Fusce quis viverra mi. Aenean quis massa pretium, ullamcorper nisi eget, hendrerit odio.
+Galanou Consulting supports healthcare organizations, professional associations, digital health teams, and pharmacy leaders navigating transformation, growth, and emerging technology adoption.
+
+Engagements are designed to bring clarity, structure, and momentum to complex priorities.
