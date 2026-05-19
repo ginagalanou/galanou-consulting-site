@@ -1,11 +1,17 @@
-title: "Strategy & Transformation"
-  description: "Clarify priorities, define direction, and build practical roadmaps for healthcare transformation."
-  image: "images/icons/noun_branding_1885335.svg"
-
-title: "Stakeholder Alignment"
-  description: "Translate complexity into board-ready narratives, executive communication, and cross-functional alignment."
-  image: "images/icons/noun_The Process_1885341.svg"
-
-title: "Measurable Execution"
-  description: "Move from concept to implementation with clear ownership, milestones, and measures of success."
-  image: "images/icons/noun_3d modeling_1885342.svg"
+[
+  {
+    "title": "Strategy & Transformation",
+    "description": "Clarify priorities, define direction, and build practical roadmaps for healthcare transformation.",
+    "image": "images/icons/noun_branding_1885335.svg"
+  },
+  {
+    "title": "Stakeholder Alignment",
+    "description": "Translate complexity into board-ready narratives, executive communication, and cross-functional alignment.",
+    "image": "images/icons/noun_The Process_1885341.svg"
+  },
+  {
+    "title": "Measurable Execution",
+    "description": "Move from concept to implementation with clear ownership, milestones, and measures of success.",
+    "image": "images/icons/noun_3d modeling_1885342.svg"
+  }
+]
