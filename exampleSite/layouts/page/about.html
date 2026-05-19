@@ -1,0 +1,44 @@
+{{ define "body_classes" }}page-about{{ end }}
+
+{{ define "main" }}
+
+<div class="container pt-6 pb-6 pt-md-10 pb-md-10">
+  <div class="row align-items-start">
+    <div class="col-12 col-md-7">
+      <h1 class="title">{{ .Title }}</h1>
+      <div class="content">
+        {{ .Content }}
+      </div>
+    </div>
+
+    <div class="col-12 col-md-5 mt-4 mt-md-0">
+      {{ with .Params.image }}
+        <img
+          src="{{ . | relURL }}"
+          alt="Dr. Georgia Galanou Luchen"
+          class="about-headshot"
+        >
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+<style>
+  .about-headshot {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+  }
+
+  @media (max-width: 767px) {
+    .about-headshot {
+      max-width: 280px;
+      margin: 2rem auto 0 auto;
+    }
+  }
+</style>
+
+{{ end }}
