@@ -1,1 +1,86 @@
+{{ define "body_classes" }}page-contact{{ end }}
 
+{{ define "main" }}
+
+<div class="container pt-6 pb-6 pt-md-10 pb-md-10">
+  <div class="row justify-content-start">
+    <div class="col-12 col-md-8">
+      <h1 class="title">{{ .Title }}</h1>
+      <div class="content">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container pb-6 pb-md-10">
+  <div class="row">
+    <div class="col-12 col-md-8">
+
+      <form action="https://formspree.io/f/mojbvbjj" method="POST" class="contact-form">
+
+        <div class="mb-3">
+          <label for="name">Name *</label>
+          <input class="form-control" type="text" id="name" name="name" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="organization">Organization *</label>
+          <input class="form-control" type="text" id="organization" name="organization" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="title">Role / Title</label>
+          <input class="form-control" type="text" id="title" name="title">
+        </div>
+
+        <div class="mb-3">
+          <label for="email">Email *</label>
+          <input class="form-control" type="email" id="email" name="email" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="support_type">What type of support are you seeking?</label>
+          <select class="form-select" id="support_type" name="support_type">
+            <option value="">Please select</option>
+            <option value="Strategy & transformation advisory">Strategy & transformation advisory</option>
+            <option value="Digital health, AI, or emerging technology strategy">Digital health, AI, or emerging technology strategy</option>
+            <option value="Stakeholder alignment or executive communication">Stakeholder alignment or executive communication</option>
+            <option value="Program, product, or growth development">Program, product, or growth development</option>
+            <option value="Speaking or facilitation">Speaking or facilitation</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="timeline">Desired timeline</label>
+          <select class="form-select" id="timeline" name="timeline">
+            <option value="">Please select</option>
+            <option value="As soon as possible">As soon as possible</option>
+            <option value="Within 1–3 months">Within 1–3 months</option>
+            <option value="Later this year">Later this year</option>
+            <option value="Exploring options">Exploring options</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="message">Briefly describe your challenge or opportunity *</label>
+          <textarea class="form-control" id="message" name="message" rows="6" required></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="referral_source">How did you hear about us?</label>
+          <input class="form-control" type="text" id="referral_source" name="referral_source">
+        </div>
+
+        <input type="hidden" name="_subject" value="New inquiry from Galanou Consulting website">
+
+        <button type="submit" class="button button-primary">Send Message</button>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+{{ end }}
