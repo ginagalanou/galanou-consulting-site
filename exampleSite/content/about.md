@@ -1,10 +1,12 @@
 ---
 title: "About Dr. Georgia Galanou Luchen"
 description: "Founder and Principal of Galanou Consulting, advising healthcare organizations on transformation, strategy, digital health, stakeholder alignment, and execution."
-intro_image: "images/team/Galanou_Georgia.png"
+intro_image: "images/team/galanou_georgia.png"
 intro_image_absolute: false
 intro_image_hide_on_mobile: true
 ---
+
+![Dr. Georgia Galanou Luchen](/images/team/Galanou_Georgia.png)
 
 Dr. Georgia Galanou Luchen is the Founder and Principal of Galanou Consulting. She is a healthcare transformation strategist and advisor with a PharmD foundation and experience across enterprise strategy, digital health, data, policy, member growth, and product-oriented execution.
 
