@@ -6,7 +6,6 @@ intro_image: "images/photos/executive-workspace.png"
 intro_image_absolute: false
 intro_image_hide_on_mobile: true
 ---
----
 
 # Strategy and transformation advisory for healthcare organizations navigating what comes next.
 
