@@ -1,7 +1,7 @@
 ---
 title: "About Dr. Georgia Galanou Luchen"
 description: "Founder and Principal of Galanou Consulting, advising healthcare organizations on transformation, strategy, digital health, stakeholder alignment, and execution."
-intro_image: "images/team/galanou_georgia.png"
+intro_image: "images/team/Galanou_Georgia.png"
 intro_image_absolute: false
 intro_image_hide_on_mobile: true
 ---
