@@ -25,7 +25,7 @@ title = "Galanou Consulting"
     mobile_height = "36px"
     desktop = "images/logo/logo.svg"
     desktop_height = "36px"
-    alt = "Serif - A Hugo Business Theme"
+    alt = "Galanou Consulting"
 
   [params.fonts]
     # sets the google font link in layouts/partials/google-fonts.html
@@ -52,7 +52,7 @@ title = "Galanou Consulting"
     summary_large_truncate = 120 # How many characters to include in the summary of the team bios (large layout) before truncating
 
   [params.footer]
-    copyright_text = 'Free Hugo theme by <a class="zerostatic" href="https://www.zerostatic.io">www.zerostatic.io</a>'
+    copyright_text = '© Galanou Consulting. All rights reserved.'
 
 [menu]
   # Main Menu
