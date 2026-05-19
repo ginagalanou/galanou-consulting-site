@@ -20,12 +20,13 @@ title = "Galanou Consulting"
     show_contact_box = true      # show / hide the contaxt box on the homepage
     show_services_button = false # show / hide the "view all services" button
 
-  [params.logo]
-    mobile = "images/logo/logo-mobile.svg"
-    mobile_height = "36px"
-    desktop = "images/logo/logo.svg"
-    desktop_height = "36px"
-    alt = "Galanou Consulting"
+[params.logo]
+  mobile = "images/logo/logo-mobile.svg"
+  mobile_height = "52px"
+  desktop = "images/logo/logo.svg"
+  desktop_height = "68px"
+  mobile_height = "56px"
+  alt = "Galanou Consulting"
 
   [params.fonts]
     # sets the google font link in layouts/partials/google-fonts.html
