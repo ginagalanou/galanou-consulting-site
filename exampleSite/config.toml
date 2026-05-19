@@ -1,6 +1,6 @@
 baseURL = "/"
 themesDir = "../"
-theme = "galanou-consulting-site"
+theme = "."
 languageCode = "en-us"
 title = "Galanou Consulting"
 
