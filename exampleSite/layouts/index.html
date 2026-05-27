@@ -4,6 +4,23 @@
 
 <style>
   /*
+    Header logo alignment.
+    This pulls the logo slightly left without changing the logo file itself.
+  */
+
+  .header .container {
+    padding-left: 10px;
+  }
+
+  .header .logo {
+    margin-left: -8px;
+  }
+
+  .header .logo img {
+    display: block;
+  }
+
+  /*
     Homepage refinement styles.
     Scoped to .page-home so they do not affect service, about, or contact pages.
   */
@@ -94,7 +111,7 @@
 
   .page-home .home-features-container {
     padding-top: 38px;
-    padding-bottom: 60px;
+    padding-bottom: 58px;
   }
 
   .page-home .home-section-heading {
@@ -103,16 +120,16 @@
   }
 
   .page-home .home-section-intro {
-    max-width: 700px;
-    margin: 0 auto 34px auto;
-    line-height: 1.6;
+    max-width: 680px;
+    margin: 0 auto 28px auto;
+    line-height: 1.55;
     color: #555;
-    font-size: 1.05rem;
+    font-size: 1.02rem;
   }
 
   .page-home .feature {
     height: 100%;
-    padding: 34px 28px;
+    padding: 28px 24px;
     border-radius: 18px;
     transition: transform 180ms ease, box-shadow 180ms ease;
   }
@@ -123,7 +140,7 @@
   }
 
   .page-home .feature-image {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
 
   .page-home .feature-image img {
@@ -133,7 +150,7 @@
   }
 
   .page-home .feature-title {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     line-height: 1.2;
   }
 
@@ -154,12 +171,20 @@
     }
 
     .page-home .home-features-container {
-      padding-top: 46px;
-      padding-bottom: 74px;
+      padding-top: 44px;
+      padding-bottom: 68px;
     }
   }
 
   @media (max-width: 767px) {
+    .header .container {
+      padding-left: 12px;
+    }
+
+    .header .logo {
+      margin-left: -6px;
+    }
+
     .page-home .intro {
       padding-top: 16px;
       padding-bottom: 30px;
@@ -214,12 +239,12 @@
 
     .page-home .home-section-intro {
       font-size: 1rem;
-      margin-bottom: 28px;
+      margin-bottom: 26px;
     }
 
     .page-home .feature {
-      padding: 28px 24px;
-      margin-bottom: 18px;
+      padding: 24px 22px;
+      margin-bottom: 16px;
     }
 
     .page-home .feature:hover {
@@ -282,7 +307,7 @@
       <div class="col-12 text-center">
         <h2 class="home-section-heading">How We Work Together</h2>
         <p class="home-section-intro">
-          A practical, collaborative approach to helping healthcare leaders move from complex questions to clear direction and measurable progress.
+          Engagements are shaped around your organization’s priorities, from strategic planning and governance to digital health, stakeholder alignment, and implementation support.
         </p>
       </div>
     </div>
