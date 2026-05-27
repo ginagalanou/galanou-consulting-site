@@ -9,12 +9,13 @@
 <style>
   /*
     Services page refinements.
-    Scoped to .page-services-list so these styles only affect the services page.
+    This version uses a two-column editorial hero so the image feels integrated,
+    not oversized or banner-like.
   */
 
   .page-services-list .services-hero {
-    padding-top: 28px;
-    padding-bottom: 40px;
+    padding-top: 30px;
+    padding-bottom: 42px;
   }
 
   .page-services-list .services-intro-panel {
@@ -25,8 +26,15 @@
     overflow: hidden;
   }
 
+  .page-services-list .services-intro-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+    gap: 38px;
+    align-items: center;
+  }
+
   .page-services-list .services-intro-content {
-    max-width: 760px;
+    max-width: 720px;
     position: relative;
     z-index: 2;
   }
@@ -34,25 +42,25 @@
   .page-services-list .services-intro-content h1 {
     margin-top: 0;
     margin-bottom: 18px;
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(2rem, 4vw, 2.85rem);
     line-height: 1.08;
     letter-spacing: -0.025em;
   }
 
   .page-services-list .services-intro-content p {
-    max-width: 720px;
+    max-width: 680px;
     margin-bottom: 16px;
     font-size: 1.05rem;
     line-height: 1.64;
   }
 
   .page-services-list .services-image-wrap {
-    margin-top: 30px;
     position: relative;
     overflow: hidden;
     border-radius: 18px;
     background: rgba(255, 255, 255, 0.42);
-    border: 1px solid rgba(143, 132, 101, 0.14);
+    border: 1px solid rgba(143, 132, 101, 0.16);
+    min-height: 280px;
   }
 
   .page-services-list .services-image-wrap::before {
@@ -61,10 +69,10 @@
     inset: 0;
     background:
       linear-gradient(
-        to bottom,
-        rgba(232, 226, 211, 0.62) 0%,
-        rgba(232, 226, 211, 0.18) 32%,
-        rgba(232, 226, 211, 0) 62%
+        to right,
+        rgba(232, 226, 211, 0.42) 0%,
+        rgba(232, 226, 211, 0.10) 36%,
+        rgba(232, 226, 211, 0) 68%
       );
     z-index: 2;
     pointer-events: none;
@@ -73,13 +81,14 @@
   .page-services-list .services-image {
     display: block;
     width: 100%;
-    max-width: 100%;
-    height: auto;
+    height: 100%;
+    min-height: 280px;
+    object-fit: cover;
     border-radius: 18px;
   }
 
   .page-services-list .services-list-section {
-    padding-top: 10px;
+    padding-top: 8px;
     padding-bottom: 72px;
   }
 
@@ -102,7 +111,7 @@
 
   .page-services-list .service-card {
     height: 100%;
-    padding: 30px 26px;
+    padding: 28px 24px;
     background: rgba(143, 132, 101, 0.075);
     border: 1px solid rgba(143, 132, 101, 0.16);
     border-radius: 20px;
@@ -118,7 +127,7 @@
   .page-services-list .service-card h2 {
     margin-top: 0;
     margin-bottom: 12px;
-    font-size: 1.3rem;
+    font-size: 1.28rem;
     line-height: 1.22;
   }
 
@@ -145,11 +154,22 @@
   @media (min-width: 768px) {
     .page-services-list .services-hero {
       padding-top: 36px;
-      padding-bottom: 46px;
+      padding-bottom: 48px;
     }
 
     .page-services-list .services-list-section {
       padding-bottom: 80px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .page-services-list .services-intro-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .page-services-list .services-image-wrap {
+      max-width: 520px;
     }
   }
 
@@ -164,6 +184,10 @@
       border-radius: 20px;
     }
 
+    .page-services-list .services-intro-grid {
+      gap: 24px;
+    }
+
     .page-services-list .services-intro-content h1 {
       font-size: clamp(1.9rem, 9vw, 2.35rem);
       line-height: 1.1;
@@ -176,7 +200,7 @@
     }
 
     .page-services-list .services-image-wrap {
-      margin-top: 22px;
+      min-height: 210px;
       border-radius: 16px;
     }
 
@@ -184,13 +208,14 @@
       background:
         linear-gradient(
           to bottom,
-          rgba(232, 226, 211, 0.52) 0%,
-          rgba(232, 226, 211, 0.12) 35%,
-          rgba(232, 226, 211, 0) 65%
+          rgba(232, 226, 211, 0.36) 0%,
+          rgba(232, 226, 211, 0.08) 44%,
+          rgba(232, 226, 211, 0) 74%
         );
     }
 
     .page-services-list .services-image {
+      min-height: 210px;
       border-radius: 16px;
     }
 
@@ -218,19 +243,21 @@
 <div class="services-hero">
   <div class="container">
     <div class="services-intro-panel">
-      <div class="services-intro-content">
-        {{ .Content }}
-      </div>
-
-      {{ if .Params.intro_image }}
-        <div class="services-image-wrap">
-          <img
-            class="services-image"
-            src="{{ .Params.intro_image | relURL }}"
-            alt="{{ .Title }}"
-          />
+      <div class="services-intro-grid">
+        <div class="services-intro-content">
+          {{ .Content }}
         </div>
-      {{ end }}
+
+        {{ if .Params.intro_image }}
+          <div class="services-image-wrap">
+            <img
+              class="services-image"
+              src="{{ .Params.intro_image | relURL }}"
+              alt="{{ .Title }}"
+            />
+          </div>
+        {{ end }}
+      </div>
     </div>
   </div>
 </div>
