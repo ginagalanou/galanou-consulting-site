@@ -1,0 +1,9 @@
+<div class="service-card">
+  <h2>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </h2>
+
+  <p>{{ .Summary | plainify | htmlUnescape }}</p>
+
+  <a class="service-card-link" href="{{ .RelPermalink }}">Learn more</a>
+</div>
