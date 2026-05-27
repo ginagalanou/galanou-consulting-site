@@ -1,0 +1,251 @@
+{{ define "body_classes" }}page-services-list{{ end }}
+
+{{ define "main" }}
+
+<style>
+  /*
+    Services page refinements.
+    Scoped to .page-services-list so these styles only affect the services page.
+  */
+
+  .page-services-list .services-hero {
+    padding-top: 28px;
+    padding-bottom: 40px;
+  }
+
+  .page-services-list .services-intro-panel {
+    background: rgba(143, 132, 101, 0.10);
+    border: 1px solid rgba(143, 132, 101, 0.16);
+    border-radius: 26px;
+    padding: 42px;
+    overflow: hidden;
+  }
+
+  .page-services-list .services-intro-content {
+    max-width: 760px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .page-services-list .services-intro-content h1 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+  }
+
+  .page-services-list .services-intro-content p {
+    max-width: 720px;
+    margin-bottom: 16px;
+    font-size: 1.05rem;
+    line-height: 1.64;
+  }
+
+  .page-services-list .services-image-wrap {
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.42);
+    border: 1px solid rgba(143, 132, 101, 0.14);
+  }
+
+  .page-services-list .services-image-wrap::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(232, 226, 211, 0.62) 0%,
+        rgba(232, 226, 211, 0.18) 32%,
+        rgba(232, 226, 211, 0) 62%
+      );
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .page-services-list .services-image-wrap img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 18px;
+  }
+
+  .page-services-list .services-list-section {
+    padding-top: 10px;
+    padding-bottom: 72px;
+  }
+
+  .page-services-list .services-section-heading {
+    max-width: 720px;
+    margin-bottom: 28px;
+  }
+
+  .page-services-list .services-section-heading h2 {
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .page-services-list .services-section-heading p {
+    margin-bottom: 0;
+    color: #555;
+    font-size: 1.03rem;
+    line-height: 1.6;
+  }
+
+  .page-services-list .service-card {
+    height: 100%;
+    padding: 30px 26px;
+    background: rgba(143, 132, 101, 0.075);
+    border: 1px solid rgba(143, 132, 101, 0.16);
+    border-radius: 20px;
+    transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  }
+
+  .page-services-list .service-card:hover {
+    transform: translateY(-3px);
+    background: rgba(143, 132, 101, 0.11);
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.06);
+  }
+
+  .page-services-list .service-card h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+    line-height: 1.22;
+  }
+
+  .page-services-list .service-card h2 a {
+    text-decoration: none;
+  }
+
+  .page-services-list .service-card p {
+    margin-bottom: 16px;
+    color: #444;
+    line-height: 1.58;
+  }
+
+  .page-services-list .service-card-link {
+    display: inline-block;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .page-services-list .service-card-link::after {
+    content: " →";
+  }
+
+  @media (min-width: 768px) {
+    .page-services-list .services-hero {
+      padding-top: 36px;
+      padding-bottom: 46px;
+    }
+
+    .page-services-list .services-list-section {
+      padding-bottom: 80px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .page-services-list .services-hero {
+      padding-top: 18px;
+      padding-bottom: 32px;
+    }
+
+    .page-services-list .services-intro-panel {
+      padding: 30px 24px;
+      border-radius: 20px;
+    }
+
+    .page-services-list .services-intro-content h1 {
+      font-size: clamp(1.9rem, 9vw, 2.35rem);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .page-services-list .services-intro-content p {
+      font-size: 1rem;
+      line-height: 1.58;
+    }
+
+    .page-services-list .services-image-wrap {
+      margin-top: 22px;
+      border-radius: 16px;
+    }
+
+    .page-services-list .services-image-wrap::before {
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(232, 226, 211, 0.52) 0%,
+          rgba(232, 226, 211, 0.12) 35%,
+          rgba(232, 226, 211, 0) 65%
+        );
+    }
+
+    .page-services-list .services-image-wrap img {
+      border-radius: 16px;
+    }
+
+    .page-services-list .services-list-section {
+      padding-top: 0;
+      padding-bottom: 48px;
+    }
+
+    .page-services-list .services-section-heading {
+      margin-bottom: 22px;
+    }
+
+    .page-services-list .service-card {
+      padding: 24px 22px;
+      margin-bottom: 16px;
+    }
+
+    .page-services-list .service-card:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+</style>
+
+<div class="services-hero">
+  <div class="container">
+    <div class="services-intro-panel">
+      <div class="services-intro-content">
+        {{ .Content }}
+      </div>
+
+      <div class="services-image-wrap">
+        {{ partial "intro-image.html" . }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ if .Pages }}
+<div class="services-list-section">
+  <div class="container">
+
+    <div class="services-section-heading">
+      <h2>Advisory Services</h2>
+      <p>
+        Support is tailored to the stage, scale, and complexity of the initiative, from early strategic definition to implementation planning and stakeholder engagement.
+      </p>
+    </div>
+
+    <div class="row">
+      {{ range .Pages.ByWeight }}
+        <div class="col-12 col-md-6 mb-4">
+          {{ .Render "summary" }}
+        </div>
+      {{ end }}
+    </div>
+
+  </div>
+</div>
+{{ end }}
+
+{{ end }}
