@@ -2,9 +2,220 @@
 
 {{ define "main" }}
 
+<style>
+  /*
+    Homepage refinement styles.
+    These are scoped to .page-home so they do not affect service, about, or contact pages.
+  */
+
+  .page-home .intro {
+    padding-top: 22px;
+    padding-bottom: 34px;
+  }
+
+  .page-home .intro .row {
+    align-items: center;
+  }
+
+  .page-home .intro h1 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+
+  .page-home .intro p {
+    line-height: 1.62;
+    margin-bottom: 16px;
+  }
+
+  .page-home .intro .call {
+    margin-top: 24px;
+  }
+
+  /*
+    Targets the homepage image column produced by the intro-image partial.
+    This keeps the image treatment from accidentally affecting other images elsewhere.
+  */
+
+  .page-home .intro .order-1.order-md-2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .page-home .intro .order-1.order-md-2::before {
+    content: "";
+    position: absolute;
+    width: min(88%, 430px);
+    height: 88%;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-44%);
+    border-radius: 24px;
+    background: rgba(143, 132, 101, 0.10);
+    z-index: 0;
+  }
+
+  .page-home .intro .order-1.order-md-2 img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 22px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+  }
+
+  .page-home .home-services-strip {
+    padding-top: 26px;
+    padding-bottom: 36px;
+  }
+
+  .page-home .home-features-strip {
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+  }
+
+  .page-home .home-features-container {
+    padding-top: 38px;
+    padding-bottom: 60px;
+  }
+
+  .page-home .home-section-heading {
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .page-home .home-section-intro {
+    max-width: 700px;
+    margin: 0 auto 34px auto;
+    line-height: 1.6;
+    color: #555;
+    font-size: 1.05rem;
+  }
+
+  .page-home .feature {
+    height: 100%;
+    padding: 34px 28px;
+    border-radius: 18px;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+
+  .page-home .feature:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.06);
+  }
+
+  .page-home .feature-image {
+    margin-bottom: 16px;
+  }
+
+  .page-home .feature-image img {
+    width: 82px;
+    height: 82px;
+    object-fit: contain;
+  }
+
+  .page-home .feature-title {
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .page-home .feature-content p {
+    margin-bottom: 0;
+    line-height: 1.58;
+  }
+
+  @media (min-width: 768px) {
+    .page-home .intro {
+      padding-top: 32px;
+      padding-bottom: 42px;
+    }
+
+    .page-home .home-services-strip {
+      padding-top: 32px;
+      padding-bottom: 46px;
+    }
+
+    .page-home .home-features-container {
+      padding-top: 46px;
+      padding-bottom: 74px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .page-home .intro {
+      padding-top: 16px;
+      padding-bottom: 30px;
+    }
+
+    .page-home .intro h1 {
+      font-size: 2.05rem;
+      line-height: 1.12;
+      margin-bottom: 16px;
+    }
+
+    .page-home .intro p {
+      font-size: 1rem;
+      line-height: 1.58;
+    }
+
+    .page-home .intro .call {
+      margin-top: 22px;
+      margin-bottom: 10px;
+    }
+
+    .page-home .intro .order-1.order-md-2 {
+      margin-bottom: 24px;
+    }
+
+    .page-home .intro .order-1.order-md-2::before {
+      display: none;
+    }
+
+    .page-home .intro .order-1.order-md-2 img {
+      max-width: 330px;
+      border-radius: 18px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07);
+    }
+
+    .page-home .home-features-container {
+      padding-top: 32px;
+      padding-bottom: 48px;
+    }
+
+    .page-home .home-section-heading {
+      margin-bottom: 8px;
+    }
+
+    .page-home .home-section-intro {
+      font-size: 1rem;
+      margin-bottom: 28px;
+    }
+
+    .page-home .feature {
+      padding: 28px 24px;
+      margin-bottom: 18px;
+    }
+
+    .page-home .feature:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    .page-home .feature-image img {
+      width: 72px;
+      height: 72px;
+    }
+  }
+</style>
+
 <div class="intro">
   <div class="container">
-    <div class="row justify-content-start">
+    <div class="row justify-content-start align-items-center">
       <div class="col-12 col-md-7 col-lg-6 order-2 order-md-1">
         {{ .Content }}
 
@@ -22,10 +233,10 @@
 
 {{ if gt (len $services) 0 }}
 <div class="strip">
-  <div class="container pt-6 pb-6 pb-md-10">
+  <div class="container home-services-strip">
     <div class="row justify-content-start">
       {{ range first 6 (sort $services ".Params.weight") }}
-        <div class="col-12 col-md-4 mb-1">
+        <div class="col-12 col-md-4 mb-3">
           {{ .Render "summary" }}
         </div>
       {{ end }}
@@ -43,22 +254,25 @@
 {{ end }}
 
 {{ if .Site.Data.features }}
-<div class="strip strip-grey">
-  <div class="container pt-6 pb-6 pt-md-10 pb-md-10">
+<div class="strip strip-grey home-features-strip">
+  <div class="container home-features-container">
 
     <div class="row justify-content-center">
-      <div class="col-12 text-center mb-4">
-        <h2>How We Work Together</h2>
+      <div class="col-12 text-center">
+        <h2 class="home-section-heading">How We Work Together</h2>
+        <p class="home-section-intro">
+          A practical, collaborative approach to helping healthcare leaders move from complex questions to clear direction and measurable progress.
+        </p>
       </div>
     </div>
 
     <div class="row justify-content-center">
       {{ range .Site.Data.features }}
-        <div class="col-12 col-md-6 col-lg-4 mb-2">
+        <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
           <div class="feature">
             {{ if .image }}
               <div class="feature-image">
-                <img width="100" height="100" alt="{{ .title }} logo" src="{{ .image | relURL }}" />
+                <img width="82" height="82" alt="{{ .title }} icon" src="{{ .image | relURL }}" />
               </div>
             {{ end }}
 
