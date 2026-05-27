@@ -66,7 +66,7 @@
     pointer-events: none;
   }
 
-  .page-services-list .services-image-wrap img {
+  .page-services-list .services-image {
     display: block;
     width: 100%;
     max-width: 100%;
@@ -186,7 +186,7 @@
         );
     }
 
-    .page-services-list .services-image-wrap img {
+    .page-services-list .services-image {
       border-radius: 16px;
     }
 
@@ -218,9 +218,15 @@
         {{ .Content }}
       </div>
 
-      <div class="services-image-wrap">
-        {{ partial "intro-image.html" . }}
-      </div>
+      {{ if .Params.intro_image }}
+        <div class="services-image-wrap">
+          <img
+            class="services-image"
+            src="{{ .Params.intro_image | relURL }}"
+            alt="{{ .Title }}"
+          />
+        </div>
+      {{ end }}
     </div>
   </div>
 </div>
