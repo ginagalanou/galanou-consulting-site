@@ -7,6 +7,8 @@ intro_image_absolute: false
 intro_image_hide_on_mobile: true
 ---
 
-# Leading organizational initiatives from blueprint to execution.
+<div class="eyebrow">Healthcare Strategy & Transformation Advisory</div>
 
-Galanou Consulting helps healthcare organizations translate emerging change into clear priorities, stakeholder alignment, and measurable execution.
+# From complexity to clear execution.
+
+Galanou Consulting helps healthcare leaders translate high-stakes priorities into scalable programs, digital products, and high-impact stakeholder alignment.
