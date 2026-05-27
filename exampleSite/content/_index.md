@@ -1,14 +1,12 @@
 ---
 title: 'Homepage'
-meta_title: 'Strategy and transformation advisory for healthcare organizations navigating what comes next.'
-description: "Galanou Consulting helps healthcare organizations translate emerging change into strategy, governance, stakeholder alignment, and measurable execution."
+meta_title: 'Bringing organizational initiatives from blueprint to execution.'
+description: "Galanou Consulting helps healthcare leaders translate high-stakes priorities into scalable programs, digital products, and high-impact stakeholder alignment."
 intro_image: "images/photos/executive-workspace.png"
 intro_image_absolute: false
 intro_image_hide_on_mobile: true
 ---
 
-# Strategy and transformation advisory for healthcare organizations navigating what comes next.
+# Leading organizational initiatives from blueprint to execution.
 
 Galanou Consulting helps healthcare organizations translate emerging change into clear priorities, stakeholder alignment, and measurable execution.
-
-We advise leaders across healthcare transformation, digital health, emerging technology, governance, and growth.
