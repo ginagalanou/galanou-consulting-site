@@ -2,83 +2,178 @@
 
 {{ define "main" }}
 
-<div class="container pt-6 pb-6 pt-md-10 pb-md-10">
-  <div class="row justify-content-start">
-    <div class="col-12 col-md-8">
-      <h1 class="title">{{ .Title }}</h1>
-      <div class="content">
-        {{ .Content }}
+<style>
+  .page-contact .contact-page {
+    padding-top: 36px;
+    padding-bottom: 80px;
+  }
+
+  .page-contact .contact-panel {
+    background: rgba(143, 132, 101, 0.10);
+    border: 1px solid rgba(143, 132, 101, 0.16);
+    border-radius: 26px;
+    padding: 42px;
+  }
+
+  .page-contact .contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.75fr);
+    gap: 34px;
+    align-items: start;
+  }
+
+  .page-contact .contact-intro h1 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: clamp(2.1rem, 4vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+  }
+
+  .page-contact .contact-intro .content {
+    max-width: 760px;
+    font-size: 1.05rem;
+    line-height: 1.64;
+  }
+
+  .page-contact .contact-fit {
+    margin-top: 30px;
+  }
+
+  .page-contact .contact-fit h2 {
+    margin-bottom: 14px;
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .page-contact .contact-fit ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .page-contact .contact-fit li {
+    margin-bottom: 9px;
+    line-height: 1.55;
+  }
+
+  .page-contact .contact-card {
+    background: rgba(255, 255, 255, 0.62);
+    border: 1px solid rgba(143, 132, 101, 0.18);
+    border-radius: 22px;
+    padding: 28px 26px;
+  }
+
+  .page-contact .contact-card h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 1.35rem;
+  }
+
+  .page-contact .contact-detail {
+    margin-bottom: 14px;
+    color: #444;
+    line-height: 1.55;
+  }
+
+  .page-contact .contact-detail strong {
+    display: block;
+    margin-bottom: 2px;
+    color: #222;
+  }
+
+  .page-contact .contact-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 11px 18px;
+    background: #2f5d50;
+    color: #fff;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .page-contact .contact-button:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  @media (max-width: 767px) {
+    .page-contact .contact-page {
+      padding-top: 18px;
+      padding-bottom: 48px;
+    }
+
+    .page-contact .contact-panel {
+      padding: 30px 24px;
+      border-radius: 20px;
+    }
+
+    .page-contact .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 26px;
+    }
+
+    .page-contact .contact-intro .content {
+      font-size: 1rem;
+      line-height: 1.58;
+    }
+
+    .page-contact .contact-card {
+      padding: 24px 22px;
+    }
+  }
+</style>
+
+<div class="contact-page">
+  <div class="container">
+    <div class="contact-panel">
+      <div class="contact-grid">
+
+        <div class="contact-intro">
+          <h1>{{ .Title }}</h1>
+          <div class="content">
+            {{ .Content }}
+          </div>
+
+          <div class="contact-fit">
+            <h2>Good fit for conversations about:</h2>
+            <ul>
+              <li>Healthcare transformation or strategic planning</li>
+              <li>Digital health, AI, data, or emerging technology decisions</li>
+              <li>Stakeholder alignment, board communication, or program design</li>
+              <li>Grant strategy, partnership framing, or fundable initiatives</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="contact-card">
+          <h2>Contact</h2>
+
+          {{ if .Site.Data.contact.email }}
+            <div class="contact-detail">
+              <strong>Email</strong>
+              <a href="mailto:{{ .Site.Data.contact.email }}">{{ .Site.Data.contact.email }}</a>
+            </div>
+          {{ end }}
+
+          {{ if .Site.Data.contact.address }}
+            <div class="contact-detail">
+              <strong>Location</strong>
+              {{ .Site.Data.contact.address }}
+            </div>
+          {{ end }}
+
+          <div class="contact-detail">
+            <strong>Availability</strong>
+            Consultations by appointment
+          </div>
+
+          {{ if .Site.Data.contact.email }}
+            <a class="contact-button" href="mailto:{{ .Site.Data.contact.email }}">Email Galanou Consulting</a>
+          {{ end }}
+        </aside>
+
       </div>
-    </div>
-  </div>
-</div>
-
-<div class="container pb-6 pb-md-10">
-  <div class="row">
-    <div class="col-12 col-md-8">
-
-      <form action="https://formspree.io/f/mojbvbjj" method="POST" class="contact-form">
-
-        <div class="mb-3">
-          <label for="name">Name *</label>
-          <input class="form-control" type="text" id="name" name="name" required>
-        </div>
-
-        <div class="mb-3">
-          <label for="organization">Organization *</label>
-          <input class="form-control" type="text" id="organization" name="organization" required>
-        </div>
-
-        <div class="mb-3">
-          <label for="title">Role / Title</label>
-          <input class="form-control" type="text" id="title" name="title">
-        </div>
-
-        <div class="mb-3">
-          <label for="email">Email *</label>
-          <input class="form-control" type="email" id="email" name="email" required>
-        </div>
-
-        <div class="mb-3">
-          <label for="support_type">What type of support are you seeking?</label>
-          <select class="form-select" id="support_type" name="support_type">
-            <option value="">Please select</option>
-            <option value="Strategy & transformation advisory">Strategy & transformation advisory</option>
-            <option value="Digital health, AI, or emerging technology strategy">Digital health, AI, or emerging technology strategy</option>
-            <option value="Stakeholder alignment or executive communication">Stakeholder alignment or executive communication</option>
-            <option value="Program, product, or growth development">Program, product, or growth development</option>
-            <option value="Speaking or facilitation">Speaking or facilitation</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-
-        <div class="mb-3">
-          <label for="timeline">Desired timeline</label>
-          <select class="form-select" id="timeline" name="timeline">
-            <option value="">Please select</option>
-            <option value="As soon as possible">As soon as possible</option>
-            <option value="Within 1–3 months">Within 1–3 months</option>
-            <option value="Later this year">Later this year</option>
-            <option value="Exploring options">Exploring options</option>
-          </select>
-        </div>
-
-        <div class="mb-3">
-          <label for="message">Briefly describe your challenge or opportunity *</label>
-          <textarea class="form-control" id="message" name="message" rows="6" required></textarea>
-        </div>
-
-        <div class="mb-3">
-          <label for="referral_source">How did you hear about us?</label>
-          <input class="form-control" type="text" id="referral_source" name="referral_source">
-        </div>
-
-        <input type="hidden" name="_subject" value="New inquiry from Galanou Consulting website">
-
-        <button type="submit" class="button button-primary">Send Message</button>
-
-      </form>
-
     </div>
   </div>
 </div>
