@@ -138,6 +138,43 @@
     content: " →";
   }
 
+.page-services-list .services-cta {
+  margin-top: 30px;
+  padding: 34px 30px;
+  background: rgba(47, 93, 80, 0.08);
+  border: 1px solid rgba(47, 93, 80, 0.16);
+  border-radius: 22px;
+}
+
+.page-services-list .services-cta h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.55rem;
+  line-height: 1.2;
+}
+
+.page-services-list .services-cta p {
+  max-width: 760px;
+  margin-bottom: 20px;
+  color: #444;
+  line-height: 1.62;
+}
+
+.page-services-list .services-cta-button {
+  display: inline-block;
+  padding: 11px 18px;
+  background: #2f5d50;
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.page-services-list .services-cta-button:hover {
+  color: #fff;
+  text-decoration: none;
+}
+  
   @media (min-width: 768px) {
     .page-services-list .services-hero {
       padding-top: 36px;
@@ -250,6 +287,16 @@
       {{ end }}
     </div>
 
+    <div class="services-cta">
+  <h2>Does this sound like your organization?</h2>
+  <p>
+    If your team is navigating a complex healthcare priority, emerging technology decision,
+    stakeholder alignment challenge, or fundable program opportunity, Galanou Consulting can
+    help bring structure, clarity, and momentum.
+  </p>
+  <a class="services-cta-button" href="/contact/">Start a conversation</a>
+</div>
+    
   </div>
 </div>
 {{ end }}
