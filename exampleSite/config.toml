@@ -67,9 +67,14 @@ title = "Galanou Consulting"
     weight = 2
 
   [[menu.main]]
+    name = "Thought Leadership"
+    url = "/thought-leadership/"
+    weight = 3
+
+  [[menu.main]]
     name = "Contact"
     url = "/contact/"
-    weight = 3
+    weight = 4
 
   # Footer Menu
   [[menu.footer]]
