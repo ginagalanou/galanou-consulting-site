@@ -1,10 +1,10 @@
 ---
 title: "Services"
-description: "Advisory services for healthcare organizations navigating transformation, emerging technology, stakeholder complexity, and growth."
+description: "Strategic advisory support for healthcare organizations, professional societies, and mission-driven teams navigating transformation, emerging technology, stakeholder complexity, and program development."
 ---
 
 # Services
 
-Galanou Consulting supports healthcare organizations, professional associations, digital health teams, and pharmacy leaders navigating transformation, growth, and emerging technology adoption.
+Galanou Consulting supports healthcare organizations, professional societies, and mission-driven teams facing complex priorities that require strategic clarity, stakeholder alignment, and practical execution support.
 
-Engagements are designed to bring clarity, structure, and momentum to complex priorities.
+The work is especially relevant when an initiative is important, but still too broad, too fragmented, or difficult to move forward without additional strategic capacity.
