@@ -1,9 +1,6 @@
 ---
 title: "Services"
 description: "Advisory services for healthcare organizations navigating transformation, emerging technology, stakeholder complexity, and growth."
-intro_image: "images/photos/general-office.png"
-intro_image_absolute: false
-intro_image_hide_on_mobile: false
 ---
 
 # Services
