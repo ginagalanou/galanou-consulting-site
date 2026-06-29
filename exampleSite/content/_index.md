@@ -1,7 +1,7 @@
 ---
 title: 'Homepage'
 meta_title: 'Bringing organizational initiatives from blueprint to execution.'
-description: "Galanou Consulting helps healthcare leaders translate high-stakes priorities into scalable programs, digital products, and high-impact stakeholder alignment."
+description: "Galanou Consulting helps healthcare organizations, professional associations, nonprofits, and digital health teams turn complex priorities into clear strategy, aligned stakeholders, fundable programs, and executable plans."
 intro_image: "images/photos/executive-workspace.png"
 intro_image_absolute: false
 intro_image_hide_on_mobile: true
@@ -11,4 +11,4 @@ intro_image_hide_on_mobile: true
 
 # From complexity to clear execution.
 
-Galanou Consulting helps healthcare leaders translate high-stakes priorities into scalable programs, digital products, and high-impact stakeholder alignment.
+GGalanou Consulting helps healthcare organizations, professional associations, nonprofits, and digital health teams turn complex priorities into clear strategy, aligned stakeholders, fundable programs, and executable plans.
