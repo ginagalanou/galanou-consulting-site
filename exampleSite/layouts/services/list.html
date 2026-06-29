@@ -4,84 +4,56 @@
 
 <style>
   /*
-    Services page refinements.
-    Scoped to .page-services-list so these styles only affect the services page.
+    Services page remodel.
+    Scoped to .page-services-list so these styles only affect the Services page.
   */
 
   .page-services-list .services-hero {
-    padding-top: 28px;
-    padding-bottom: 40px;
+    padding-top: 34px;
+    padding-bottom: 46px;
   }
 
   .page-services-list .services-intro-panel {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 46px 42px;
     background: rgba(143, 132, 101, 0.10);
     border: 1px solid rgba(143, 132, 101, 0.16);
     border-radius: 26px;
-    padding: 42px;
-    overflow: hidden;
   }
 
   .page-services-list .services-intro-content {
-    max-width: 760px;
-    position: relative;
-    z-index: 2;
+    max-width: 780px;
   }
 
   .page-services-list .services-intro-content h1 {
     margin-top: 0;
     margin-bottom: 18px;
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(2.2rem, 4vw, 3rem);
     line-height: 1.08;
     letter-spacing: -0.025em;
   }
 
   .page-services-list .services-intro-content p {
-    max-width: 720px;
+    max-width: 760px;
     margin-bottom: 16px;
-    font-size: 1.05rem;
-    line-height: 1.64;
+    font-size: 1.06rem;
+    line-height: 1.66;
+    color: #444;
   }
 
-  .page-services-list .services-image-wrap {
-    margin-top: 30px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.42);
-    border: 1px solid rgba(143, 132, 101, 0.14);
+  .page-services-list .services-intro-content p:last-child {
+    margin-bottom: 0;
   }
 
-  .page-services-list .services-image-wrap::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(
-        to bottom,
-        rgba(232, 226, 211, 0.62) 0%,
-        rgba(232, 226, 211, 0.18) 32%,
-        rgba(232, 226, 211, 0) 62%
-      );
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  .page-services-list .services-image {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-radius: 18px;
-  }
-
-  .page-services-list .services-list-section {
-    padding-top: 10px;
-    padding-bottom: 72px;
+  .page-services-list .services-section {
+    padding-top: 18px;
+    padding-bottom: 68px;
   }
 
   .page-services-list .services-section-heading {
-    max-width: 720px;
-    margin-bottom: 28px;
+    max-width: 760px;
+    margin-bottom: 30px;
   }
 
   .page-services-list .services-section-heading h2 {
@@ -93,12 +65,12 @@
     margin-bottom: 0;
     color: #555;
     font-size: 1.03rem;
-    line-height: 1.6;
+    line-height: 1.62;
   }
 
   .page-services-list .service-card {
     height: 100%;
-    padding: 30px 26px;
+    padding: 30px 28px;
     background: rgba(143, 132, 101, 0.075);
     border: 1px solid rgba(143, 132, 101, 0.16);
     border-radius: 20px;
@@ -111,85 +83,125 @@
     box-shadow: 0 16px 38px rgba(0, 0, 0, 0.06);
   }
 
-  .page-services-list .service-card h2 {
+  .page-services-list .service-card h3 {
     margin-top: 0;
-    margin-bottom: 12px;
-    font-size: 1.3rem;
+    margin-bottom: 13px;
+    font-size: 1.28rem;
     line-height: 1.22;
   }
 
-  .page-services-list .service-card h2 a {
-    text-decoration: none;
-  }
-
   .page-services-list .service-card p {
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     color: #444;
-    line-height: 1.58;
+    line-height: 1.6;
   }
 
-  .page-services-list .service-card-link {
+  .page-services-list .service-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .page-services-list .service-detail {
+    color: #606060;
+    font-size: 0.98rem;
+  }
+
+  .page-services-list .services-band {
+    margin-top: 6px;
+    margin-bottom: 70px;
+    padding: 58px 0;
+    background: #f7f3ec;
+  }
+
+  .page-services-list .services-band .services-section-heading {
+    margin-bottom: 26px;
+  }
+
+  .page-services-list .services-band p {
+    max-width: 760px;
+    color: #444;
+    line-height: 1.62;
+  }
+
+  .page-services-list .services-list {
+    max-width: 960px;
+    margin: 24px 0 0;
+    padding-left: 1.2rem;
+  }
+
+  .page-services-list .services-list.two-column {
+    columns: 2;
+    column-gap: 54px;
+  }
+
+  .page-services-list .services-list li {
+    margin-bottom: 11px;
+    color: #3f3f3f;
+    line-height: 1.55;
+    break-inside: avoid;
+  }
+
+  .page-services-list .best-fit-section {
+    padding-bottom: 28px;
+  }
+
+  .page-services-list .best-fit-card {
+    max-width: 960px;
+    padding: 34px 32px;
+    background: #fff;
+    border: 1px solid rgba(143, 132, 101, 0.16);
+    border-radius: 22px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+  }
+
+  .page-services-list .best-fit-card p {
+    margin-bottom: 18px;
+    color: #444;
+    line-height: 1.62;
+  }
+
+  .page-services-list .services-cta {
+    margin-top: 34px;
+    padding: 40px 34px;
+    background: #2f5d50;
+    border-radius: 24px;
+    color: #fff;
+  }
+
+  .page-services-list .services-cta h2 {
+    margin-top: 0;
+    margin-bottom: 14px;
+    color: #fff;
+    font-size: 1.65rem;
+    line-height: 1.2;
+  }
+
+  .page-services-list .services-cta p {
+    max-width: 760px;
+    margin-bottom: 22px;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.65;
+  }
+
+  .page-services-list .services-cta-button {
     display: inline-block;
-    font-weight: 600;
+    padding: 12px 20px;
+    background: #fff;
+    color: #2f5d50;
+    border-radius: 999px;
+    font-weight: 700;
     text-decoration: none;
   }
 
-  .page-services-list .service-card-link::after {
-    content: " →";
-  }
-
-.page-services-list .services-cta {
-  margin-top: 30px;
-  padding: 34px 30px;
-  background: rgba(47, 93, 80, 0.08);
-  border: 1px solid rgba(47, 93, 80, 0.16);
-  border-radius: 22px;
-}
-
-.page-services-list .services-cta h2 {
-  margin-top: 0;
-  margin-bottom: 12px;
-  font-size: 1.55rem;
-  line-height: 1.2;
-}
-
-.page-services-list .services-cta p {
-  max-width: 760px;
-  margin-bottom: 20px;
-  color: #444;
-  line-height: 1.62;
-}
-
-.page-services-list .services-cta-button {
-  display: inline-block;
-  padding: 11px 18px;
-  background: #2f5d50;
-  color: #fff;
-  border-radius: 999px;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.page-services-list .services-cta-button:hover {
-  color: #fff;
-  text-decoration: none;
-}
-  
-  @media (min-width: 768px) {
-    .page-services-list .services-hero {
-      padding-top: 36px;
-      padding-bottom: 46px;
-    }
-
-    .page-services-list .services-list-section {
-      padding-bottom: 80px;
-    }
+  .page-services-list .services-cta-button:hover {
+    color: #2f5d50;
+    opacity: 0.88;
+    text-decoration: none;
   }
 
   @media (max-width: 767px) {
     .page-services-list .services-hero {
       padding-top: 18px;
-      padding-bottom: 32px;
+      padding-bottom: 34px;
     }
 
     .page-services-list .services-intro-panel {
@@ -208,28 +220,9 @@
       line-height: 1.58;
     }
 
-    .page-services-list .services-image-wrap {
-      margin-top: 22px;
-      border-radius: 16px;
-    }
-
-    .page-services-list .services-image-wrap::before {
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(232, 226, 211, 0.52) 0%,
-          rgba(232, 226, 211, 0.12) 35%,
-          rgba(232, 226, 211, 0) 65%
-        );
-    }
-
-    .page-services-list .services-image {
-      border-radius: 16px;
-    }
-
-    .page-services-list .services-list-section {
+    .page-services-list .services-section {
       padding-top: 0;
-      padding-bottom: 48px;
+      padding-bottom: 46px;
     }
 
     .page-services-list .services-section-heading {
@@ -245,6 +238,24 @@
       transform: none;
       box-shadow: none;
     }
+
+    .page-services-list .services-band {
+      margin-bottom: 48px;
+      padding: 42px 0;
+    }
+
+    .page-services-list .services-list.two-column {
+      columns: 1;
+    }
+
+    .page-services-list .best-fit-card {
+      padding: 28px 24px;
+    }
+
+    .page-services-list .services-cta {
+      padding: 34px 24px;
+      border-radius: 20px;
+    }
   }
 </style>
 
@@ -254,52 +265,124 @@
       <div class="services-intro-content">
         {{ .Content }}
       </div>
-
-      {{ if .Params.intro_image }}
-        <div class="services-image-wrap">
-          <img
-            class="services-image"
-            src="{{ .Params.intro_image | relURL }}"
-            alt="{{ .Title }}"
-          />
-        </div>
-      {{ end }}
     </div>
   </div>
 </div>
 
-{{ if .Pages }}
-<div class="services-list-section">
+<div class="services-section">
   <div class="container">
 
     <div class="services-section-heading">
-      <h2>Advisory Services</h2>
+      <h2>Core areas of support</h2>
       <p>
         Support is tailored to the stage, scale, and complexity of the initiative, from early strategic definition to implementation planning and stakeholder engagement.
       </p>
     </div>
 
     <div class="row">
-      {{ range .Pages.ByWeight }}
-        <div class="col-12 col-md-6 mb-4">
-          {{ .Render "summary" }}
-        </div>
-      {{ end }}
-    </div>
 
-    <div class="services-cta">
-  <h2>Does this sound like your organization?</h2>
-  <p>
-    If your team is navigating a complex healthcare priority, emerging technology decision,
-    stakeholder alignment challenge, or fundable program opportunity, Galanou Consulting can
-    help bring structure, clarity, and momentum.
-  </p>
-  <a class="services-cta-button" href="/contact/">Start a conversation</a>
-</div>
-    
+      <div class="col-12 col-md-6 mb-4">
+        <div class="service-card">
+          <h3>Strategy &amp; Transformation</h3>
+          <p>
+            For organizations navigating growth, change, or emerging priorities that need clearer direction and a practical path forward.
+          </p>
+          <p class="service-detail">
+            This work may include strategic planning support, initiative design, organizational assessments, executive briefings, decision frameworks, and translation of broad priorities into focused action.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 mb-4">
+        <div class="service-card">
+          <h3>Digital Health &amp; AI Readiness</h3>
+          <p>
+            For organizations trying to understand what digital transformation, AI, data, or emerging technology means for their workforce, members, governance, programs, or strategy.
+          </p>
+          <p class="service-detail">
+            This work may include AI and digital health education, readiness assessments, stakeholder discussions, strategy briefs, practical frameworks, and support translating emerging technology into responsible organizational action.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 mb-4">
+        <div class="service-card">
+          <h3>Stakeholder Alignment &amp; Execution</h3>
+          <p>
+            For initiatives that require cross-functional coordination, executive communication, and sustained movement from discussion to delivery.
+          </p>
+          <p class="service-detail">
+            This work may include stakeholder mapping, meeting design, working group support, leadership communications, implementation planning, project coordination, and the materials needed to move work forward.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 mb-4">
+        <div class="service-card">
+          <h3>Grants &amp; Program Development</h3>
+          <p>
+            For organizations developing new programs, funding concepts, strategic partnerships, or grant opportunities that require structure, narrative, and execution support.
+          </p>
+          <p class="service-detail">
+            This work may include opportunity assessment, concept development, proposal strategy, partner coordination, program design, first-draft development, review support, and translation of complex ideas into fundable and actionable plans.
+          </p>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
-{{ end }}
+
+<div class="services-band">
+  <div class="container">
+    <div class="services-section-heading">
+      <h2>How this can show up</h2>
+      <p>
+        Galanou Consulting can support focused projects, fractional strategic capacity, or defined workstreams that help an organization move from broad intent to usable outputs.
+      </p>
+    </div>
+
+    <ul class="services-list two-column">
+      <li>Strategic briefs and recommendations</li>
+      <li>Board or executive communication materials</li>
+      <li>Stakeholder convenings and discussion guides</li>
+      <li>AI or digital health education resources</li>
+      <li>Member-facing tools, frameworks, or reports</li>
+      <li>Program plans, roadmaps, and implementation support</li>
+      <li>Grant concepts, proposal narratives, and partner materials</li>
+      <li>Working group design, facilitation support, and synthesis</li>
+    </ul>
+  </div>
+</div>
+
+<div class="best-fit-section">
+  <div class="container">
+    <div class="best-fit-card">
+      <h2>Best fit</h2>
+
+      <p>
+        Galanou Consulting is a strong fit when your organization:
+      </p>
+
+      <ul class="services-list">
+        <li>Has an important priority that is still too broad or undefined</li>
+        <li>Needs to align internal and external stakeholders</li>
+        <li>Is navigating AI, digital health, workforce, member value, or organizational change</li>
+        <li>Needs focused strategic support without adding a full-time role</li>
+        <li>Has promising ideas, but needs help turning them into structured programs, proposals, or deliverables</li>
+        <li>Wants practical outputs, not just discussion</li>
+      </ul>
+
+      <div class="services-cta">
+        <h2>Does this sound like your organization?</h2>
+        <p>
+          Many organizations do not need a large consulting engagement. They need a focused partner who can help clarify the problem, organize the work, and move the next phase forward.
+        </p>
+        <a class="services-cta-button" href="/contact/">Contact Galanou Consulting</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 {{ end }}
 
