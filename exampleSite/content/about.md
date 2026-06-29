@@ -5,10 +5,24 @@ layout: "about"
 image: "images/team/Galanou_Georgia.png"
 ---
 
-Dr. Georgia Galanou Luchen is the Founder and Principal of Galanou Consulting. She is a healthcare transformation strategist and advisor with a PharmD foundation and experience across enterprise strategy, digital health, data, policy, member growth, and product-oriented execution.
+Dr. Georgia Galanou Luchen is a healthcare strategist and advisor with a pharmacy background and experience helping professional organizations move complex priorities from idea to execution.
 
-She helps healthcare organizations translate ambiguity into governed priorities, stakeholder alignment, and measurable action. Her work sits at the intersection of clinical insight, market change, executive decision-making, and organizational implementation.
+Her work focuses on the intersection of healthcare strategy, emerging technology, professional education, and organizational change. She helps organizations move from recognizing that an issue matters to defining what should happen next, who needs to be involved, and how the work will get done.
 
-Before founding Galanou Consulting, Dr. Galanou Luchen served in leadership roles at the American Society of Health-System Pharmacists, where she led enterprise strategy across digital health, data, AI, and cross-divisional transformation. Her work included strategic planning, board communications, KPI development, policy positions, national convenings, and new program development.
+Most recently, Dr. Galanou Luchen worked with the American Society of Health-System Pharmacists, a national professional association representing more than 60,000 pharmacy professionals. In that role, she supported work across digital health, data, AI strategy, strategic planning, professional education, stakeholder engagement, board and executive communications, and new program development.
 
-She is known for helping organizations make sense of emerging change, build the structures needed to respond, and move from concept to measurable execution.
+That experience gave her a front-row view into how professional organizations respond to change. She saw how emerging priorities are identified, how internal and external stakeholders are aligned, how value is communicated to members, and how ideas become deliverables that are useful beyond a single meeting or report.
+
+Now based in Greece, Dr. Galanou Luchen brings a Greek-American perspective to her work. Her background is rooted in U.S. health-system pharmacy and association leadership, but her current focus is broader. She helps healthcare organizations, professional societies, and mission-driven teams navigate transformation in ways that are clear, credible, and executable.
+
+Galanou Consulting was created to support organizations that need strategic capacity, thoughtful communication, and practical execution support, especially in areas where healthcare, technology, workforce development, and organizational change overlap.
+
+## Areas of focus
+
+- Strategy and organizational transformation
+- Digital health and AI readiness
+- Professional education and workforce development
+- Stakeholder alignment and convening
+- Member value and association growth
+- Executive communication and board-facing materials
+- Program or grant development, implementation planning, and practical deliverables
