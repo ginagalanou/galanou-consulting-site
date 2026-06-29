@@ -11,4 +11,4 @@ intro_image_hide_on_mobile: true
 
 # From complexity to clear execution.
 
-GGalanou Consulting helps healthcare organizations, professional associations, nonprofits, and digital health teams turn complex priorities into clear strategy, aligned stakeholders, fundable programs, and executable plans.
+Galanou Consulting helps healthcare organizations, professional associations, nonprofits, and digital health teams turn complex priorities into clear strategy, aligned stakeholders, fundable programs, and executable plans.
