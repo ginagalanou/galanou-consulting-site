@@ -1,10 +1,10 @@
 sections:
 
-* title: "Published Work"
+- title: "Published Work"
   intro: "Selected writing that frames emerging priorities across digital health, AI, pharmacy practice, and healthcare transformation."
   items:
 
-  * label: "Book Chapter"
+  - label: "Book Chapter"
     title: "Introduction to Digital Health and Its Cross-Functional Role in Healthcare"
     organization: "Transforming Healthcare: Digital Health and Emerging Technology"
     year: "In progress"
@@ -13,7 +13,7 @@ sections:
     link: ""
     link_text: ""
 
-  * label: "Publication"
+  - label: "Publication"
     title: "Creating a framework for delivering digital and telehealth knowledge to future and current pharmacists"
     organization: "American Journal of Health-System Pharmacy"
     year: "2026"
@@ -22,7 +22,7 @@ sections:
     link: "https://doi.org/10.1093/ajhp/zxag178"
     link_text: "View publication"
 
-  * label: "Publication"
+  - label: "Publication"
     title: "Pharmacy Futures: Summit on Artificial Intelligence in Pharmacy Practice"
     organization: "American Journal of Health-System Pharmacy"
     year: "2024"
@@ -31,7 +31,7 @@ sections:
     link: "https://doi.org/10.1093/ajhp/zxae279"
     link_text: "View publication"
 
-  * label: "Professional Statement"
+  - label: "Professional Statement"
     title: "ASHP Statement on the Community Pharmacist’s Role in the Care Continuum"
     organization: "American Journal of Health-System Pharmacy"
     year: "2025"
@@ -40,7 +40,7 @@ sections:
     link: "https://doi.org/10.1093/ajhp/zxaf146"
     link_text: "View publication"
 
-  * label: "Publication"
+  - label: "Publication"
     title: "Envisioning the Near Future of Community Pharmacy Patient Care Practice"
     organization: "American Journal of Pharmaceutical Education"
     year: "2024"
@@ -49,7 +49,7 @@ sections:
     link: "https://doi.org/10.1016/j.ajpe.2024.100742"
     link_text: "View publication"
 
-  * label: "Publication"
+  - label: "Publication"
     title: "The ASHP Section of Pharmacy Educators Crystal Ball Project"
     organization: "American Journal of Health-System Pharmacy"
     year: "2023"
@@ -58,11 +58,11 @@ sections:
     link: "https://doi.org/10.1093/ajhp/zxac332"
     link_text: "View publication"
 
-* title: "Advisory Contributions"
+- title: "Advisory Contributions"
   intro: "Advisory and expert forum contributions focused on digital infrastructure, workforce readiness, and mission-driven health system change."
   items:
 
-  * label: "Commission"
+  - label: "Commission"
     title: "Executive Summary of the 2025 ASHP Commission on Goals"
     organization: "American Journal of Health-System Pharmacy"
     year: "2026"
@@ -71,7 +71,7 @@ sections:
     link: "https://doi.org/10.1093/ajhp/zxaf309"
     link_text: "View summary"
 
-  * label: "Advisory"
+  - label: "Advisory"
     title: "i2x - Connecting EU Health Data"
     organization: "External Advisory Board"
     year: "2025-Present"
@@ -80,7 +80,7 @@ sections:
     link: ""
     link_text: ""
 
-  * label: "Professional Statement"
+  - label: "Professional Statement"
     title: "ASHP Statement on Artificial Intelligence in Pharmacy"
     organization: "American Journal of Health-System Pharmacy"
     year: "2025"
@@ -98,7 +98,7 @@ sections:
     link: "https://doi.org/10.1093/ajhp/zxaf170"
     link_text: "View proceedings"
 
-  * label: "Commission"
+  - label: "Commission"
     title: "Executive Summary of the 2024 ASHP Commission on Goals"
     organization: "American Journal of Health-System Pharmacy"
     year: "2025"
@@ -107,7 +107,7 @@ sections:
     link: "https://doi.org/10.1093/ajhp/zxae324"
     link_text: "View summary"
 
-  * label: "Expert Forum"
+  - label: "Expert Forum"
     title: "Digital Health & AI Action Collaborative"
     organization: "National Academy of Medicine"
     year: "2025"
@@ -116,7 +116,7 @@ sections:
     link: "https://nam.edu/our-work/programs/leadership-consortium/evidence-digital-health/"
     link_text: "View"
 
-  * label: "Expert Forum"
+  - label: "Expert Forum"
     title: "Workforce Implications of AI in Health and Medicine"
     organization: "National Academy of Medicine Leadership Consortium"
     year: "2024"
@@ -125,7 +125,7 @@ sections:
     link: "https://nam.edu/event/workforce-implications-of-artificial-intelligence-in-health-and-medicine/"
     link_text: "View"
 
-  * label: "Commission"
+  - label: "Commission"
     title: "Advanced Practice Provider Fellowship Accreditation Application Manual"
     organization: "American Nurses Credentialing Center"
     year: "2023"
@@ -134,7 +134,7 @@ sections:
     link: "https://www.nursingworld.org/globalassets/organizational-programs/accreditation/2023-appfa-application-manual.pdf"
     link_text: "View manual"
 
-  * label: "Advisory"
+  - label: "Advisory"
     title: "A Call to Action: Next Steps to Advance Diagnosis Education in the Health Professions"
     organization: "Diagnosis"
     year: "2021"
@@ -143,7 +143,7 @@ sections:
     link: "https://doi.org/10.1515/dx-2021-0103"
     link_text: "View article"
 
-  * label: "Advisory"
+  - label: "Advisory"
     title: "ASHP Practice Advancement Initiative 2030"
     organization: "American Journal of Health-System Pharmacy"
     year: "2020"
@@ -152,7 +152,7 @@ sections:
     link: "https://doi.org/10.1093/ajhp/zxz271"
     link_text: "View article"
 
-  * label: "Advisory"
+  - label: "Advisory"
     title: "ASHP Foundation Pharmacy Forecast 2020"
     organization: "American Journal of Health-System Pharmacy"
     year: "2020"
@@ -161,7 +161,7 @@ sections:
     link: "https://doi.org/10.1093/ajhp/zxz283"
     link_text: "View article"
 
-  * label: "Advisory"
+  - label: "Advisory"
     title: "ASHP Long-Range Vision for the Pharmacy Workforce"
     organization: "American Journal of Health-System Pharmacy"
     year: "2020"
@@ -170,11 +170,11 @@ sections:
     link: "https://doi.org/10.1093/ajhp/zxz312"
     link_text: "View article"
 
-* title: "Media Features"
+- title: "Media Features"
   intro: "Commentary and interviews translating healthcare technology shifts for professional audiences."
   items:
 
-  * label: "Interview"
+  - label: "Interview"
     title: "Q&A: AI is playing a pivotal role in health system pharmacy"
     organization: "MobiHealthNews"
     year: "2025"
@@ -183,7 +183,7 @@ sections:
     link: "https://www.mobihealthnews.com/news/qa-ai-playing-pivotal-role-health-system-pharmacy"
     link_text: "Read feature"
 
-  * label: "Commentary"
+  - label: "Commentary"
     title: "Failing to check AI-generated advice could endanger patients"
     organization: "ASHP News"
     year: "2023"
@@ -192,7 +192,7 @@ sections:
     link: "https://news.ashp.org/News/ashp-news/2023/12/05/study-finds-chatgpt-provides-inaccurate-responses-to-drug-questions"
     link_text: "Read feature"
 
-  * label: "Interview"
+  - label: "Interview"
     title: "In Conversation With Georgia Galanou Luchen, PharmD"
     organization: "AHRQ PSNet Patient Safety Network"
     year: "2021"
@@ -201,7 +201,7 @@ sections:
     link: "https://psnet.ahrq.gov/perspective/conversation-georgia-galanou-luchen-pharm-d"
     link_text: "Read interview"
 
-  * label: "Article"
+  - label: "Article"
     title: "The Role of Community Pharmacists in Patient Safety"
     organization: "AHRQ PSNet Patient Safety Network"
     year: "2021"
@@ -210,7 +210,7 @@ sections:
     link: "https://psnet.ahrq.gov/perspective/role-community-pharmacists-patient-safety"
     link_text: "Read article"
 
-  * label: "Article"
+  - label: "Article"
     title: "Mastering the Art of Giving Your Ideas and Talent as a Young Professional"
     organization: "ASAE Resources"
     year: "2019"
