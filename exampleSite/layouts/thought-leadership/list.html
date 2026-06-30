@@ -33,6 +33,11 @@
     line-height: 1.64;
   }
 
+  .page-thought-leadership .thought-featured {
+    padding-top: 8px;
+    padding-bottom: 34px;
+  }
+
   .page-thought-leadership .thought-sections {
     padding-bottom: 80px;
   }
@@ -69,10 +74,19 @@
     transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
   }
 
+  .page-thought-leadership .thought-card-featured {
+    background: rgba(47, 93, 80, 0.075);
+    border-color: rgba(47, 93, 80, 0.16);
+  }
+
   .page-thought-leadership .thought-card:hover {
     transform: translateY(-3px);
     background: rgba(143, 132, 101, 0.11);
     box-shadow: 0 16px 38px rgba(0, 0, 0, 0.06);
+  }
+
+  .page-thought-leadership .thought-card-featured:hover {
+    background: rgba(47, 93, 80, 0.105);
   }
 
   .page-thought-leadership .thought-card-label {
@@ -147,6 +161,11 @@
       line-height: 1.58;
     }
 
+    .page-thought-leadership .thought-featured {
+      padding-top: 0;
+      padding-bottom: 24px;
+    }
+
     .page-thought-leadership .thought-sections {
       padding-bottom: 48px;
     }
@@ -183,6 +202,39 @@
     </div>
   </div>
 </div>
+
+{{ with .Site.Data.thought_leadership.featured }}
+  <section class="thought-featured">
+    <div class="container">
+      <div class="thought-section-heading">
+        <h2>Featured Work</h2>
+        {{ with .intro }}
+          <p>{{ . }}</p>
+        {{ end }}
+      </div>
+
+      <div class="row">
+        {{ range .items }}
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <article class="thought-card thought-card-featured">
+              <div class="thought-card-label">{{ .label }}</div>
+              <h3>{{ .title }}</h3>
+              <div class="thought-card-meta">
+                <span>{{ .organization }}</span>
+                <span>{{ .year }} | {{ .role }}</span>
+              </div>
+              <p class="thought-card-description">{{ .description }}</p>
+              {{ $linkText := .link_text | default "Read more" }}
+              {{ with .link }}
+                <a class="thought-card-link" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $linkText }}</a>
+              {{ end }}
+            </article>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}
 
 {{ with .Site.Data.thought_leadership.sections }}
   <div class="thought-sections">
