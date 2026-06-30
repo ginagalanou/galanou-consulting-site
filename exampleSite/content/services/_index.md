@@ -1,6 +1,6 @@
 ---
 title: "Services"
-description: "Strategic advisory support for healthcare organizations, professional societies, and mission-driven teams navigating transformation, emerging technology, stakeholder complexity, and program development."
+description: "Focused strategic support for healthcare organizations, professional societies, and mission-driven teams navigating complex priorities."
 ---
 
 # Services
