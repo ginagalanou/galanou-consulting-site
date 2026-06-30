@@ -80,7 +80,13 @@
     margin-bottom: 2px;
     color: #222;
   }
-
+    .page-contact .contact-note {
+    margin-top: 16px;
+    margin-bottom: 0;
+    color: #5C5A5A;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
   .page-contact .contact-button {
     display: inline-block;
     margin-top: 10px;
@@ -138,30 +144,41 @@
         </div>
 
         <aside class="contact-card">
-          <h2>Contact</h2>
+         <h2>Contact</h2>
 
-          {{ if .Site.Data.contact.email }}
-            <div class="contact-detail">
-              <strong>Email</strong>
-              <a href="mailto:{{ .Site.Data.contact.email }}">{{ .Site.Data.contact.email }}</a>
-            </div>
-          {{ end }}
+{{ if .Site.Data.contact.email }}
+  <div class="contact-detail">
+    <strong>Email</strong>
+    <a href="mailto:{{ .Site.Data.contact.email }}">{{ .Site.Data.contact.email }}</a>
+  </div>
+{{ end }}
 
-          {{ if .Site.Data.contact.address }}
-            <div class="contact-detail">
-              <strong>Location</strong>
-              {{ .Site.Data.contact.address }}
-            </div>
-          {{ end }}
+{{ if .Site.Data.contact.linkedin }}
+  <div class="contact-detail">
+    <strong>LinkedIn</strong>
+    <a href="https://{{ .Site.Data.contact.linkedin }}" target="_blank" rel="noopener noreferrer">{{ .Site.Data.contact.linkedin }}</a>
+  </div>
+{{ end }}
 
-          <div class="contact-detail">
-            <strong>Availability</strong>
-            Consultations by appointment
-          </div>
+{{ if .Site.Data.contact.location }}
+  <div class="contact-detail">
+    <strong>Location</strong>
+    {{ .Site.Data.contact.location }}
+  </div>
+{{ end }}
 
-          {{ if .Site.Data.contact.email }}
-            <a class="contact-button" href="mailto:{{ .Site.Data.contact.email }}">Email Galanou Consulting</a>
-          {{ end }}
+{{ if .Site.Data.contact.availability }}
+  <div class="contact-detail">
+    <strong>Availability</strong>
+    {{ .Site.Data.contact.availability }}
+  </div>
+{{ end }}
+
+{{ if .Site.Data.contact.contact_button_link }}
+  <a class="contact-button" href="{{ .Site.Data.contact.contact_button_link }}">Email Galanou Consulting</a>
+{{ end }}
+
+<p class="contact-note">Conversations can begin by email or LinkedIn.</p>
         </aside>
 
       </div>
