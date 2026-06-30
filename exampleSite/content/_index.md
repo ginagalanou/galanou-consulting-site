@@ -1,7 +1,7 @@
 ---
 title: 'Homepage'
-meta_title: 'Bringing organizational initiatives from blueprint to execution.'
-description: "Galanou Consulting helps healthcare organizations, professional associations, nonprofits, and digital health teams turn complex priorities into clear strategy, aligned stakeholders, fundable programs, and executable plans."
+meta_title: 'Leading organizational initiatives from blueprint to execution.'
+description: "Strategic advisory support for healthcare associations, professional societies, and mission-driven teams turning emerging priorities into clear plans, aligned stakeholders, and practical deliverables."
 intro_image: "images/photos/executive-workspace.png"
 intro_image_absolute: false
 intro_image_hide_on_mobile: true
@@ -9,6 +9,6 @@ intro_image_hide_on_mobile: true
 
 <div class="eyebrow">Healthcare Strategy & Transformation Advisory</div>
 
-# From complexity to clear execution.
+# Leading organizational initiatives from blueprint to execution.
 
-Galanou Consulting helps healthcare organizations, professional associations, nonprofits, and digital health teams turn complex priorities into clear strategy, aligned stakeholders, fundable programs, and executable plans.
+Strategic advisory support for healthcare associations, professional societies, and mission-driven teams turning emerging priorities into clear plans, aligned stakeholders, and practical deliverables.
