@@ -69,8 +69,8 @@
     margin-bottom: 16px;
   }
 
-  .page-home .intro .call {
-    margin-top: 24px;
+  .page-home .home-hero-button {
+    margin-top: 18px;
   }
 
   /*
@@ -169,6 +169,72 @@
     line-height: 1.58;
   }
 
+  .page-home .home-founder-strip {
+    padding-top: 52px;
+    padding-bottom: 52px;
+    background: #fff;
+  }
+
+  .page-home .home-founder-card {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 34px 36px;
+    background: rgba(143, 132, 101, 0.08);
+    border: 1px solid rgba(143, 132, 101, 0.16);
+    border-radius: 22px;
+  }
+
+  .page-home .home-founder-card p {
+    margin-bottom: 14px;
+    color: #3f3f3f;
+    font-size: 1.05rem;
+    line-height: 1.62;
+  }
+
+  .page-home .home-founder-card a {
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .page-home .home-final-cta {
+    padding-top: 58px;
+    padding-bottom: 70px;
+    background: #2f5d50;
+    color: #fff;
+  }
+
+  .page-home .home-final-cta-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .page-home .home-final-cta h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #fff;
+    font-size: clamp(1.9rem, 3vw, 2.55rem);
+    line-height: 1.15;
+  }
+
+  .page-home .home-final-cta p {
+    max-width: 720px;
+    margin: 0 auto 24px auto;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1.06rem;
+    line-height: 1.65;
+  }
+
+  .page-home .home-final-cta .button {
+    background: #fff;
+    color: #2f5d50;
+  }
+
+  .page-home .home-final-cta .button:hover {
+    color: #2f5d50;
+    opacity: 0.9;
+  }
+
   @media (min-width: 768px) {
     .page-home .intro {
       padding-top: 32px;
@@ -219,11 +285,6 @@
       line-height: 1.58;
     }
 
-    .page-home .intro .call {
-      margin-top: 22px;
-      margin-bottom: 10px;
-    }
-
     .page-home .intro .order-1.order-md-2 {
       margin-bottom: 24px;
     }
@@ -266,6 +327,21 @@
       width: 72px;
       height: 72px;
     }
+
+    .page-home .home-founder-strip {
+      padding-top: 38px;
+      padding-bottom: 38px;
+    }
+
+    .page-home .home-founder-card {
+      padding: 28px 24px;
+      border-radius: 20px;
+    }
+
+    .page-home .home-final-cta {
+      padding-top: 46px;
+      padding-bottom: 54px;
+    }
   }
 </style>
 
@@ -275,9 +351,7 @@
       <div class="col-12 col-md-7 col-lg-6 order-2 order-md-1">
         {{ .Content }}
 
-        {{ if .Site.Params.homepage.show_contact_box }}
-          {{ partial "call.html" (dict "site" .Site "context" . "show_button" "true") }}
-        {{ end }}
+        <a class="button button-primary home-hero-button" href="/contact/">Let’s map out your next priority.</a>
       </div>
 
       {{ partial "intro-image.html" . }}
@@ -315,16 +389,16 @@
 
     <div class="row justify-content-center">
       <div class="col-12 text-center">
-       <h2 class="home-section-heading">Areas of support</h2>
-<p class="home-section-intro">
-  Focused strategic support for healthcare organizations, professional societies, and mission-driven teams navigating complex priorities.
-</p>
+        <h2 class="home-section-heading">Areas of support</h2>
+        <p class="home-section-intro">
+          Focused strategic support for healthcare organizations, professional societies, and mission-driven teams navigating complex priorities.
+        </p>
       </div>
     </div>
 
     <div class="row justify-content-center">
       {{ range .Site.Data.features }}
-       <div class="col-12 col-md-6 mb-4">
+        <div class="col-12 col-md-6 mb-4">
           <div class="feature">
             {{ if .image }}
               <div class="feature-image">
@@ -345,6 +419,29 @@
   </div>
 </div>
 {{ end }}
+
+<div class="home-founder-strip">
+  <div class="container">
+    <div class="home-founder-card">
+      <p>
+        Galanou Consulting is led by Dr. Georgia Galanou Luchen, a Greek-American healthcare strategist with a pharmacy background and experience across professional associations, digital health, AI, education, and stakeholder-driven transformation.
+      </p>
+      <a href="/about/">Learn more about Georgia</a>
+    </div>
+  </div>
+</div>
+
+<div class="home-final-cta">
+  <div class="container">
+    <div class="home-final-cta-inner">
+      <h2>When the priority matters, but the path is still forming</h2>
+      <p>
+        Some initiatives are important before they are fully defined. Galanou Consulting helps clarify the work, align the right people, and turn emerging priorities into practical plans, materials, and next steps.
+      </p>
+      <a class="button" href="/contact/">Let’s map out your next priority.</a>
+    </div>
+  </div>
+</div>
 
 {{ end }}
 
