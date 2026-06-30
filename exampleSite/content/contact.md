@@ -1,9 +1,9 @@
 ---
-title: "Start a Conversation"
-description: "Start a conversation with Galanou Consulting about healthcare transformation, strategy, governance, stakeholder alignment, digital health, AI, or program development."
+title: "Contact"
+description: "Start a conversation with Galanou Consulting about healthcare strategy, emerging technology, stakeholder alignment, digital health, AI, or program development."
 layout: "contact"
 ---
 
-If your organization is facing a complex healthcare initiative and needs clearer strategy, alignment, or execution support, Galanou Consulting can help bring structure and momentum.
+## Let’s start a conversation.
 
-Share a brief note about the decision, challenge, or opportunity in front of you. We will follow up to explore whether there is a strong fit for advisory support.
+If your organization is navigating a complex priority, emerging technology question, stakeholder alignment challenge, or program opportunity, we would be glad to connect.
