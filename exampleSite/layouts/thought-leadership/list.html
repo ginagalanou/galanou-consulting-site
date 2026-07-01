@@ -3,118 +3,303 @@
 {{ define "main" }}
 
 <style>
-  .page-thought-leadership .thought-hero {
-    padding-top: 36px;
-    padding-bottom: 44px;
+  .header {
+    background: #ffffff;
+    border-bottom: 1px solid rgba(47, 93, 80, 0.14);
   }
 
-  .page-thought-leadership .thought-hero-panel {
-    background: rgba(143, 132, 101, 0.10);
-    border: 1px solid rgba(143, 132, 101, 0.16);
-    border-radius: 26px;
-    padding: 42px;
+  .header .container {
+    padding-left: 10px;
+  }
+
+  .header .logo {
+    margin-left: -12px;
+  }
+
+  .header .logo img {
+    display: block;
+  }
+
+  .page-thought-leadership .thought-page {
+    position: relative;
+    overflow: hidden;
+    background:
+      linear-gradient(180deg, #ffffff 0%, #fcfaf6 42%, #ffffff 100%);
+  }
+
+  .page-thought-leadership .thought-hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: 54px;
+    padding-bottom: 58px;
+    background:
+      linear-gradient(90deg, #ffffff 0%, #fcfaf6 58%, #f7f3ec 100%);
+    border-bottom: 1px solid rgba(143, 132, 101, 0.12);
+  }
+
+  .page-thought-leadership .thought-hero::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: -120px;
+    width: 680px;
+    height: 500px;
+    background-image: url('{{ "images/graphics/blueprint-linework.svg" | relURL }}');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right top;
+    opacity: 0.36;
+    pointer-events: none;
+  }
+
+  .page-thought-leadership .thought-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.90) 46%, rgba(252, 250, 246, 0.50) 100%),
+      radial-gradient(circle at 84% 24%, rgba(184, 135, 69, 0.08), transparent 28%),
+      radial-gradient(circle at 90% 72%, rgba(47, 93, 80, 0.08), transparent 30%);
+    pointer-events: none;
+  }
+
+  .page-thought-leadership .thought-hero .container {
+    position: relative;
+    z-index: 1;
   }
 
   .page-thought-leadership .thought-hero-content {
-    max-width: 800px;
+    max-width: 850px;
+  }
+
+  .page-thought-leadership .thought-eyebrow {
+    margin-bottom: 14px;
+    color: #2f5d50;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
 
   .page-thought-leadership .thought-hero-content h1 {
+    max-width: 760px;
     margin-top: 0;
-    margin-bottom: 18px;
-    font-size: 3rem;
+    margin-bottom: 22px;
+    font-size: clamp(2.35rem, 4.4vw, 3.55rem);
     line-height: 1.08;
+    letter-spacing: -0.025em;
   }
 
   .page-thought-leadership .thought-hero-content p {
     max-width: 760px;
     margin-bottom: 0;
-    font-size: 1.05rem;
+    padding: 24px 28px;
+    background: rgba(255, 255, 255, 0.76);
+    border: 1px solid rgba(143, 132, 101, 0.17);
+    border-left: 4px solid rgba(47, 93, 80, 0.42);
+    border-radius: 20px;
+    color: #3f3f3f;
+    font-size: 1.04rem;
     line-height: 1.64;
+    box-shadow: 0 14px 34px rgba(47, 93, 80, 0.05);
+    backdrop-filter: blur(2px);
   }
 
   .page-thought-leadership .thought-featured {
-    padding-top: 8px;
-    padding-bottom: 34px;
-  }
-
-  .page-thought-leadership .thought-sections {
-    padding-bottom: 80px;
-  }
-
-  .page-thought-leadership .thought-section {
-    padding-top: 18px;
-    padding-bottom: 30px;
+    position: relative;
+    padding-top: 54px;
+    padding-bottom: 58px;
+    background: #ffffff;
   }
 
   .page-thought-leadership .thought-section-heading {
-    max-width: 760px;
-    margin-bottom: 24px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 26px;
+  }
+
+  .page-thought-leadership .thought-heading-copy {
+    max-width: 820px;
   }
 
   .page-thought-leadership .thought-section-heading h2 {
+    margin-top: 0;
     margin-bottom: 10px;
+    color: #2f5d50;
+    letter-spacing: -0.01em;
   }
 
   .page-thought-leadership .thought-section-heading p {
     margin-bottom: 0;
     color: #555;
     font-size: 1.03rem;
-    line-height: 1.6;
+    line-height: 1.62;
+  }
+
+  .page-thought-leadership .thought-scroll-note {
+    flex: 0 0 auto;
+    color: #8f8465;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .page-thought-leadership .thought-featured-rail,
+  .page-thought-leadership .thought-card-rail {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 18px;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 2px;
+    padding: 2px 2px 22px 2px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .page-thought-leadership .thought-featured-rail {
+    grid-auto-columns: minmax(330px, 0.44fr);
+  }
+
+  .page-thought-leadership .thought-card-rail {
+    grid-auto-columns: minmax(310px, 0.34fr);
+  }
+
+  .page-thought-leadership .thought-featured-rail::-webkit-scrollbar,
+  .page-thought-leadership .thought-card-rail::-webkit-scrollbar {
+    height: 9px;
+  }
+
+  .page-thought-leadership .thought-featured-rail::-webkit-scrollbar-track,
+  .page-thought-leadership .thought-card-rail::-webkit-scrollbar-track {
+    background: rgba(143, 132, 101, 0.10);
+    border-radius: 999px;
+  }
+
+  .page-thought-leadership .thought-featured-rail::-webkit-scrollbar-thumb,
+  .page-thought-leadership .thought-card-rail::-webkit-scrollbar-thumb {
+    background: rgba(47, 93, 80, 0.32);
+    border-radius: 999px;
   }
 
   .page-thought-leadership .thought-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     min-height: 100%;
+    scroll-snap-align: start;
     padding: 28px 26px;
-    background: rgba(143, 132, 101, 0.075);
+    background: rgba(247, 243, 236, 0.54);
     border: 1px solid rgba(143, 132, 101, 0.16);
-    border-radius: 20px;
-    transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    border-radius: 22px;
+    box-shadow: 0 12px 30px rgba(47, 93, 80, 0.04);
+    transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
   }
 
-  .page-thought-leadership .thought-card-featured {
-    background: rgba(47, 93, 80, 0.075);
-    border-color: rgba(47, 93, 80, 0.16);
+  .page-thought-leadership .thought-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 26px;
+    width: 54px;
+    height: 3px;
+    background: #b88745;
+    border-radius: 0 0 4px 4px;
   }
 
   .page-thought-leadership .thought-card:hover {
-    transform: translateY(-3px);
-    background: rgba(143, 132, 101, 0.11);
-    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.06);
+    transform: translateY(-4px);
+    background: #ffffff;
+    border-color: rgba(47, 93, 80, 0.20);
+    box-shadow: 0 18px 42px rgba(47, 93, 80, 0.075);
+  }
+
+  .page-thought-leadership .thought-card-featured {
+    min-height: 420px;
+    padding: 34px 32px;
+    background: #2f5d50;
+    border-color: rgba(47, 93, 80, 0.20);
+    color: #ffffff;
+    box-shadow: 0 18px 44px rgba(47, 93, 80, 0.14);
+  }
+
+  .page-thought-leadership .thought-card-featured::before {
+    left: 32px;
+    width: 64px;
+    background: #ffffff;
+  }
+
+  .page-thought-leadership .thought-card-featured::after {
+    content: "";
+    position: absolute;
+    top: -78px;
+    right: -110px;
+    width: 340px;
+    height: 260px;
+    background-image: url('{{ "images/graphics/blueprint-linework.svg" | relURL }}');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right top;
+    opacity: 0.08;
+    filter: brightness(1.9);
+    pointer-events: none;
   }
 
   .page-thought-leadership .thought-card-featured:hover {
-    background: rgba(47, 93, 80, 0.105);
+    background: #2f5d50;
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 20px 48px rgba(47, 93, 80, 0.18);
+  }
+
+  .page-thought-leadership .thought-card > * {
+    position: relative;
+    z-index: 1;
   }
 
   .page-thought-leadership .thought-card-label {
     align-self: flex-start;
     margin-bottom: 16px;
-    padding: 5px 10px;
+    padding: 6px 11px;
     color: #2f5d50;
     background: rgba(47, 93, 80, 0.09);
     border: 1px solid rgba(47, 93, 80, 0.14);
     border-radius: 999px;
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     font-weight: 700;
     line-height: 1.2;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
+  }
+
+  .page-thought-leadership .thought-card-featured .thought-card-label {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.20);
   }
 
   .page-thought-leadership .thought-card h3 {
     margin-top: 0;
-    margin-bottom: 12px;
-    font-size: 1.28rem;
-    line-height: 1.24;
+    margin-bottom: 14px;
+    color: #2f5d50;
+    font-size: 1.24rem;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+
+  .page-thought-leadership .thought-card-featured h3 {
+    color: #ffffff;
+    font-size: clamp(1.42rem, 2.5vw, 1.82rem);
+    line-height: 1.18;
   }
 
   .page-thought-leadership .thought-card-meta {
-    margin-bottom: 14px;
+    margin-bottom: 16px;
     color: #5C5A5A;
-    font-size: 0.95rem;
+    font-size: 0.94rem;
     line-height: 1.5;
   }
 
@@ -122,78 +307,223 @@
     display: block;
   }
 
+  .page-thought-leadership .thought-card-featured .thought-card-meta {
+    color: rgba(255, 255, 255, 0.74);
+  }
+
   .page-thought-leadership .thought-card-description {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     color: #444;
-    line-height: 1.58;
+    line-height: 1.6;
+  }
+
+  .page-thought-leadership .thought-card-featured .thought-card-description {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1.01rem;
+    line-height: 1.62;
   }
 
   .page-thought-leadership .thought-card-link {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
     margin-top: auto;
+    color: #2f5d50;
     font-weight: 700;
     text-decoration: none;
   }
 
   .page-thought-leadership .thought-card-link::after {
-    content: " ->";
+    content: "→";
+    transition: transform 180ms ease;
+  }
+
+  .page-thought-leadership .thought-card-link:hover {
+    color: #2f5d50;
+    text-decoration: none;
+  }
+
+  .page-thought-leadership .thought-card-link:hover::after {
+    transform: translateX(3px);
+  }
+
+  .page-thought-leadership .thought-card-featured .thought-card-link {
+    color: #ffffff;
+  }
+
+  .page-thought-leadership .thought-card-featured .thought-card-link:hover {
+    color: #ffffff;
+    opacity: 0.88;
+  }
+
+  .page-thought-leadership .thought-sections {
+    padding-top: 12px;
+    padding-bottom: 74px;
+  }
+
+  .page-thought-leadership .thought-section {
+    position: relative;
+    padding-top: 46px;
+    padding-bottom: 48px;
+    border-top: 1px solid rgba(143, 132, 101, 0.14);
+  }
+
+  .page-thought-leadership .thought-section:nth-child(even) {
+    margin-left: calc((100vw - 100%) / -2);
+    margin-right: calc((100vw - 100%) / -2);
+    padding-left: calc((100vw - 100%) / 2);
+    padding-right: calc((100vw - 100%) / 2);
+    background:
+      radial-gradient(circle at 88% 18%, rgba(47, 93, 80, 0.055), transparent 24%),
+      linear-gradient(180deg, #fcfaf6 0%, #f7f3ec 100%);
+  }
+
+  .page-thought-leadership .thought-section:nth-child(even) .thought-card {
+    background: rgba(255, 255, 255, 0.78);
+  }
+
+  .page-thought-leadership .thought-section:nth-child(even) .thought-card:hover {
+    background: #ffffff;
+  }
+
+  .page-thought-leadership .thought-empty-link-space {
+    margin-top: auto;
+    min-height: 1px;
+  }
+
+  @media (max-width: 991px) {
+    .page-thought-leadership .thought-hero::before {
+      right: -260px;
+      opacity: 0.22;
+    }
+
+    .page-thought-leadership .thought-section-heading {
+      display: block;
+    }
+
+    .page-thought-leadership .thought-scroll-note {
+      display: block;
+      margin-top: 14px;
+    }
+
+    .page-thought-leadership .thought-featured-rail {
+      grid-auto-columns: minmax(310px, 76vw);
+    }
+
+    .page-thought-leadership .thought-card-rail {
+      grid-auto-columns: minmax(290px, 72vw);
+    }
   }
 
   @media (max-width: 767px) {
-    .page-thought-leadership .thought-hero {
-      padding-top: 18px;
-      padding-bottom: 32px;
+    .header .container {
+      padding-left: 12px;
     }
 
-    .page-thought-leadership .thought-hero-panel {
-      padding: 30px 24px;
-      border-radius: 20px;
+    .header .logo {
+      margin-left: -6px;
+    }
+
+    .page-thought-leadership .thought-hero {
+      padding-top: 34px;
+      padding-bottom: 46px;
+    }
+
+    .page-thought-leadership .thought-hero::before {
+      top: -34px;
+      right: -340px;
+      width: 640px;
+      opacity: 0.16;
     }
 
     .page-thought-leadership .thought-hero-content h1 {
-      font-size: 2.35rem;
+      font-size: clamp(1.95rem, 9vw, 2.45rem);
       line-height: 1.1;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
 
     .page-thought-leadership .thought-hero-content p {
+      padding: 20px 20px;
       font-size: 1rem;
       line-height: 1.58;
     }
 
     .page-thought-leadership .thought-featured {
-      padding-top: 0;
-      padding-bottom: 24px;
+      padding-top: 40px;
+      padding-bottom: 42px;
+    }
+
+    .page-thought-leadership .thought-section-heading {
+      margin-bottom: 22px;
+    }
+
+    .page-thought-leadership .thought-section-heading h2 {
+      margin-bottom: 10px;
+    }
+
+    .page-thought-leadership .thought-section-heading h2::after {
+      content: "";
+      display: block;
+      width: 72px;
+      height: 2px;
+      margin-top: 14px;
+      background: rgba(47, 93, 80, 0.28);
+    }
+
+    .page-thought-leadership .thought-scroll-note {
+      font-size: 0.76rem;
+    }
+
+    .page-thought-leadership .thought-featured-rail,
+    .page-thought-leadership .thought-card-rail {
+      gap: 16px;
+      padding-bottom: 18px;
+    }
+
+    .page-thought-leadership .thought-featured-rail {
+      grid-auto-columns: minmax(280px, 84vw);
+    }
+
+    .page-thought-leadership .thought-card-rail {
+      grid-auto-columns: minmax(270px, 82vw);
+    }
+
+    .page-thought-leadership .thought-card,
+    .page-thought-leadership .thought-card-featured {
+      min-height: auto;
+      padding: 26px 24px;
+    }
+
+    .page-thought-leadership .thought-card::before,
+    .page-thought-leadership .thought-card-featured::before {
+      left: 24px;
+      width: 52px;
+    }
+
+    .page-thought-leadership .thought-card:hover,
+    .page-thought-leadership .thought-card-featured:hover {
+      transform: none;
     }
 
     .page-thought-leadership .thought-sections {
+      padding-top: 0;
       padding-bottom: 48px;
     }
 
     .page-thought-leadership .thought-section {
-      padding-top: 8px;
-      padding-bottom: 24px;
-    }
-
-    .page-thought-leadership .thought-section-heading {
-      margin-bottom: 20px;
-    }
-
-    .page-thought-leadership .thought-card {
-      padding: 24px 22px;
-    }
-
-    .page-thought-leadership .thought-card:hover {
-      transform: none;
-      box-shadow: none;
+      padding-top: 38px;
+      padding-bottom: 40px;
     }
   }
 </style>
 
-<div class="thought-hero">
-  <div class="container">
-    <div class="thought-hero-panel">
+<div class="thought-page">
+
+  <div class="thought-hero">
+    <div class="container">
       <div class="thought-hero-content">
+        <div class="thought-eyebrow">Publications, media &amp; advisory contributions</div>
         <h1>{{ .Title }}</h1>
         {{ with .Params.description }}
           <p>{{ . }}</p>
@@ -201,21 +531,22 @@
       </div>
     </div>
   </div>
-</div>
 
-{{ with .Site.Data.thought_leadership.featured }}
-  <section class="thought-featured">
-    <div class="container">
-      <div class="thought-section-heading">
-        <h2>Featured Work</h2>
-        {{ with .intro }}
-          <p>{{ . }}</p>
-        {{ end }}
-      </div>
+  {{ with .Site.Data.thought_leadership.featured }}
+    <section class="thought-featured">
+      <div class="container">
+        <div class="thought-section-heading">
+          <div class="thought-heading-copy">
+            <h2>Featured Work</h2>
+            {{ with .intro }}
+              <p>{{ . }}</p>
+            {{ end }}
+          </div>
+          <div class="thought-scroll-note">Scroll to explore</div>
+        </div>
 
-      <div class="row">
-        {{ range .items }}
-          <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="thought-featured-rail" aria-label="Featured thought leadership">
+          {{ range .items }}
             <article class="thought-card thought-card-featured">
               <div class="thought-card-label">{{ .label }}</div>
               <h3>{{ .title }}</h3>
@@ -227,28 +558,31 @@
               {{ $linkText := .link_text | default "Read more" }}
               {{ with .link }}
                 <a class="thought-card-link" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $linkText }}</a>
+              {{ else }}
+                <div class="thought-empty-link-space"></div>
               {{ end }}
             </article>
-          </div>
-        {{ end }}
+          {{ end }}
+        </div>
       </div>
-    </div>
-  </section>
-{{ end }}
+    </section>
+  {{ end }}
 
-{{ with .Site.Data.thought_leadership.sections }}
-  <div class="thought-sections">
-    <div class="container">
-      {{ range . }}
-        <section class="thought-section">
-          <div class="thought-section-heading">
-            <h2>{{ .title }}</h2>
-            <p>{{ .intro }}</p>
-          </div>
+  {{ with .Site.Data.thought_leadership.sections }}
+    <div class="thought-sections">
+      <div class="container">
+        {{ range . }}
+          <section class="thought-section">
+            <div class="thought-section-heading">
+              <div class="thought-heading-copy">
+                <h2>{{ .title }}</h2>
+                <p>{{ .intro }}</p>
+              </div>
+              <div class="thought-scroll-note">Scroll to explore</div>
+            </div>
 
-          <div class="row">
-            {{ range .items }}
-              <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="thought-card-rail" aria-label="{{ .title }}">
+              {{ range .items }}
                 <article class="thought-card">
                   <div class="thought-card-label">{{ .label }}</div>
                   <h3>{{ .title }}</h3>
@@ -260,15 +594,18 @@
                   {{ $linkText := .link_text | default "Read more" }}
                   {{ with .link }}
                     <a class="thought-card-link" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $linkText }}</a>
+                  {{ else }}
+                    <div class="thought-empty-link-space"></div>
                   {{ end }}
                 </article>
-              </div>
-            {{ end }}
-          </div>
-        </section>
-      {{ end }}
+              {{ end }}
+            </div>
+          </section>
+        {{ end }}
+      </div>
     </div>
-  </div>
-{{ end }}
+  {{ end }}
+
+</div>
 
 {{ end }}
