@@ -20,17 +20,17 @@
     display: block;
   }
 
-  .page-services-list .services-hero {
-    position: relative;
-    overflow: hidden;
-    padding-top: 58px;
-    padding-bottom: 72px;
-    background:
-      radial-gradient(circle at 82% 28%, rgba(184, 135, 69, 0.08), transparent 28%),
-      radial-gradient(circle at 90% 72%, rgba(47, 93, 80, 0.08), transparent 32%),
-      linear-gradient(90deg, #ffffff 0%, #fcfaf6 62%, #f7f3ec 100%);
-    border-bottom: 1px solid rgba(143, 132, 101, 0.12);
-  }
+ .page-services-list .services-hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: 44px;
+  padding-bottom: 52px;
+  background:
+    radial-gradient(circle at 82% 28%, rgba(184, 135, 69, 0.08), transparent 28%),
+    radial-gradient(circle at 90% 72%, rgba(47, 93, 80, 0.08), transparent 32%),
+    linear-gradient(90deg, #ffffff 0%, #fcfaf6 62%, #f7f3ec 100%);
+  border-bottom: 1px solid rgba(143, 132, 101, 0.12);
+}
 
   .page-services-list .services-hero::before {
     content: "";
@@ -64,33 +64,41 @@
   }
 
   .page-services-list .services-intro-content {
-    max-width: 790px;
-  }
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: 42px;
+  align-items: end;
+}
+.page-services-list .services-intro-content {
+  display: block;
+}
+  
+ .page-services-list .services-intro-content h1 {
+  margin: 0;
+  font-size: clamp(2.25rem, 4.4vw, 3.45rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
 
-  .page-services-list .services-intro-content h1 {
-    margin-top: 0;
-    margin-bottom: 18px;
-    font-size: clamp(2.25rem, 4.4vw, 3.45rem);
-    line-height: 1.08;
-    letter-spacing: -0.025em;
-  }
-
-  .page-services-list .services-intro-content p {
-    max-width: 760px;
-    margin-bottom: 0;
-    color: #3f3f3f;
-    font-size: 1.08rem;
-    line-height: 1.64;
-  }
+ .page-services-list .services-intro-content p {
+  max-width: 700px;
+  margin-bottom: 0;
+  padding-left: 24px;
+  border-left: 3px solid rgba(47, 93, 80, 0.28);
+  color: #3f3f3f;
+  font-size: 1.06rem;
+  line-height: 1.64;
+}
 
   .page-services-list .services-main {
     background: #ffffff;
   }
 
   .page-services-list .services-section {
-    padding-top: 66px;
-    padding-bottom: 58px;
-  }
+  padding-top: 48px;
+  padding-bottom: 54px;
+}
 
   .page-services-list .services-section-heading {
     display: flex;
@@ -113,30 +121,20 @@
   }
 
   .page-services-list .service-card {
-    position: relative;
-    height: 100%;
-    padding: 34px 30px 32px;
-    background: rgba(247, 243, 236, 0.48);
-    border: 1px solid rgba(143, 132, 101, 0.16);
-    border-radius: 22px;
-    transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
-  }
+  position: relative;
+  height: 100%;
+  padding: 30px 28px 28px;
+  background: rgba(247, 243, 236, 0.48);
+  border: 1px solid rgba(143, 132, 101, 0.16);
+  border-radius: 22px;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
+}
 
   .page-services-list .service-card:hover {
     transform: translateY(-3px);
     background: #ffffff;
     border-color: rgba(47, 93, 80, 0.20);
     box-shadow: 0 16px 38px rgba(47, 93, 80, 0.07);
-  }
-
-  .page-services-list .service-number {
-    display: block;
-    margin-bottom: 18px;
-    color: #b88745;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
   }
 
   .page-services-list .service-card h3 {
@@ -154,6 +152,28 @@
     line-height: 1.6;
   }
 
+  .page-services-list .service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: 58px;
+  height: 3px;
+  background: #2f5d50;
+  border-radius: 0 0 4px 4px;
+}
+
+.page-services-list .row > div:nth-child(2) .service-card::before {
+  background: #b88745;
+}
+
+.page-services-list .row > div:nth-child(3) .service-card::before {
+  background: #8f8465;
+}
+
+.page-services-list .row > div:nth-child(4) .service-card::before {
+  background: #2f5d50;
+}
   .page-services-list .examples-section {
     padding-top: 64px;
     padding-bottom: 70px;
@@ -364,10 +384,11 @@
       margin-bottom: 16px;
     }
 
-    .page-services-list .services-intro-content p {
-      font-size: 1rem;
-      line-height: 1.58;
-    }
+.page-services-list .services-intro-content p {
+  padding-left: 18px;
+  font-size: 1rem;
+  line-height: 1.58;
+}
 
     .page-services-list .services-section {
       padding-top: 46px;
@@ -448,7 +469,6 @@
 
         <div class="col-12 col-md-6 mb-4">
           <div class="service-card">
-            <span class="service-number">01</span>
             <h3>Strategy &amp; Transformation</h3>
             <p>
               Support for emerging priorities, strategic planning efforts, new initiatives, and organizational shifts that need structure, synthesis, and a clear path forward.
@@ -458,7 +478,6 @@
 
         <div class="col-12 col-md-6 mb-4">
           <div class="service-card">
-            <span class="service-number">02</span>
             <h3>Digital Health &amp; AI Readiness</h3>
             <p>
               Helping healthcare teams translate AI and digital health questions into practical strategy, education, governance, and member-facing resources.
@@ -468,7 +487,6 @@
 
         <div class="col-12 col-md-6 mb-4">
           <div class="service-card">
-            <span class="service-number">03</span>
             <h3>Stakeholder Alignment &amp; Execution</h3>
             <p>
               Designing the working structure, communications, decision points, and deliverables needed to move cross-functional or volunteer-driven work forward.
@@ -478,7 +496,6 @@
 
         <div class="col-12 col-md-6 mb-4">
           <div class="service-card">
-            <span class="service-number">04</span>
             <h3>Grants &amp; Program Development</h3>
             <p>
               Turning early ideas into fundable concepts, partner narratives, program plans, and proposal-ready materials.
