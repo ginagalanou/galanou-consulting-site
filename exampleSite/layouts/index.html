@@ -20,14 +20,47 @@
     display: block;
   }
 
-.page-home .intro {
-  padding-top: 34px;
-  padding-bottom: 48px;
-  background: linear-gradient(180deg, #ffffff 0%, #fcfaf6 100%);
-}
+  .page-home .intro {
+    position: relative;
+    overflow: hidden;
+    padding-top: 58px;
+    padding-bottom: 78px;
+    background:
+      linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.97) 31%, rgba(252, 250, 246, 0.88) 58%, rgba(247, 243, 236, 0.72) 100%);
+  }
 
-  .page-home .intro .row {
-    align-items: center;
+  .page-home .intro::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('{{ "images/graphics/blueprint-linework.svg" | relURL }}');
+    background-repeat: no-repeat;
+    background-position: right -70px center;
+    background-size: min(68vw, 780px) auto;
+    opacity: 0.72;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .page-home .intro::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 78% 32%, rgba(184, 135, 69, 0.10), transparent 28%),
+      radial-gradient(circle at 92% 70%, rgba(47, 93, 80, 0.10), transparent 32%),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.90) 39%, rgba(255, 255, 255, 0.58) 62%, rgba(255, 255, 255, 0.22) 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .page-home .intro .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .page-home .home-hero-content {
+    max-width: 675px;
   }
 
   .page-home .intro .eyebrow {
@@ -41,16 +74,17 @@
   }
 
   .page-home .intro h1 {
-    max-width: 640px;
+    max-width: 650px;
     margin-top: 0;
     margin-bottom: 18px;
-    font-size: clamp(2.15rem, 4vw, 3.2rem);
+    font-size: clamp(2.25rem, 4.4vw, 3.55rem);
     line-height: 1.08;
     letter-spacing: -0.025em;
   }
 
   .page-home .intro p {
     max-width: 620px;
+    color: #3f3f3f;
     line-height: 1.62;
     margin-bottom: 18px;
   }
@@ -58,37 +92,6 @@
   .page-home .home-hero-button {
     margin-top: 12px;
   }
-
-.page-home .home-visual-wrap {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 460px;
-}
-
-.page-home .home-visual-wrap::before {
-  content: "";
-  position: absolute;
-  inset: 4% 2% 6% 4%;
-  background:
-    radial-gradient(circle at 24% 26%, rgba(143, 132, 101, 0.12), transparent 34%),
-    radial-gradient(circle at 72% 62%, rgba(47, 93, 80, 0.10), transparent 38%),
-    radial-gradient(circle at 82% 18%, rgba(184, 135, 69, 0.08), transparent 22%);
-  filter: blur(10px);
-  z-index: 0;
-}
-
-.page-home .home-blueprint-image {
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: 100%;
-  max-width: 560px;
-  height: auto;
-  box-shadow: none;
-  border-radius: 0;
-}
 
   .page-home .home-features-strip {
     border-top: 1px solid rgba(0, 0, 0, 0.04);
@@ -173,13 +176,31 @@
   }
 
   .page-home .home-final-cta {
+    position: relative;
+    overflow: hidden;
     padding-top: 64px;
     padding-bottom: 74px;
     background: #2f5d50;
     color: #fff;
   }
 
+  .page-home .home-final-cta::before {
+    content: "";
+    position: absolute;
+    inset: -80px -80px -120px auto;
+    width: min(58vw, 720px);
+    background-image: url('{{ "images/graphics/blueprint-linework.svg" | relURL }}');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+    opacity: 0.10;
+    filter: grayscale(1) brightness(2);
+    pointer-events: none;
+  }
+
   .page-home .home-final-cta-inner {
+    position: relative;
+    z-index: 1;
     max-width: 860px;
     margin: 0 auto;
     text-align: center;
@@ -211,6 +232,19 @@
     opacity: 0.9;
   }
 
+  @media (max-width: 991px) {
+    .page-home .intro::before {
+      background-position: right -180px center;
+      background-size: 820px auto;
+      opacity: 0.50;
+    }
+
+    .page-home .intro::after {
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.91) 55%, rgba(255, 255, 255, 0.72) 100%);
+    }
+  }
+
   @media (max-width: 767px) {
     .header .container {
       padding-left: 12px;
@@ -221,8 +255,21 @@
     }
 
     .page-home .intro {
-      padding-top: 20px;
-      padding-bottom: 38px;
+      padding-top: 34px;
+      padding-bottom: 48px;
+      background:
+        linear-gradient(180deg, #ffffff 0%, #fcfaf6 100%);
+    }
+
+    .page-home .intro::before {
+      background-position: center top 8px;
+      background-size: 620px auto;
+      opacity: 0.18;
+    }
+
+    .page-home .intro::after {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.90) 0%, rgba(255, 255, 255, 0.82) 48%, rgba(252, 250, 246, 0.92) 100%);
     }
 
     .page-home .intro .eyebrow {
@@ -233,7 +280,7 @@
 
     .page-home .intro h1 {
       max-width: 100%;
-      font-size: clamp(1.9rem, 9vw, 2.35rem);
+      font-size: clamp(1.95rem, 9vw, 2.45rem);
       line-height: 1.1;
       margin-bottom: 16px;
     }
@@ -243,20 +290,6 @@
       font-size: 1rem;
       line-height: 1.58;
     }
-
-   .page-home .home-visual-wrap {
-  margin-bottom: 26px;
-  min-height: auto;
-}
-
-.page-home .home-visual-wrap::before {
-  inset: 6% 4% 8% 4%;
-  filter: blur(8px);
-}
-
-.page-home .home-blueprint-image {
-  max-width: 340px;
-}
 
     .page-home .home-features-container {
       padding-top: 38px;
@@ -296,28 +329,21 @@
       padding-top: 46px;
       padding-bottom: 54px;
     }
+
+    .page-home .home-final-cta::before {
+      width: 680px;
+      opacity: 0.07;
+      inset: -120px -260px -160px auto;
+    }
   }
 </style>
 
 <div class="intro">
   <div class="container">
-    <div class="row justify-content-start align-items-center">
-      <div class="col-12 col-md-7 col-lg-6 order-2 order-md-1">
-        {{ .Content }}
+    <div class="home-hero-content">
+      {{ .Content }}
 
-        <a class="button button-primary home-hero-button" href="/contact/">Let’s map out your next priority.</a>
-      </div>
-
-      <div class="col-12 col-md-5 col-lg-6 order-1 order-md-2">
-        <div class="home-visual-wrap">
-          <img
-            class="home-blueprint-image"
-            src="{{ "images/graphics/blueprint-linework.svg" | relURL }}"
-            alt=""
-            aria-hidden="true"
-          />
-        </div>
-      </div>
+      <a class="button button-primary home-hero-button" href="/contact/">Let’s map out your next priority.</a>
     </div>
   </div>
 </div>
