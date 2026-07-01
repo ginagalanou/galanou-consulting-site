@@ -20,10 +20,11 @@
     display: block;
   }
 
-  .page-home .intro {
-    padding-top: 34px;
-    padding-bottom: 48px;
-  }
+.page-home .intro {
+  padding-top: 34px;
+  padding-bottom: 48px;
+  background: linear-gradient(180deg, #ffffff 0%, #fcfaf6 100%);
+}
 
   .page-home .intro .row {
     align-items: center;
@@ -243,14 +244,19 @@
       line-height: 1.58;
     }
 
-    .page-home .home-visual-wrap {
-      margin-bottom: 26px;
-    }
+   .page-home .home-visual-wrap {
+  margin-bottom: 26px;
+  min-height: auto;
+}
 
-    .page-home .home-blueprint-image {
-      max-width: 340px;
-      border-radius: 22px;
-    }
+.page-home .home-visual-wrap::before {
+  inset: 6% 4% 8% 4%;
+  filter: blur(8px);
+}
+
+.page-home .home-blueprint-image {
+  max-width: 340px;
+}
 
     .page-home .home-features-container {
       padding-top: 38px;
