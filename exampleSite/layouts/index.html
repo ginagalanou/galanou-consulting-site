@@ -194,20 +194,38 @@
   }
 
   .page-home .home-founder-card {
-    max-width: 940px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    max-width: 980px;
     margin: 0 auto;
-    padding: 34px 36px;
+    padding: 30px 34px;
     background: rgba(143, 132, 101, 0.08);
     border: 1px solid rgba(143, 132, 101, 0.16);
     border-left: 4px solid #2f5d50;
     border-radius: 22px;
   }
 
+  .page-home .home-founder-photo {
+    flex: 0 0 92px;
+    width: 92px;
+    height: 108px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 18px;
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 12px 28px rgba(47, 93, 80, 0.10);
+  }
+
+  .page-home .home-founder-copy {
+    flex: 1;
+  }
+
   .page-home .home-founder-card p {
-    margin-bottom: 14px;
+    margin-bottom: 12px;
     color: #3f3f3f;
-    font-size: 1.05rem;
-    line-height: 1.62;
+    font-size: 1.04rem;
+    line-height: 1.6;
   }
 
   .page-home .home-founder-card a {
@@ -363,8 +381,15 @@
     }
 
     .page-home .home-founder-card {
+      display: block;
       padding: 28px 24px;
       border-radius: 20px;
+    }
+
+    .page-home .home-founder-photo {
+      width: 84px;
+      height: 98px;
+      margin-bottom: 18px;
     }
 
     .page-home .home-final-cta {
@@ -414,10 +439,18 @@
 <div class="home-founder-strip">
   <div class="container">
     <div class="home-founder-card">
-      <p>
-        Galanou Consulting is led by Dr. Georgia Galanou Luchen, a Greek-American healthcare strategist with a pharmacy background and experience across professional associations, digital health, AI, education, and stakeholder-driven transformation.
-      </p>
-      <a href="/about/">Learn more about Georgia</a>
+      <img
+        class="home-founder-photo"
+        src="{{ "images/team/Galanou_Georgia.png" | relURL }}"
+        alt="Dr. Georgia Galanou Luchen"
+      />
+
+      <div class="home-founder-copy">
+        <p>
+          Galanou Consulting is led by Dr. Georgia Galanou Luchen, a Greek-American healthcare strategist with a pharmacy background and experience across professional associations, digital health, AI, education, and stakeholder-driven transformation.
+        </p>
+        <a href="/about/">Learn more about Georgia</a>
+      </div>
     </div>
   </div>
 </div>
