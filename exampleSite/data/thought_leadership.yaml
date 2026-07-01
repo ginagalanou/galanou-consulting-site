@@ -1,5 +1,5 @@
 featured:
-  intro: "A few selected examples that reflect Galanou Consulting’s focus across healthcare strategy, digital health, AI, professional education, and association-led transformation."
+  intro: "Selected examples from Dr. Galanou Luchen’s professional body of work, including prior roles, publications, media, and external service. These contributions inform the advisory perspective behind Galanou Consulting."
   items:
 
   - label: "Featured Publication"
@@ -32,7 +32,7 @@ featured:
 sections:
 
 - title: "Selected Publications & Writing"
-  intro: "Selected writing on digital health, AI, pharmacy practice, workforce development, and healthcare transformation."
+  intro: "Selected authored and co-authored publications, writing, and professional statements developed across prior professional roles and external contributions."
   items:
 
   - label: "Book Chapter"
@@ -89,18 +89,9 @@ sections:
     link: "https://doi.org/10.1093/ajhp/zxac332"
     link_text: "View publication"
 
-- title: "Advisory, Convening & Expert Contributions"
-  intro: "Selected advisory and expert forum contributions across digital infrastructure, AI, workforce readiness, pharmacy practice, and health system change."
+- title: "External Advisory & Expert Forums"
+  intro: "Selected external advisory, expert forum, and appointed contributions across AI, digital health, workforce readiness, diagnosis education, accreditation, and health system transformation."
   items:
-
-  - label: "Commission"
-    title: "Executive Summary of the 2025 ASHP Commission on Goals"
-    organization: "American Journal of Health-System Pharmacy"
-    year: "2026"
-    role: "Staff Convener"
-    description: "Strategic planning commission focused on preparing for the evolving healthcare landscape."
-    link: "https://doi.org/10.1093/ajhp/zxaf309"
-    link_text: "View summary"
 
   - label: "Advisory"
     title: "i2x - Connecting EU Health Data"
@@ -110,33 +101,6 @@ sections:
     description: "Advisory board service supporting European health data collaboration and digital health transformation."
     link: ""
     link_text: ""
-
-  - label: "Professional Statement"
-    title: "ASHP Statement on Artificial Intelligence in Pharmacy"
-    organization: "American Journal of Health-System Pharmacy"
-    year: "2025"
-    role: "Expert Reviewer"
-    description: "Expert review for professional guidance on AI in pharmacy practice, governance, and responsible adoption."
-    link: "https://doi.org/10.1093/ajhp/zxaf107"
-    link_text: "View statement"
-
-  - label: "Advisory"
-    title: "Proceedings of the ASHP Autoverification Work Group: Findings and Guidance"
-    organization: "American Journal of Health-System Pharmacy"
-    year: "2025"
-    role: "Staff Convener"
-    description: "Expert work group findings and guidance for autoverification in pharmacy operations."
-    link: "https://doi.org/10.1093/ajhp/zxaf170"
-    link_text: "View proceedings"
-
-  - label: "Commission"
-    title: "Executive Summary of the 2024 ASHP Commission on Goals"
-    organization: "American Journal of Health-System Pharmacy"
-    year: "2025"
-    role: "Staff Convener"
-    description: "Strategic commission focused on primary care delivery transformation."
-    link: "https://doi.org/10.1093/ajhp/zxae324"
-    link_text: "View summary"
 
   - label: "Expert Forum"
     title: "Clinicians’ Forum on AI in Health & Medicine"
@@ -173,6 +137,46 @@ sections:
     description: "Advisory committee work on advancing diagnosis education across health professions."
     link: "https://doi.org/10.1515/dx-2021-0103"
     link_text: "View article"
+
+- title: "Association Strategy & Practice Transformation"
+  intro: "Selected credited contributions to association-led strategy, professional guidance, expert work groups, and long-range planning efforts. These entries reflect professional roles held at the time of the work and are not presented as Galanou Consulting client engagements."
+  items:
+
+  - label: "Commission"
+    title: "Executive Summary of the 2025 ASHP Commission on Goals"
+    organization: "American Journal of Health-System Pharmacy"
+    year: "2026"
+    role: "Staff Convener"
+    description: "Strategic planning commission focused on preparing for the evolving healthcare landscape."
+    link: "https://doi.org/10.1093/ajhp/zxaf309"
+    link_text: "View summary"
+
+  - label: "Professional Statement"
+    title: "ASHP Statement on Artificial Intelligence in Pharmacy"
+    organization: "American Journal of Health-System Pharmacy"
+    year: "2025"
+    role: "Expert Reviewer"
+    description: "Expert review for professional guidance on AI in pharmacy practice, governance, and responsible adoption."
+    link: "https://doi.org/10.1093/ajhp/zxaf107"
+    link_text: "View statement"
+
+  - label: "Advisory"
+    title: "Proceedings of the ASHP Autoverification Work Group: Findings and Guidance"
+    organization: "American Journal of Health-System Pharmacy"
+    year: "2025"
+    role: "Staff Convener"
+    description: "Expert work group findings and guidance for autoverification in pharmacy operations."
+    link: "https://doi.org/10.1093/ajhp/zxaf170"
+    link_text: "View proceedings"
+
+  - label: "Commission"
+    title: "Executive Summary of the 2024 ASHP Commission on Goals"
+    organization: "American Journal of Health-System Pharmacy"
+    year: "2025"
+    role: "Staff Convener"
+    description: "Strategic commission focused on primary care delivery transformation."
+    link: "https://doi.org/10.1093/ajhp/zxae324"
+    link_text: "View summary"
 
   - label: "Advisory"
     title: "ASHP Practice Advancement Initiative 2030"
