@@ -20,17 +20,17 @@
     display: block;
   }
 
-.page-services-list .services-hero {
-  position: relative;
-  overflow: hidden;
-  padding-top: 42px;
-  padding-bottom: 46px;
-  background:
-    radial-gradient(circle at 82% 28%, rgba(184, 135, 69, 0.08), transparent 28%),
-    radial-gradient(circle at 90% 72%, rgba(47, 93, 80, 0.08), transparent 32%),
-    linear-gradient(90deg, #ffffff 0%, #fcfaf6 62%, #f7f3ec 100%);
-  border-bottom: 1px solid rgba(143, 132, 101, 0.12);
-}
+  .page-services-list .services-hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: 38px;
+    padding-bottom: 38px;
+    background:
+      radial-gradient(circle at 82% 28%, rgba(184, 135, 69, 0.08), transparent 28%),
+      radial-gradient(circle at 90% 72%, rgba(47, 93, 80, 0.08), transparent 32%),
+      linear-gradient(90deg, #ffffff 0%, #fcfaf6 62%, #f7f3ec 100%);
+    border-bottom: 1px solid rgba(143, 132, 101, 0.12);
+  }
 
   .page-services-list .services-hero::before {
     content: "";
@@ -40,16 +40,19 @@
     width: 520px;
     height: 420px;
     background-image:
-      radial-gradient(circle, rgba(47, 93, 80, 0.18) 1.5px, transparent 1.5px);
-    background-size: 28px 28px;
-    opacity: 0.34;
+      radial-gradient(circle, rgba(47, 93, 80, 0.22) 1.5px, transparent 1.5px),
+      radial-gradient(circle, rgba(184, 135, 69, 0.18) 1.3px, transparent 1.3px),
+      radial-gradient(circle, rgba(143, 132, 101, 0.16) 1.2px, transparent 1.2px);
+    background-size: 28px 28px, 42px 42px, 56px 56px;
+    background-position: 0 0, 14px 12px, 8px 24px;
+    opacity: 0.36;
     pointer-events: none;
   }
 
   .page-services-list .services-hero::after {
     content: "";
     position: absolute;
-    top: 78px;
+    top: 68px;
     right: 120px;
     width: 220px;
     height: 220px;
@@ -63,48 +66,49 @@
     z-index: 1;
   }
 
-.page-services-list .services-intro-content {
-  max-width: none;
-  display: grid;
-  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
-  gap: 72px;
-  align-items: center;
-}
-.page-services-list .services-intro-content {
-  display: block;
-}
-  
- .page-services-list .services-intro-content h1 {
-  margin: 0;
-  font-size: clamp(2.25rem, 4.4vw, 3.45rem);
-  line-height: 1.08;
-  letter-spacing: -0.025em;
-}
+  .page-services-list .services-intro-content {
+    max-width: none;
+    display: grid;
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+    gap: 72px;
+    align-items: center;
+  }
 
-.page-services-list .services-intro-content p {
-  max-width: 700px;
-  margin-bottom: 0;
-  padding-left: 28px;
-  border-left: 3px solid rgba(47, 93, 80, 0.28);
-  color: #3f3f3f;
-  font-size: 1.06rem;
-  line-height: 1.64;
-}
+  .page-services-list .services-intro-content h1 {
+    margin: 0;
+    font-size: clamp(2.25rem, 4.4vw, 3.45rem);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+  }
+
+  .page-services-list .services-intro-content p {
+    max-width: 720px;
+    margin-bottom: 0;
+    padding: 22px 26px;
+    background: rgba(255, 255, 255, 0.62);
+    border: 1px solid rgba(143, 132, 101, 0.16);
+    border-left: 4px solid rgba(47, 93, 80, 0.38);
+    border-radius: 18px;
+    color: #3f3f3f;
+    font-size: 1.04rem;
+    line-height: 1.62;
+    box-shadow: 0 12px 30px rgba(47, 93, 80, 0.04);
+  }
 
   .page-services-list .services-main {
     background: #ffffff;
   }
 
   .page-services-list .services-section {
-  padding-top: 48px;
-  padding-bottom: 54px;
-}
+    padding-top: 42px;
+    padding-bottom: 48px;
+  }
 
   .page-services-list .services-section-heading {
     display: flex;
     align-items: center;
     gap: 22px;
-    margin-bottom: 34px;
+    margin-bottom: 30px;
   }
 
   .page-services-list .services-section-heading::after {
@@ -121,14 +125,37 @@
   }
 
   .page-services-list .service-card {
-  position: relative;
-  height: 100%;
-  padding: 30px 28px 28px;
-  background: rgba(247, 243, 236, 0.48);
-  border: 1px solid rgba(143, 132, 101, 0.16);
-  border-radius: 22px;
-  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
-}
+    position: relative;
+    height: 100%;
+    padding: 30px 28px 28px;
+    background: rgba(247, 243, 236, 0.48);
+    border: 1px solid rgba(143, 132, 101, 0.16);
+    border-radius: 22px;
+    transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
+  }
+
+  .page-services-list .service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 28px;
+    width: 58px;
+    height: 3px;
+    background: #2f5d50;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .page-services-list .services-cards-row > div:nth-child(2) .service-card::before {
+    background: #b88745;
+  }
+
+  .page-services-list .services-cards-row > div:nth-child(3) .service-card::before {
+    background: #8f8465;
+  }
+
+  .page-services-list .services-cards-row > div:nth-child(4) .service-card::before {
+    background: #2f5d50;
+  }
 
   .page-services-list .service-card:hover {
     transform: translateY(-3px);
@@ -152,40 +179,19 @@
     line-height: 1.6;
   }
 
-  .page-services-list .service-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 28px;
-  width: 58px;
-  height: 3px;
-  background: #2f5d50;
-  border-radius: 0 0 4px 4px;
-}
-
-.page-services-list .row > div:nth-child(2) .service-card::before {
-  background: #b88745;
-}
-
-.page-services-list .row > div:nth-child(3) .service-card::before {
-  background: #8f8465;
-}
-
-.page-services-list .row > div:nth-child(4) .service-card::before {
-  background: #2f5d50;
-}
   .page-services-list .examples-section {
-    padding-top: 64px;
-    padding-bottom: 70px;
+    padding-top: 54px;
+    padding-bottom: 60px;
     background:
+      radial-gradient(circle at 88% 18%, rgba(47, 93, 80, 0.055), transparent 24%),
       linear-gradient(180deg, #fcfaf6 0%, #f7f3ec 100%);
     border-top: 1px solid rgba(143, 132, 101, 0.12);
     border-bottom: 1px solid rgba(143, 132, 101, 0.12);
   }
 
   .page-services-list .examples-intro {
-    max-width: 760px;
-    margin-bottom: 34px;
+    max-width: 800px;
+    margin-bottom: 30px;
   }
 
   .page-services-list .examples-intro h2 {
@@ -202,11 +208,32 @@
   }
 
   .page-services-list .example-card {
+    position: relative;
     height: 100%;
-    padding: 30px 28px;
-    background: rgba(255, 255, 255, 0.78);
-    border: 1px solid rgba(143, 132, 101, 0.16);
+    padding: 32px 28px 30px;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(143, 132, 101, 0.18);
     border-radius: 22px;
+    box-shadow: 0 12px 30px rgba(47, 93, 80, 0.04);
+  }
+
+  .page-services-list .example-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 28px;
+    width: 52px;
+    height: 3px;
+    background: #b88745;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .page-services-list .examples-cards-row > div:nth-child(2) .example-card::before {
+    background: #2f5d50;
+  }
+
+  .page-services-list .examples-cards-row > div:nth-child(3) .example-card::before {
+    background: #8f8465;
   }
 
   .page-services-list .example-card h3 {
@@ -247,15 +274,15 @@
   }
 
   .page-services-list .best-fit-section {
-    padding-top: 66px;
-    padding-bottom: 72px;
+    padding-top: 54px;
+    padding-bottom: 62px;
     background: #ffffff;
   }
 
   .page-services-list .best-fit-card {
     position: relative;
     overflow: hidden;
-    padding: 42px 38px;
+    padding: 38px 36px;
     background: #ffffff;
     border: 1px solid rgba(143, 132, 101, 0.18);
     border-radius: 26px;
@@ -280,7 +307,7 @@
 
   .page-services-list .best-fit-heading {
     max-width: 760px;
-    margin-bottom: 26px;
+    margin-bottom: 24px;
   }
 
   .page-services-list .best-fit-heading h2 {
@@ -303,8 +330,8 @@
   .page-services-list .services-cta {
     position: relative;
     z-index: 1;
-    margin-top: 36px;
-    padding: 36px 34px;
+    margin-top: 32px;
+    padding: 34px 32px;
     background: #2f5d50;
     border-radius: 22px;
     color: #fff;
@@ -342,6 +369,11 @@
   }
 
   @media (max-width: 991px) {
+    .page-services-list .services-intro-content {
+      gap: 42px;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    }
+
     .page-services-list .services-hero::before {
       right: -180px;
       opacity: 0.24;
@@ -363,7 +395,7 @@
 
     .page-services-list .services-hero {
       padding-top: 34px;
-      padding-bottom: 48px;
+      padding-bottom: 42px;
     }
 
     .page-services-list .services-hero::before {
@@ -378,26 +410,30 @@
       display: none;
     }
 
-.page-services-list .services-intro-content h1 {
-  font-size: clamp(1.95rem, 9vw, 2.45rem);
-  line-height: 1.1;
-  margin-bottom: 22px;
-}
-    
-.page-services-list .services-intro-content p {
-  padding-left: 18px;
-  font-size: 1rem;
-  line-height: 1.58;
-}
+    .page-services-list .services-intro-content {
+      display: block;
+    }
+
+    .page-services-list .services-intro-content h1 {
+      font-size: clamp(1.95rem, 9vw, 2.45rem);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .page-services-list .services-intro-content p {
+      padding: 20px 20px;
+      font-size: 1rem;
+      line-height: 1.58;
+    }
 
     .page-services-list .services-section {
-      padding-top: 46px;
-      padding-bottom: 42px;
+      padding-top: 40px;
+      padding-bottom: 40px;
     }
 
     .page-services-list .services-section-heading {
       display: block;
-      margin-bottom: 26px;
+      margin-bottom: 24px;
     }
 
     .page-services-list .services-section-heading::after {
@@ -412,28 +448,38 @@
       margin-bottom: 16px;
     }
 
+    .page-services-list .service-card::before {
+      left: 24px;
+      width: 52px;
+    }
+
     .page-services-list .service-card:hover {
       transform: none;
       box-shadow: none;
     }
 
     .page-services-list .examples-section {
-      padding-top: 46px;
-      padding-bottom: 50px;
+      padding-top: 44px;
+      padding-bottom: 48px;
     }
 
     .page-services-list .examples-intro {
-      margin-bottom: 26px;
+      margin-bottom: 24px;
     }
 
     .page-services-list .example-card {
-      padding: 26px 24px;
+      padding: 28px 24px 26px;
       margin-bottom: 16px;
     }
 
+    .page-services-list .example-card::before {
+      left: 24px;
+      width: 52px;
+    }
+
     .page-services-list .best-fit-section {
-      padding-top: 46px;
-      padding-bottom: 54px;
+      padding-top: 44px;
+      padding-bottom: 52px;
     }
 
     .page-services-list .best-fit-card {
@@ -442,7 +488,7 @@
     }
 
     .page-services-list .services-cta {
-      padding: 32px 24px;
+      padding: 30px 24px;
       border-radius: 20px;
     }
   }
@@ -465,7 +511,7 @@
         <h2>Areas of support</h2>
       </div>
 
-      <div class="row">
+      <div class="row services-cards-row">
 
         <div class="col-12 col-md-6 mb-4">
           <div class="service-card">
@@ -517,7 +563,7 @@
         </p>
       </div>
 
-      <div class="row">
+      <div class="row examples-cards-row">
 
         <div class="col-12 col-md-4 mb-4">
           <div class="example-card">
