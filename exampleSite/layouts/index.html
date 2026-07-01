@@ -3,20 +3,10 @@
 {{ define "main" }}
 
 <style>
-  /*
-    Header refinement.
-    Gives the top navigation a subtle visual anchor without making it heavy.
-  */
-
   .header {
     background: #ffffff;
     border-bottom: 1px solid rgba(47, 93, 80, 0.14);
   }
-
-  /*
-    Header logo alignment.
-    This pulls the logo slightly left without changing the logo file itself.
-  */
 
   .header .container {
     padding-left: 10px;
@@ -30,14 +20,9 @@
     display: block;
   }
 
-  /*
-    Homepage refinement styles.
-    Scoped to .page-home so they do not affect service, about, or contact pages.
-  */
-
   .page-home .intro {
-    padding-top: 22px;
-    padding-bottom: 34px;
+    padding-top: 34px;
+    padding-bottom: 48px;
   }
 
   .page-home .intro .row {
@@ -55,10 +40,10 @@
   }
 
   .page-home .intro h1 {
-    max-width: 620px;
+    max-width: 640px;
     margin-top: 0;
     margin-bottom: 18px;
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(2.15rem, 4vw, 3.2rem);
     line-height: 1.08;
     letter-spacing: -0.025em;
   }
@@ -66,53 +51,26 @@
   .page-home .intro p {
     max-width: 620px;
     line-height: 1.62;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
   }
 
   .page-home .home-hero-button {
-    margin-top: 18px;
+    margin-top: 12px;
   }
 
-  /*
-    Targets the homepage image column produced by the intro-image partial.
-    This keeps the image treatment from accidentally affecting other images elsewhere.
-  */
-
-  .page-home .intro .order-1.order-md-2 {
+  .page-home .home-visual-wrap {
     position: relative;
     display: flex;
     justify-content: center;
   }
 
-  .page-home .intro .order-1.order-md-2::before {
-    content: "";
-    position: absolute;
-    width: min(88%, 430px);
-    height: 88%;
-    top: 28px;
-    left: 50%;
-    transform: translateX(-44%);
-    border-radius: 24px;
-    background: rgba(143, 132, 101, 0.10);
-    z-index: 0;
-  }
-
-  .page-home .intro .order-1.order-md-2 img {
-    position: relative;
-    z-index: 1;
+  .page-home .home-blueprint-image {
     display: block;
     width: 100%;
-    max-width: 440px;
+    max-width: 520px;
     height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 22px;
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
-  }
-
-  .page-home .home-services-strip {
-    padding-top: 26px;
-    padding-bottom: 36px;
+    border-radius: 28px;
+    box-shadow: 0 22px 55px rgba(47, 93, 80, 0.08);
   }
 
   .page-home .home-features-strip {
@@ -120,8 +78,8 @@
   }
 
   .page-home .home-features-container {
-    padding-top: 38px;
-    padding-bottom: 58px;
+    padding-top: 52px;
+    padding-bottom: 64px;
   }
 
   .page-home .home-section-heading {
@@ -131,7 +89,7 @@
 
   .page-home .home-section-intro {
     max-width: 680px;
-    margin: 0 auto 28px auto;
+    margin: 0 auto 32px auto;
     line-height: 1.55;
     color: #555;
     font-size: 1.02rem;
@@ -139,48 +97,49 @@
 
   .page-home .feature {
     height: 100%;
-    padding: 28px 24px;
-    border-radius: 18px;
-    transition: transform 180ms ease, box-shadow 180ms ease;
+    padding: 30px 28px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(143, 132, 101, 0.16);
+    border-radius: 20px;
+    transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
   }
 
   .page-home .feature:hover {
     transform: translateY(-3px);
+    background: #ffffff;
     box-shadow: 0 16px 38px rgba(0, 0, 0, 0.06);
   }
 
   .page-home .feature-image {
-    margin-bottom: 12px;
-  }
-
-  .page-home .feature-image img {
-    width: 82px;
-    height: 82px;
-    object-fit: contain;
+    display: none;
   }
 
   .page-home .feature-title {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    color: #2f5d50;
+    font-size: 1.34rem;
     line-height: 1.2;
   }
 
   .page-home .feature-content p {
     margin-bottom: 0;
+    color: #444;
     line-height: 1.58;
   }
 
   .page-home .home-founder-strip {
-    padding-top: 52px;
-    padding-bottom: 52px;
-    background: #fff;
+    padding-top: 54px;
+    padding-bottom: 54px;
+    background: #ffffff;
   }
 
   .page-home .home-founder-card {
-    max-width: 920px;
+    max-width: 940px;
     margin: 0 auto;
     padding: 34px 36px;
     background: rgba(143, 132, 101, 0.08);
     border: 1px solid rgba(143, 132, 101, 0.16);
+    border-left: 4px solid #2f5d50;
     border-radius: 22px;
   }
 
@@ -197,8 +156,8 @@
   }
 
   .page-home .home-final-cta {
-    padding-top: 58px;
-    padding-bottom: 70px;
+    padding-top: 64px;
+    padding-bottom: 74px;
     background: #2f5d50;
     color: #fff;
   }
@@ -235,23 +194,6 @@
     opacity: 0.9;
   }
 
-  @media (min-width: 768px) {
-    .page-home .intro {
-      padding-top: 32px;
-      padding-bottom: 42px;
-    }
-
-    .page-home .home-services-strip {
-      padding-top: 32px;
-      padding-bottom: 46px;
-    }
-
-    .page-home .home-features-container {
-      padding-top: 44px;
-      padding-bottom: 68px;
-    }
-  }
-
   @media (max-width: 767px) {
     .header .container {
       padding-left: 12px;
@@ -262,8 +204,8 @@
     }
 
     .page-home .intro {
-      padding-top: 16px;
-      padding-bottom: 30px;
+      padding-top: 20px;
+      padding-bottom: 38px;
     }
 
     .page-home .intro .eyebrow {
@@ -285,23 +227,18 @@
       line-height: 1.58;
     }
 
-    .page-home .intro .order-1.order-md-2 {
-      margin-bottom: 24px;
+    .page-home .home-visual-wrap {
+      margin-bottom: 26px;
     }
 
-    .page-home .intro .order-1.order-md-2::before {
-      display: none;
-    }
-
-    .page-home .intro .order-1.order-md-2 img {
-      max-width: 320px;
-      border-radius: 18px;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07);
+    .page-home .home-blueprint-image {
+      max-width: 340px;
+      border-radius: 22px;
     }
 
     .page-home .home-features-container {
-      padding-top: 32px;
-      padding-bottom: 48px;
+      padding-top: 38px;
+      padding-bottom: 50px;
     }
 
     .page-home .home-section-heading {
@@ -321,11 +258,6 @@
     .page-home .feature:hover {
       transform: none;
       box-shadow: none;
-    }
-
-    .page-home .feature-image img {
-      width: 72px;
-      height: 72px;
     }
 
     .page-home .home-founder-strip {
@@ -354,48 +286,19 @@
         <a class="button button-primary home-hero-button" href="/contact/">Let’s map out your next priority.</a>
       </div>
 
-     <div class="col-12 col-md-5 col-lg-6 order-1 order-md-2">
-  <div class="home-blueprint-visual" aria-hidden="true">
-    <div class="blueprint-line line-one"></div>
-    <div class="blueprint-line line-two"></div>
-    <div class="blueprint-line line-three"></div>
-    <div class="blueprint-node node-one"></div>
-    <div class="blueprint-node node-two"></div>
-    <div class="blueprint-node node-three"></div>
-    <div class="blueprint-card">
-      <span>Clarify</span>
-      <span>Align</span>
-      <span>Execute</span>
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-</div>
-
-{{ $services := where (where .Site.RegularPages "Type" "services") ".Params.featured" true }}
-
-{{ if gt (len $services) 0 }}
-<div class="strip">
-  <div class="container home-services-strip">
-    <div class="row justify-content-start">
-      {{ range first 6 (sort $services ".Params.weight") }}
-        <div class="col-12 col-md-4 mb-3">
-          {{ .Render "summary" }}
-        </div>
-      {{ end }}
-    </div>
-
-    {{ if .Site.Params.homepage.show_services_button }}
-      <div class="row justify-content-center">
-        <div class="col-auto">
-          <a class="button button-primary" href="{{ "services/" | relURL }}">View All Services</a>
+      <div class="col-12 col-md-5 col-lg-6 order-1 order-md-2">
+        <div class="home-visual-wrap">
+          <img
+            class="home-blueprint-image"
+            src="{{ "images/graphics/blueprint-linework.svg" | relURL }}"
+            alt=""
+            aria-hidden="true"
+          />
         </div>
       </div>
-    {{ end }}
+    </div>
   </div>
 </div>
-{{ end }}
 
 {{ if .Site.Data.features }}
 <div class="strip strip-grey home-features-strip">
@@ -414,12 +317,6 @@
       {{ range .Site.Data.features }}
         <div class="col-12 col-md-6 mb-4">
           <div class="feature">
-            {{ if .image }}
-              <div class="feature-image">
-                <img width="82" height="82" alt="{{ .title }} icon" src="{{ .image | relURL }}" />
-              </div>
-            {{ end }}
-
             <h2 class="feature-title">{{ .title }}</h2>
 
             <div class="feature-content">
