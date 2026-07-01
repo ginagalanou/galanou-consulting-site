@@ -1,4 +1,4 @@
 ---
 title: "Thought Leadership"
-description: "Selected publications, media, and advisory contributions reflecting work across digital health, AI, pharmacy transformation, professional education, healthcare strategy, and mission-driven change."
+description: "Selected publications, media, and professional contributions from Dr. Georgia Galanou Luchen’s prior roles and external service, reflecting the experience base that informs Galanou Consulting’s advisory work."
 ---
