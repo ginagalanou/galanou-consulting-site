@@ -1,0 +1,83 @@
+<svg width="900" height="420" viewBox="0 0 900 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- subtle field -->
+  <g opacity="0.46">
+    <!-- dot matrix -->
+    <circle cx="488" cy="86" r="4" fill="#8F8465"/>
+    <circle cx="538" cy="86" r="4" fill="#8F8465"/>
+    <circle cx="588" cy="86" r="4" fill="#8F8465"/>
+    <circle cx="638" cy="86" r="4" fill="#8F8465"/>
+    <circle cx="688" cy="86" r="4" fill="#8F8465"/>
+
+    <circle cx="488" cy="136" r="4" fill="#8F8465"/>
+    <circle cx="538" cy="136" r="4" fill="#8F8465"/>
+    <circle cx="588" cy="136" r="4" fill="#8F8465"/>
+    <circle cx="638" cy="136" r="4" fill="#8F8465"/>
+    <circle cx="688" cy="136" r="4" fill="#8F8465"/>
+
+    <circle cx="488" cy="186" r="4" fill="#8F8465"/>
+    <circle cx="538" cy="186" r="4" fill="#8F8465"/>
+    <circle cx="588" cy="186" r="4" fill="#8F8465"/>
+    <circle cx="638" cy="186" r="4" fill="#8F8465"/>
+    <circle cx="688" cy="186" r="4" fill="#8F8465"/>
+
+    <circle cx="488" cy="236" r="4" fill="#8F8465"/>
+    <circle cx="538" cy="236" r="4" fill="#8F8465"/>
+    <circle cx="588" cy="236" r="4" fill="#8F8465"/>
+    <circle cx="638" cy="236" r="4" fill="#8F8465"/>
+    <circle cx="688" cy="236" r="4" fill="#8F8465"/>
+
+    <circle cx="488" cy="286" r="4" fill="#8F8465"/>
+    <circle cx="538" cy="286" r="4" fill="#8F8465"/>
+    <circle cx="588" cy="286" r="4" fill="#8F8465"/>
+    <circle cx="638" cy="286" r="4" fill="#8F8465"/>
+    <circle cx="688" cy="286" r="4" fill="#8F8465"/>
+  </g>
+
+  <!-- faint scaffolding -->
+  <g opacity="0.18">
+    <path d="M488 86H688" stroke="#8F8465" stroke-width="1"/>
+    <path d="M488 136H688" stroke="#8F8465" stroke-width="1"/>
+    <path d="M488 186H688" stroke="#8F8465" stroke-width="1"/>
+    <path d="M488 236H688" stroke="#8F8465" stroke-width="1"/>
+    <path d="M488 286H688" stroke="#8F8465" stroke-width="1"/>
+
+    <path d="M488 86V286" stroke="#8F8465" stroke-width="1"/>
+    <path d="M538 86V286" stroke="#8F8465" stroke-width="1"/>
+    <path d="M588 86V286" stroke="#8F8465" stroke-width="1"/>
+    <path d="M638 86V286" stroke="#8F8465" stroke-width="1"/>
+    <path d="M688 86V286" stroke="#8F8465" stroke-width="1"/>
+  </g>
+
+  <!-- organized signal -->
+  <path d="M538 136H588V186H638" stroke="#2F5D50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M538 236H588V186" stroke="#B88745" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M588 186H638V236" stroke="#2F5D50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M638 186H688" stroke="#8F8465" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- highlighted nodes -->
+  <circle cx="538" cy="136" r="6.5" fill="#2F5D50"/>
+  <circle cx="588" cy="136" r="6.5" fill="#B88745"/>
+  <circle cx="588" cy="186" r="7.5" fill="#2F5D50"/>
+  <circle cx="638" cy="186" r="7.5" fill="#B88745"/>
+  <circle cx="538" cy="236" r="6.5" fill="#8F8465"/>
+  <circle cx="638" cy="236" r="6.5" fill="#2F5D50"/>
+  <circle cx="688" cy="186" r="6.5" fill="#8F8465"/>
+
+  <!-- soft framing -->
+  <rect x="520" y="118" width="136" height="136" rx="22" stroke="#B88745" stroke-width="1.4" opacity="0.32"/>
+  <circle cx="602" cy="192" r="86" stroke="#2F5D50" stroke-width="1.2" opacity="0.16"/>
+
+  <!-- small accent marks -->
+  <g opacity="0.62">
+    <rect x="722" y="108" width="18" height="18" rx="2" transform="rotate(45 722 108)" stroke="#B88745" stroke-width="1.8"/>
+    <circle cx="730" cy="266" r="18" stroke="#8F8465" stroke-width="1.4"/>
+    <circle cx="730" cy="266" r="4" fill="#2F5D50"/>
+  </g>
+
+  <!-- restrained left-side bridge -->
+  <g opacity="0.26">
+    <path d="M410 186H476" stroke="#2F5D50" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="410" cy="186" r="4" fill="#2F5D50"/>
+    <circle cx="476" cy="186" r="4" fill="#8F8465"/>
+  </g>
+</svg>
