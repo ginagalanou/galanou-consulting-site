@@ -58,20 +58,36 @@
     margin-top: 12px;
   }
 
-  .page-home .home-visual-wrap {
-    position: relative;
-    display: flex;
-    justify-content: center;
-  }
+.page-home .home-visual-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 460px;
+}
 
-  .page-home .home-blueprint-image {
-    display: block;
-    width: 100%;
-    max-width: 520px;
-    height: auto;
-    border-radius: 28px;
-    box-shadow: 0 22px 55px rgba(47, 93, 80, 0.08);
-  }
+.page-home .home-visual-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 4% 2% 6% 4%;
+  background:
+    radial-gradient(circle at 24% 26%, rgba(143, 132, 101, 0.12), transparent 34%),
+    radial-gradient(circle at 72% 62%, rgba(47, 93, 80, 0.10), transparent 38%),
+    radial-gradient(circle at 82% 18%, rgba(184, 135, 69, 0.08), transparent 22%);
+  filter: blur(10px);
+  z-index: 0;
+}
+
+.page-home .home-blueprint-image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  box-shadow: none;
+  border-radius: 0;
+}
 
   .page-home .home-features-strip {
     border-top: 1px solid rgba(0, 0, 0, 0.04);
