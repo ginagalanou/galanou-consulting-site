@@ -1,6 +1,5 @@
 <svg width="720" height="520" viewBox="0 0 720 520" fill="none" xmlns="http://www.w3.org/2000/svg">
-
-  <g opacity="0.45">
+  <g opacity="0.34">
     <path d="M80 90H640" stroke="#8F8465" stroke-width="1"/>
     <path d="M80 170H640" stroke="#8F8465" stroke-width="1"/>
     <path d="M80 250H640" stroke="#8F8465" stroke-width="1"/>
@@ -18,10 +17,10 @@
         stroke="#2F5D50" stroke-width="3" stroke-linecap="round"/>
 
   <path d="M96 215H178C230 215 238 140 292 140H356C420 140 422 298 496 298H625"
-        stroke="#B88745" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+        stroke="#B88745" stroke-width="2" stroke-linecap="round" opacity="0.86"/>
 
   <path d="M125 420C205 420 210 378 276 378H360C432 378 445 338 518 338H630"
-        stroke="#2F5D50" stroke-width="2" stroke-linecap="round" opacity="0.45"/>
+        stroke="#2F5D50" stroke-width="2" stroke-linecap="round" opacity="0.42"/>
 
   <circle cx="92" cy="350" r="7" fill="#2F5D50"/>
   <circle cx="232" cy="286" r="6" fill="#8F8465"/>
@@ -32,13 +31,13 @@
   <circle cx="356" cy="140" r="6" fill="#2F5D50"/>
   <circle cx="496" cy="298" r="6" fill="#8F8465"/>
 
-  <g opacity="0.9">
+  <g opacity="0.82">
     <rect x="455" y="70" width="18" height="18" rx="2" stroke="#B88745" stroke-width="2" transform="rotate(45 455 70)"/>
     <circle cx="170" cy="115" r="30" stroke="#B88745" stroke-width="1.5"/>
     <circle cx="170" cy="115" r="5" fill="#2F5D50"/>
   </g>
 
-  <g opacity="0.65">
+  <g opacity="0.52">
     <circle cx="585" cy="82" r="3" fill="#2F5D50"/>
     <circle cx="615" cy="82" r="3" fill="#2F5D50"/>
     <circle cx="645" cy="82" r="3" fill="#2F5D50"/>
@@ -52,11 +51,11 @@
     <circle cx="645" cy="142" r="3" fill="#2F5D50"/>
   </g>
 
-  <rect x="218" y="338" width="284" height="94" rx="16" fill="white" fill-opacity="0.86"/>
-  <rect x="218" y="338" width="284" height="94" rx="16" stroke="#8F8465" stroke-opacity="0.22"/>
+  <rect x="218" y="338" width="284" height="94" rx="16" fill="white" fill-opacity="0.62"/>
+  <rect x="218" y="338" width="284" height="94" rx="16" stroke="#8F8465" stroke-opacity="0.18"/>
 
-  <line x1="312" y1="360" x2="312" y2="410" stroke="#8F8465" stroke-opacity="0.28"/>
-  <line x1="408" y1="360" x2="408" y2="410" stroke="#8F8465" stroke-opacity="0.28"/>
+  <line x1="312" y1="360" x2="312" y2="410" stroke="#8F8465" stroke-opacity="0.24"/>
+  <line x1="408" y1="360" x2="408" y2="410" stroke="#8F8465" stroke-opacity="0.24"/>
 
   <text x="264" y="378" text-anchor="middle" font-family="Source Sans Pro, Arial, sans-serif" font-size="15" font-weight="700" fill="#2F5D50">Clarify</text>
   <text x="264" y="400" text-anchor="middle" font-family="Source Sans Pro, Arial, sans-serif" font-size="13" fill="#5C5A5A">priorities</text>
