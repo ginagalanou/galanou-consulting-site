@@ -239,36 +239,32 @@
     line-height: 1.48;
   }
 
-  .page-about .about-bottom-cta {
-    margin-top: 34px;
-    padding: 30px 32px;
+  .page-about .about-sidebar-cta {
+    margin-top: 16px;
+    padding: 24px 22px;
     background: #2f5d50;
-    border-radius: 22px;
+    border-radius: 20px;
     color: #ffffff;
   }
 
-  .page-about .about-bottom-cta h2 {
-    display: block;
+  .page-about .about-sidebar-cta h2 {
     margin: 0 0 12px 0;
     color: #ffffff;
-    font-size: 1.58rem;
-    line-height: 1.2;
+    font-size: 1.28rem;
+    line-height: 1.22;
+    letter-spacing: -0.01em;
   }
 
-  .page-about .about-bottom-cta h2::after {
-    display: none;
-  }
-
-  .page-about .about-bottom-cta p {
-    max-width: 680px;
-    margin-bottom: 20px;
+  .page-about .about-sidebar-cta p {
+    margin-bottom: 18px;
     color: rgba(255, 255, 255, 0.88);
-    line-height: 1.62;
+    font-size: 0.98rem;
+    line-height: 1.58;
   }
 
-  .page-about .about-bottom-cta a {
+  .page-about .about-sidebar-cta a {
     display: inline-block;
-    padding: 12px 20px;
+    padding: 11px 18px;
     background: #ffffff;
     color: #2f5d50;
     border-radius: 999px;
@@ -276,7 +272,7 @@
     text-decoration: none;
   }
 
-  .page-about .about-bottom-cta a:hover {
+  .page-about .about-sidebar-cta a:hover {
     color: #2f5d50;
     opacity: 0.88;
     text-decoration: none;
@@ -361,9 +357,9 @@
       border-radius: 18px;
     }
 
-    .page-about .about-bottom-cta {
-      padding: 28px 24px;
-      border-radius: 20px;
+    .page-about .about-sidebar-cta {
+      padding: 24px 20px;
+      border-radius: 18px;
     }
   }
 </style>
@@ -377,14 +373,6 @@
 
         <div class="content">
           {{ .Content }}
-        </div>
-
-        <div class="about-bottom-cta">
-          <h2>Have a complex priority that needs structure?</h2>
-          <p>
-            Galanou Consulting works with healthcare organizations and mission-driven teams to clarify the work, align stakeholders, and move ideas into practical next steps.
-          </p>
-          <a href="/contact/">Start a conversation</a>
         </div>
       </div>
 
@@ -400,6 +388,14 @@
             <div class="about-caption">
               <strong>Dr. Georgia Galanou Luchen</strong>
               <span>Founder and Principal, Galanou Consulting</span>
+            </div>
+
+            <div class="about-sidebar-cta">
+              <h2>Have a complex priority taking shape?</h2>
+              <p>
+                Let’s talk through what needs structure, alignment, or a clearer path forward.
+              </p>
+              <a href="/contact/">Start a conversation</a>
             </div>
           </div>
         {{ end }}
