@@ -3,120 +3,283 @@
 {{ define "main" }}
 
 <style>
+  .header {
+    background: #ffffff;
+    border-bottom: 1px solid rgba(47, 93, 80, 0.14);
+  }
+
+  .header .container {
+    padding-left: 10px;
+  }
+
+  .header .logo {
+    margin-left: -12px;
+  }
+
+  .header .logo img {
+    display: block;
+  }
+
   .page-contact .contact-page {
-    padding-top: 36px;
-    padding-bottom: 80px;
+    position: relative;
+    overflow: hidden;
+    padding-top: 54px;
+    padding-bottom: 74px;
+    background:
+      linear-gradient(90deg, #ffffff 0%, #fcfaf6 58%, #f7f3ec 100%);
+    border-bottom: 1px solid rgba(143, 132, 101, 0.12);
+  }
+
+  .page-contact .contact-page::before {
+    content: "";
+    position: absolute;
+    top: -84px;
+    right: -150px;
+    width: 760px;
+    height: 560px;
+    background-image: url('{{ "images/graphics/blueprint-linework.svg" | relURL }}');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right top;
+    opacity: 0.38;
+    pointer-events: none;
+  }
+
+  .page-contact .contact-page::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.88) 48%, rgba(252, 250, 246, 0.62) 100%),
+      radial-gradient(circle at 84% 24%, rgba(184, 135, 69, 0.10), transparent 28%),
+      radial-gradient(circle at 90% 72%, rgba(47, 93, 80, 0.09), transparent 30%);
+    pointer-events: none;
+  }
+
+  .page-contact .contact-page .container {
+    position: relative;
+    z-index: 1;
   }
 
   .page-contact .contact-panel {
-    background: rgba(143, 132, 101, 0.10);
-    border: 1px solid rgba(143, 132, 101, 0.16);
-    border-radius: 26px;
+    position: relative;
+    overflow: hidden;
     padding: 42px;
+    background: rgba(255, 255, 255, 0.74);
+    border: 1px solid rgba(143, 132, 101, 0.18);
+    border-radius: 28px;
+    box-shadow: 0 18px 44px rgba(47, 93, 80, 0.07);
+    backdrop-filter: blur(2px);
+  }
+
+  .page-contact .contact-panel::before {
+    content: "";
+    position: absolute;
+    right: -90px;
+    bottom: -120px;
+    width: 340px;
+    height: 340px;
+    border: 1px solid rgba(184, 135, 69, 0.18);
+    border-radius: 50%;
+    pointer-events: none;
   }
 
   .page-contact .contact-grid {
+    position: relative;
+    z-index: 1;
     display: grid;
-    grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.75fr);
-    gap: 34px;
+    grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+    gap: 42px;
     align-items: start;
   }
 
   .page-contact .contact-intro h1 {
     margin-top: 0;
-    margin-bottom: 18px;
-    font-size: clamp(2.1rem, 4vw, 3rem);
+    margin-bottom: 24px;
+    font-size: clamp(2.35rem, 4.4vw, 3.55rem);
     line-height: 1.08;
     letter-spacing: -0.025em;
   }
 
   .page-contact .contact-intro .content {
     max-width: 760px;
+    color: #3f3f3f;
     font-size: 1.05rem;
-    line-height: 1.64;
+    line-height: 1.66;
   }
 
-  .page-contact .contact-fit {
-    margin-top: 30px;
+  .page-contact .contact-intro .content h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: #2f5d50;
+    font-size: clamp(1.65rem, 3vw, 2.22rem);
+    line-height: 1.16;
+    letter-spacing: -0.015em;
   }
 
-  .page-contact .contact-fit h2 {
-    margin-bottom: 14px;
-    font-size: 1.35rem;
-    line-height: 1.25;
+  .page-contact .contact-intro .content p {
+    max-width: 720px;
+    color: #3f3f3f;
+    line-height: 1.66;
   }
 
-  .page-contact .contact-fit ul {
-    margin: 0;
-    padding-left: 20px;
-  }
-
-  .page-contact .contact-fit li {
-    margin-bottom: 9px;
-    line-height: 1.55;
+  .page-contact .contact-intro .content p:first-of-type {
+    margin-bottom: 18px;
+    padding: 24px 28px;
+    background: rgba(247, 243, 236, 0.70);
+    border: 1px solid rgba(143, 132, 101, 0.17);
+    border-left: 4px solid rgba(47, 93, 80, 0.42);
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(47, 93, 80, 0.04);
   }
 
   .page-contact .contact-card {
-    background: rgba(255, 255, 255, 0.62);
-    border: 1px solid rgba(143, 132, 101, 0.18);
-    border-radius: 22px;
-    padding: 28px 26px;
+    position: relative;
+    overflow: hidden;
+    padding: 30px 28px;
+    background: #2f5d50;
+    border-radius: 24px;
+    color: #ffffff;
+    box-shadow: 0 16px 38px rgba(47, 93, 80, 0.12);
+  }
+
+  .page-contact .contact-card::before {
+    content: "";
+    position: absolute;
+    top: -70px;
+    right: -110px;
+    width: 320px;
+    height: 240px;
+    background-image: url('{{ "images/graphics/blueprint-linework.svg" | relURL }}');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right top;
+    opacity: 0.10;
+    pointer-events: none;
+  }
+
+  .page-contact .contact-card > * {
+    position: relative;
+    z-index: 1;
   }
 
   .page-contact .contact-card h2 {
     margin-top: 0;
-    margin-bottom: 16px;
-    font-size: 1.35rem;
+    margin-bottom: 22px;
+    color: #ffffff;
+    font-size: 1.5rem;
+    line-height: 1.2;
   }
 
   .page-contact .contact-detail {
-    margin-bottom: 14px;
-    color: #444;
+    margin-bottom: 18px;
+    color: rgba(255, 255, 255, 0.88);
     line-height: 1.55;
   }
 
   .page-contact .contact-detail strong {
     display: block;
-    margin-bottom: 2px;
-    color: #222;
+    margin-bottom: 4px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
   }
-    .page-contact .contact-note {
-    margin-top: 16px;
+
+  .page-contact .contact-detail a {
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .page-contact .contact-detail a:hover {
+    color: #ffffff;
+    opacity: 0.86;
+    text-decoration: none;
+  }
+
+  .page-contact .contact-note {
+    margin-top: 18px;
     margin-bottom: 0;
-    color: #5C5A5A;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    color: rgba(255, 255, 255, 0.74);
     font-size: 0.95rem;
     line-height: 1.5;
   }
+
   .page-contact .contact-button {
     display: inline-block;
-    margin-top: 10px;
-    padding: 11px 18px;
-    background: #2f5d50;
-    color: #fff;
+    margin-top: 8px;
+    padding: 12px 20px;
+    background: #ffffff;
+    color: #2f5d50;
     border-radius: 999px;
     font-weight: 700;
     text-decoration: none;
   }
 
   .page-contact .contact-button:hover {
-    color: #fff;
+    color: #2f5d50;
+    opacity: 0.88;
     text-decoration: none;
   }
 
-  @media (max-width: 767px) {
-    .page-contact .contact-page {
-      padding-top: 18px;
-      padding-bottom: 48px;
-    }
-
-    .page-contact .contact-panel {
-      padding: 30px 24px;
-      border-radius: 20px;
+  @media (max-width: 991px) {
+    .page-contact .contact-page::before {
+      right: -260px;
+      opacity: 0.24;
     }
 
     .page-contact .contact-grid {
       grid-template-columns: 1fr;
-      gap: 26px;
+      gap: 34px;
+    }
+
+    .page-contact .contact-card {
+      max-width: 520px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .header .container {
+      padding-left: 12px;
+    }
+
+    .header .logo {
+      margin-left: -6px;
+    }
+
+    .page-contact .contact-page {
+      padding-top: 34px;
+      padding-bottom: 52px;
+    }
+
+    .page-contact .contact-page::before {
+      top: -40px;
+      right: -300px;
+      width: 620px;
+      opacity: 0.16;
+    }
+
+    .page-contact .contact-panel {
+      padding: 30px 24px;
+      border-radius: 22px;
+    }
+
+    .page-contact .contact-grid {
+      gap: 28px;
+    }
+
+    .page-contact .contact-intro h1 {
+      font-size: clamp(1.95rem, 9vw, 2.45rem);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .page-contact .contact-intro .content h2 {
+      font-size: clamp(1.45rem, 7vw, 1.85rem);
     }
 
     .page-contact .contact-intro .content {
@@ -124,8 +287,13 @@
       line-height: 1.58;
     }
 
+    .page-contact .contact-intro .content p:first-of-type {
+      padding: 20px 20px;
+    }
+
     .page-contact .contact-card {
-      padding: 24px 22px;
+      padding: 28px 24px;
+      border-radius: 20px;
     }
   }
 </style>
@@ -140,45 +308,44 @@
           <div class="content">
             {{ .Content }}
           </div>
-
         </div>
 
         <aside class="contact-card">
-         <h2>Contact</h2>
+          <h2>Contact</h2>
 
-{{ if .Site.Data.contact.email }}
-  <div class="contact-detail">
-    <strong>Email</strong>
-    <a href="mailto:{{ .Site.Data.contact.email }}">{{ .Site.Data.contact.email }}</a>
-  </div>
-{{ end }}
+          {{ if .Site.Data.contact.email }}
+            <div class="contact-detail">
+              <strong>Email</strong>
+              <a href="mailto:{{ .Site.Data.contact.email }}">{{ .Site.Data.contact.email }}</a>
+            </div>
+          {{ end }}
 
-{{ if .Site.Data.contact.linkedin }}
-  <div class="contact-detail">
-    <strong>LinkedIn</strong>
-    <a href="https://{{ .Site.Data.contact.linkedin }}" target="_blank" rel="noopener noreferrer">{{ .Site.Data.contact.linkedin }}</a>
-  </div>
-{{ end }}
+          {{ if .Site.Data.contact.linkedin }}
+            <div class="contact-detail">
+              <strong>LinkedIn</strong>
+              <a href="https://{{ .Site.Data.contact.linkedin }}" target="_blank" rel="noopener noreferrer">{{ .Site.Data.contact.linkedin }}</a>
+            </div>
+          {{ end }}
 
-{{ if .Site.Data.contact.location }}
-  <div class="contact-detail">
-    <strong>Location</strong>
-    {{ .Site.Data.contact.location }}
-  </div>
-{{ end }}
+          {{ if .Site.Data.contact.location }}
+            <div class="contact-detail">
+              <strong>Location</strong>
+              {{ .Site.Data.contact.location }}
+            </div>
+          {{ end }}
 
-{{ if .Site.Data.contact.availability }}
-  <div class="contact-detail">
-    <strong>Availability</strong>
-    {{ .Site.Data.contact.availability }}
-  </div>
-{{ end }}
+          {{ if .Site.Data.contact.availability }}
+            <div class="contact-detail">
+              <strong>Availability</strong>
+              {{ .Site.Data.contact.availability }}
+            </div>
+          {{ end }}
 
-{{ if .Site.Data.contact.contact_button_link }}
-  <a class="contact-button" href="{{ .Site.Data.contact.contact_button_link }}">Email Galanou Consulting</a>
-{{ end }}
+          {{ if .Site.Data.contact.contact_button_link }}
+            <a class="contact-button" href="{{ .Site.Data.contact.contact_button_link }}">Email Galanou Consulting</a>
+          {{ end }}
 
-<p class="contact-note">Conversations can begin by email or LinkedIn.</p>
+          <p class="contact-note">Conversations can begin by email or LinkedIn.</p>
         </aside>
 
       </div>
