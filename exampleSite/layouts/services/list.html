@@ -26,8 +26,6 @@
     padding-top: 38px;
     padding-bottom: 38px;
     background:
-      radial-gradient(circle at 82% 28%, rgba(184, 135, 69, 0.08), transparent 28%),
-      radial-gradient(circle at 90% 72%, rgba(47, 93, 80, 0.08), transparent 32%),
       linear-gradient(90deg, #ffffff 0%, #fcfaf6 62%, #f7f3ec 100%);
     border-bottom: 1px solid rgba(143, 132, 101, 0.12);
   }
@@ -35,29 +33,25 @@
   .page-services-list .services-hero::before {
     content: "";
     position: absolute;
-    top: -20px;
-    right: -80px;
-    width: 520px;
-    height: 420px;
-    background-image:
-      radial-gradient(circle, rgba(47, 93, 80, 0.22) 1.5px, transparent 1.5px),
-      radial-gradient(circle, rgba(184, 135, 69, 0.18) 1.3px, transparent 1.3px),
-      radial-gradient(circle, rgba(143, 132, 101, 0.16) 1.2px, transparent 1.2px);
-    background-size: 28px 28px, 42px 42px, 56px 56px;
-    background-position: 0 0, 14px 12px, 8px 24px;
-    opacity: 0.36;
+    top: -14px;
+    right: -30px;
+    width: 560px;
+    height: 340px;
+    background-image: url('{{ "images/graphics/services-structured-signal.svg" | relURL }}');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right center;
+    opacity: 0.78;
     pointer-events: none;
   }
 
   .page-services-list .services-hero::after {
     content: "";
     position: absolute;
-    top: 68px;
-    right: 120px;
-    width: 220px;
-    height: 220px;
-    border: 1px solid rgba(184, 135, 69, 0.18);
-    border-radius: 50%;
+    inset: 0;
+    background:
+      radial-gradient(circle at 82% 28%, rgba(184, 135, 69, 0.08), transparent 26%),
+      radial-gradient(circle at 90% 72%, rgba(47, 93, 80, 0.08), transparent 30%);
     pointer-events: none;
   }
 
@@ -85,7 +79,7 @@
     max-width: 720px;
     margin-bottom: 0;
     padding: 22px 26px;
-    background: rgba(255, 255, 255, 0.62);
+    background: rgba(255, 255, 255, 0.64);
     border: 1px solid rgba(143, 132, 101, 0.16);
     border-left: 4px solid rgba(47, 93, 80, 0.38);
     border-radius: 18px;
@@ -180,17 +174,38 @@
   }
 
   .page-services-list .examples-section {
+    position: relative;
+    overflow: hidden;
     padding-top: 54px;
     padding-bottom: 60px;
     background:
-      radial-gradient(circle at 88% 18%, rgba(47, 93, 80, 0.055), transparent 24%),
       linear-gradient(180deg, #fcfaf6 0%, #f7f3ec 100%);
     border-top: 1px solid rgba(143, 132, 101, 0.12);
     border-bottom: 1px solid rgba(143, 132, 101, 0.12);
   }
 
+  .page-services-list .examples-section::before {
+    content: "";
+    position: absolute;
+    top: -28px;
+    right: -70px;
+    width: 360px;
+    height: 240px;
+    background-image: url('{{ "images/graphics/services-structured-signal.svg" | relURL }}');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right top;
+    opacity: 0.09;
+    pointer-events: none;
+  }
+
+  .page-services-list .examples-section .container {
+    position: relative;
+    z-index: 1;
+  }
+
   .page-services-list .examples-intro {
-    max-width: 800px;
+    max-width: 820px;
     margin-bottom: 30px;
   }
 
@@ -211,10 +226,11 @@
     position: relative;
     height: 100%;
     padding: 32px 28px 30px;
-    background: rgba(255, 255, 255, 0.82);
+    background: rgba(255, 255, 255, 0.84);
     border: 1px solid rgba(143, 132, 101, 0.18);
     border-radius: 22px;
     box-shadow: 0 12px 30px rgba(47, 93, 80, 0.04);
+    transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
   }
 
   .page-services-list .example-card::before {
@@ -234,6 +250,12 @@
 
   .page-services-list .examples-cards-row > div:nth-child(3) .example-card::before {
     background: #8f8465;
+  }
+
+  .page-services-list .example-card:hover {
+    transform: translateY(-3px);
+    background: #ffffff;
+    box-shadow: 0 16px 38px rgba(47, 93, 80, 0.06);
   }
 
   .page-services-list .example-card h3 {
@@ -282,7 +304,7 @@
   .page-services-list .best-fit-card {
     position: relative;
     overflow: hidden;
-    padding: 38px 36px;
+    padding: 0;
     background: #ffffff;
     border: 1px solid rgba(143, 132, 101, 0.18);
     border-radius: 26px;
@@ -292,8 +314,8 @@
   .page-services-list .best-fit-card::before {
     content: "";
     position: absolute;
-    top: -80px;
-    right: -70px;
+    top: -70px;
+    right: -80px;
     width: 280px;
     height: 280px;
     background: radial-gradient(circle, rgba(47, 93, 80, 0.07), transparent 68%);
@@ -303,11 +325,18 @@
   .page-services-list .best-fit-content {
     position: relative;
     z-index: 1;
+    padding: 38px 36px 0;
+  }
+
+  .page-services-list .best-fit-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: 40px;
+    align-items: start;
   }
 
   .page-services-list .best-fit-heading {
-    max-width: 760px;
-    margin-bottom: 24px;
+    margin-bottom: 0;
   }
 
   .page-services-list .best-fit-heading h2 {
@@ -321,23 +350,57 @@
     line-height: 1.62;
   }
 
+  .page-services-list .best-fit-side-note {
+    margin-top: 18px;
+    padding: 18px 20px;
+    background: rgba(247, 243, 236, 0.72);
+    border: 1px solid rgba(143, 132, 101, 0.14);
+    border-radius: 18px;
+    color: #444;
+    line-height: 1.56;
+  }
+
   .page-services-list .best-fit-list {
-    columns: 2;
-    column-gap: 44px;
     margin-bottom: 0;
+  }
+
+  .page-services-list .best-fit-list li {
+    margin-bottom: 14px;
+    break-inside: avoid;
+  }
+
+  .page-services-list .best-fit-list li::before {
+    background: #2f5d50;
   }
 
   .page-services-list .services-cta {
     position: relative;
     z-index: 1;
-    margin-top: 32px;
+    margin-top: 34px;
     padding: 34px 32px;
     background: #2f5d50;
-    border-radius: 22px;
+    border-radius: 0 0 26px 26px;
     color: #fff;
   }
 
+  .page-services-list .services-cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 260px;
+    height: 100%;
+    background-image: url('{{ "images/graphics/services-structured-signal.svg" | relURL }}');
+    background-repeat: no-repeat;
+    background-size: 260px auto;
+    background-position: right center;
+    opacity: 0.08;
+    pointer-events: none;
+  }
+
   .page-services-list .services-cta h2 {
+    position: relative;
+    z-index: 1;
     margin-top: 0;
     margin-bottom: 14px;
     color: #fff;
@@ -346,6 +409,8 @@
   }
 
   .page-services-list .services-cta p {
+    position: relative;
+    z-index: 1;
     max-width: 760px;
     margin-bottom: 22px;
     color: rgba(255, 255, 255, 0.88);
@@ -353,6 +418,8 @@
   }
 
   .page-services-list .services-cta-button {
+    position: relative;
+    z-index: 1;
     display: inline-block;
     padding: 12px 20px;
     background: #fff;
@@ -375,12 +442,14 @@
     }
 
     .page-services-list .services-hero::before {
-      right: -180px;
-      opacity: 0.24;
+      right: -120px;
+      width: 500px;
+      opacity: 0.62;
     }
 
-    .page-services-list .best-fit-list {
-      columns: 1;
+    .page-services-list .best-fit-layout {
+      grid-template-columns: 1fr;
+      gap: 24px;
     }
   }
 
@@ -399,15 +468,11 @@
     }
 
     .page-services-list .services-hero::before {
-      top: -30px;
-      right: -220px;
+      top: -18px;
+      right: -180px;
       width: 420px;
-      height: 340px;
-      opacity: 0.18;
-    }
-
-    .page-services-list .services-hero::after {
-      display: none;
+      height: 280px;
+      opacity: 0.22;
     }
 
     .page-services-list .services-intro-content {
@@ -477,19 +542,30 @@
       width: 52px;
     }
 
+    .page-services-list .example-card:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
     .page-services-list .best-fit-section {
       padding-top: 44px;
       padding-bottom: 52px;
     }
 
-    .page-services-list .best-fit-card {
-      padding: 30px 24px;
-      border-radius: 22px;
+    .page-services-list .best-fit-content {
+      padding: 30px 24px 0;
     }
 
     .page-services-list .services-cta {
+      margin-top: 28px;
       padding: 30px 24px;
-      border-radius: 20px;
+      border-radius: 0 0 22px 22px;
+    }
+
+    .page-services-list .services-cta::before {
+      width: 220px;
+      background-size: 220px auto;
+      opacity: 0.07;
     }
   }
 </style>
@@ -605,33 +681,45 @@
   <div class="best-fit-section">
     <div class="container">
       <div class="best-fit-card">
+
         <div class="best-fit-content">
+          <div class="best-fit-layout">
 
-          <div class="best-fit-heading">
-            <h2>Best fit</h2>
-            <p>
-              Galanou Consulting is a strong fit when your organization:
-            </p>
+            <div>
+              <div class="best-fit-heading">
+                <h2>Best fit</h2>
+                <p>
+                  Galanou Consulting is a strong fit when your organization:
+                </p>
+              </div>
+
+              <div class="best-fit-side-note">
+                Often, the work is important before it is fully structured. This is where focused strategic support can help bring clarity, coordination, and useful momentum.
+              </div>
+            </div>
+
+            <div>
+              <ul class="services-list best-fit-list">
+                <li>Has an important initiative that is new, cross-functional, or still taking shape</li>
+                <li>Needs to align staff, executives, board members, volunteers, partners, or external stakeholders</li>
+                <li>Is navigating AI, digital health, workforce, member value, education, or organizational change</li>
+                <li>Has a promising idea that needs structure, narrative, funding strategy, or implementation planning</li>
+                <li>Needs executive-ready materials, not just conversation</li>
+                <li>Wants an advisor who can synthesize ambiguity and produce usable deliverables</li>
+              </ul>
+            </div>
+
           </div>
-
-          <ul class="services-list best-fit-list">
-            <li>Has an important initiative that is new, cross-functional, or still taking shape</li>
-            <li>Needs to align staff, executives, board members, volunteers, partners, or external stakeholders</li>
-            <li>Is navigating AI, digital health, workforce, member value, education, or organizational change</li>
-            <li>Has a promising idea that needs structure, narrative, funding strategy, or implementation planning</li>
-            <li>Needs executive-ready materials, not just conversation</li>
-            <li>Wants an advisor who can synthesize ambiguity and produce usable deliverables</li>
-          </ul>
-
-          <div class="services-cta">
-            <h2>Does this sound like your organization?</h2>
-            <p>
-              Let’s discuss where focused strategic support could help clarify the problem, organize the work, and move the next phase forward.
-            </p>
-            <a class="services-cta-button" href="/contact/">Contact Galanou Consulting</a>
-          </div>
-
         </div>
+
+        <div class="services-cta">
+          <h2>Does this sound like your organization?</h2>
+          <p>
+            Let’s discuss where focused strategic support could help clarify the problem, organize the work, and move the next phase forward.
+          </p>
+          <a class="services-cta-button" href="/contact/">Contact Galanou Consulting</a>
+        </div>
+
       </div>
     </div>
   </div>
