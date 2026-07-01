@@ -94,40 +94,78 @@
   }
 
   .page-home .home-features-strip {
-    border-top: 1px solid rgba(0, 0, 0, 0.04);
+    position: relative;
+    background: linear-gradient(180deg, #fcfaf6 0%, #f7f3ec 100%);
+    border-top: 1px solid rgba(143, 132, 101, 0.12);
   }
 
   .page-home .home-features-container {
-    padding-top: 52px;
-    padding-bottom: 64px;
+    padding-top: 64px;
+    padding-bottom: 72px;
+  }
+
+  .page-home .home-section-heading-wrap {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 34px;
+  }
+
+  .page-home .home-section-heading-wrap::after {
+    content: "";
+    display: block;
+    flex: 1;
+    height: 1px;
+    background: rgba(143, 132, 101, 0.24);
   }
 
   .page-home .home-section-heading {
-    margin-bottom: 10px;
+    margin: 0;
     letter-spacing: -0.01em;
   }
 
-  .page-home .home-section-intro {
-    max-width: 680px;
-    margin: 0 auto 32px auto;
-    line-height: 1.55;
-    color: #555;
-    font-size: 1.02rem;
+  .page-home .features-grid {
+    align-items: stretch;
   }
 
   .page-home .feature {
+    position: relative;
     height: 100%;
-    padding: 30px 28px;
-    background: rgba(255, 255, 255, 0.72);
+    padding: 34px 30px 32px;
+    background: rgba(255, 255, 255, 0.74);
     border: 1px solid rgba(143, 132, 101, 0.16);
-    border-radius: 20px;
-    transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    border-radius: 22px;
+    transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
+  }
+
+  .page-home .feature::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 30px;
+    width: 58px;
+    height: 3px;
+    background: #2f5d50;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .page-home .features-grid > div:nth-child(2) .feature::before {
+    background: #b88745;
+  }
+
+  .page-home .features-grid > div:nth-child(3) .feature::before {
+    background: #8f8465;
+  }
+
+  .page-home .features-grid > div:nth-child(4) .feature::before {
+    background: #2f5d50;
   }
 
   .page-home .feature:hover {
     transform: translateY(-3px);
     background: #ffffff;
-    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.06);
+    border-color: rgba(47, 93, 80, 0.18);
+    box-shadow: 0 16px 38px rgba(47, 93, 80, 0.07);
   }
 
   .page-home .feature-image {
@@ -135,16 +173,18 @@
   }
 
   .page-home .feature-title {
+    margin-top: 0;
     margin-bottom: 12px;
     color: #2f5d50;
-    font-size: 1.34rem;
-    line-height: 1.2;
+    font-size: 1.28rem;
+    line-height: 1.22;
+    letter-spacing: -0.01em;
   }
 
   .page-home .feature-content p {
     margin-bottom: 0;
     color: #444;
-    line-height: 1.58;
+    line-height: 1.6;
   }
 
   .page-home .home-founder-strip {
@@ -292,27 +332,39 @@
     }
 
     .page-home .home-features-container {
-      padding-top: 38px;
-      padding-bottom: 50px;
+      padding-top: 46px;
+      padding-bottom: 54px;
     }
 
-    .page-home .home-section-heading {
-      margin-bottom: 8px;
-    }
-
-    .page-home .home-section-intro {
-      font-size: 1rem;
+    .page-home .home-section-heading-wrap {
+      display: block;
       margin-bottom: 26px;
     }
 
+    .page-home .home-section-heading-wrap::after {
+      width: 72px;
+      height: 2px;
+      margin-top: 14px;
+      background: rgba(47, 93, 80, 0.28);
+    }
+
     .page-home .feature {
-      padding: 24px 22px;
+      padding: 28px 24px 26px;
       margin-bottom: 16px;
     }
 
     .page-home .feature:hover {
       transform: none;
       box-shadow: none;
+    }
+
+    .page-home .feature::before {
+      left: 24px;
+      width: 52px;
+    }
+
+    .page-home .feature-title {
+      font-size: 1.22rem;
     }
 
     .page-home .home-founder-strip {
@@ -349,23 +401,18 @@
 </div>
 
 {{ if .Site.Data.features }}
-<div class="strip strip-grey home-features-strip">
+<div class="strip home-features-strip">
   <div class="container home-features-container">
 
-    <div class="row justify-content-center">
-      <div class="col-12 text-center">
-        <h2 class="home-section-heading">Areas of support</h2>
-        <p class="home-section-intro">
-          Focused strategic support for healthcare organizations, professional societies, and mission-driven teams navigating complex priorities.
-        </p>
-      </div>
+    <div class="home-section-heading-wrap">
+      <h2 class="home-section-heading">Areas of support</h2>
     </div>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center features-grid">
       {{ range .Site.Data.features }}
         <div class="col-12 col-md-6 mb-4">
           <div class="feature">
-            <h2 class="feature-title">{{ .title }}</h2>
+            <h3 class="feature-title">{{ .title }}</h3>
 
             <div class="feature-content">
               <p>{{ .description }}</p>
