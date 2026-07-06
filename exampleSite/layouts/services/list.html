@@ -107,21 +107,32 @@
   }
 
   .page-services-list .services-page-hero {
-    padding: 84px 0 42px;
+    padding: 76px 0 44px;
   }
 
   .page-services-list .services-page-hero-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(320px, 380px);
-    gap: 56px;
-    align-items: end;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 390px);
+    gap: 46px;
+    align-items: start;
   }
 
   .page-services-list .services-page-kicker {
-    max-width: 820px;
+    max-width: 760px;
     padding-left: 18px;
     color: #3f4b56;
     border-left: 3px solid var(--gc-teal);
+  }
+
+  .page-services-list .services-page-hero .services-card {
+    margin-top: 8px;
+    background: rgba(223, 236, 234, 0.56);
+    border-color: rgba(63, 119, 113, 0.24);
+    box-shadow: none;
+  }
+
+  .page-services-list .services-page-hero .services-card p {
+    margin-bottom: 0;
   }
 
   .page-services-list .services-card {
@@ -403,10 +414,10 @@
       <p class="services-lead services-page-kicker">{{ .Params.hero_lead | default .Params.description }}</p>
     </div>
 
-    <aside class="services-card">
-      <span class="services-tag">Best fit</span>
-      <p>Use this page to quickly determine whether the work you need is strategic, stakeholder-heavy, execution-oriented, and ready for focused advisory support.</p>
-    </aside>
+<aside class="services-card">
+  <span class="services-tag">Best fit</span>
+  <p>Useful when the work is strategic, stakeholder-heavy, execution-oriented, and ready for focused advisory support.</p>
+</aside>
   </div>
 </section>
 
