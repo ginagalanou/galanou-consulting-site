@@ -58,42 +58,52 @@ title = "Galanou Consulting"
 [menu]
   # Main Menu
   [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
     name = "Services"
     url = "/services/"
-    weight = 1
+    weight = 2
 
   [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 2
+    weight = 3
 
   [[menu.main]]
     name = "Thought Leadership"
-    url = "/insights/"
-    weight = 3
+    url = "/thought-leadership/"
+    weight = 4
 
   [[menu.main]]
     name = "Contact"
     url = "/contact/"
-    weight = 4
+    weight = 5
 
   # Footer Menu
   [[menu.footer]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.footer]]
     name = "Services"
     url = "/services/"
-    weight = 1
+    weight = 2
 
   [[menu.footer]]
     name = "About"
     url = "/about/"
-    weight = 2
+    weight = 3
 
   [[menu.footer]]
     name = "Thought Leadership"
-    url = "/insights/"
-    weight = 3
+    url = "/thought-leadership/"
+    weight = 4
 
   [[menu.footer]]
     name = "Contact"
     url = "/contact/"
-    weight = 4
+    weight = 5

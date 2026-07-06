@@ -1,17 +1,22 @@
 [
   {
     "title": "Strategy & Transformation",
-    "description": "Clarify priorities, define direction, and build practical roadmaps for healthcare transformation.",
+    "description": "Support for emerging priorities, strategic planning efforts, new initiatives, and organizational shifts that need structure, synthesis, and a clear path forward.",
     "image": "images/features/noun_branding_1885335.svg"
   },
   {
-    "title": "Stakeholder Alignment",
-    "description": "Translate complexity into executive-ready communication and cross-functional alignment.",
+    "title": "Digital Health & AI Readiness",
+    "description": "Helping healthcare teams translate AI and digital health questions into practical strategy, education, governance, and member-facing resources.",
     "image": "images/features/noun_The Process_1885341.svg"
   },
   {
-    "title": "Measurable Execution",
-    "description": "Move from concept to implementation with clear ownership, milestones, and measures of success.",
+    "title": "Stakeholder Alignment & Execution",
+    "description": "Designing the working structure, communications, decision points, and deliverables needed to move cross-functional or volunteer-driven work forward.",
     "image": "images/features/noun_3d modeling_1885342.svg"
+  },
+  {
+    "title": "Grants & Program Development",
+    "description": "Turning early ideas into fundable concepts, partner narratives, program plans, and proposal-ready materials.",
+    "image": "images/features/noun_branding_1885335.svg"
   }
 ]

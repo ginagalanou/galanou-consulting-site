@@ -2,43 +2,407 @@
 
 {{ define "main" }}
 
-<div class="container pt-6 pb-6 pt-md-10 pb-md-10">
-  <div class="row align-items-start">
-    <div class="col-12 col-md-7">
-      <h1 class="title">{{ .Title }}</h1>
-      <div class="content">
-        {{ .Content }}
-      </div>
-    </div>
-
-    <div class="col-12 col-md-5 mt-4 mt-md-0">
-      {{ with .Params.image }}
-        <img
-          src="{{ . | relURL }}"
-          alt="Dr. Georgia Galanou Luchen"
-          class="about-headshot"
-        >
-      {{ end }}
-    </div>
-  </div>
-</div>
-
 <style>
-  .about-headshot {
-    width: 100%;
-    max-width: 360px;
-    height: auto;
-    border-radius: 10px;
+  .header {
+    background: #ffffff;
+    border-bottom: 1px solid rgba(47, 93, 80, 0.14);
+  }
+
+  .header .container {
+    padding-left: 10px;
+  }
+
+  .header .logo {
+    margin-left: -12px;
+  }
+
+  .header .logo img {
     display: block;
-    margin-left: auto;
+  }
+
+  .page-about .about-hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: 54px;
+    padding-bottom: 64px;
+    background:
+      linear-gradient(90deg, #ffffff 0%, #fcfaf6 58%, #f7f3ec 100%);
+    border-bottom: 1px solid rgba(143, 132, 101, 0.12);
+  }
+
+  .page-about .about-hero::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -120px;
+    width: 520px;
+    height: 420px;
+    background-image:
+      radial-gradient(circle, rgba(47, 93, 80, 0.18) 1.5px, transparent 1.5px),
+      radial-gradient(circle, rgba(184, 135, 69, 0.16) 1.3px, transparent 1.3px),
+      radial-gradient(circle, rgba(143, 132, 101, 0.14) 1.2px, transparent 1.2px);
+    background-size: 28px 28px, 42px 42px, 56px 56px;
+    background-position: 0 0, 14px 12px, 8px 24px;
+    opacity: 0.32;
+    pointer-events: none;
+  }
+
+  .page-about .about-hero::after {
+    content: "";
+    position: absolute;
+    right: 120px;
+    bottom: -120px;
+    width: 320px;
+    height: 320px;
+    border: 1px solid rgba(184, 135, 69, 0.18);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .page-about .about-hero .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .page-about .about-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.88fr);
+    gap: 56px;
+    align-items: start;
+  }
+
+  .page-about .about-copy-panel {
+    max-width: 790px;
+  }
+
+  .page-about .title {
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: clamp(2.35rem, 4.4vw, 3.55rem);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+  }
+
+  .page-about .content {
+    color: #3f3f3f;
+  }
+
+  .page-about .content > p:first-of-type {
+    margin-bottom: 20px;
+    padding: 24px 28px;
+    background: rgba(255, 255, 255, 0.74);
+    border: 1px solid rgba(143, 132, 101, 0.17);
+    border-left: 4px solid rgba(47, 93, 80, 0.42);
+    border-radius: 20px;
+    color: #353535;
+    font-size: 1.08rem;
+    line-height: 1.64;
+    box-shadow: 0 14px 34px rgba(47, 93, 80, 0.05);
+    backdrop-filter: blur(2px);
+  }
+
+  .page-about .content p {
+    color: #3f3f3f;
+    font-size: 1.02rem;
+    line-height: 1.68;
+  }
+
+  .page-about .about-proof-box {
+    margin: 28px 0;
+    padding: 24px 26px;
+    background: rgba(247, 243, 236, 0.70);
+    border: 1px solid rgba(143, 132, 101, 0.18);
+    border-left: 4px solid #2f5d50;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(47, 93, 80, 0.04);
+  }
+
+  .page-about .about-proof-box strong {
+    display: block;
+    margin-bottom: 10px;
+    color: #2f5d50;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.11em;
+  }
+
+  .page-about .about-proof-box p {
+    margin-bottom: 0;
+    color: #3f3f3f;
+    line-height: 1.6;
+  }
+
+  .page-about .content h2 {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-top: 38px;
+    margin-bottom: 24px;
+    color: #2f5d50;
+    letter-spacing: -0.01em;
+  }
+
+  .page-about .content h2::after {
+    content: "";
+    display: block;
+    flex: 1;
+    height: 1px;
+    background: rgba(143, 132, 101, 0.24);
+  }
+
+  .page-about .content ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .page-about .content li {
+    position: relative;
+    margin: 0;
+    padding: 15px 16px 15px 34px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(143, 132, 101, 0.16);
+    border-radius: 16px;
+    color: #3f3f3f;
+    line-height: 1.42;
+  }
+
+  .page-about .content li::before {
+    content: "";
+    position: absolute;
+    top: 1.25em;
+    left: 16px;
+    width: 7px;
+    height: 7px;
+    background: #b88745;
+    border-radius: 50%;
+  }
+
+  .page-about .about-visual {
+    position: sticky;
+    top: 104px;
+  }
+
+  .page-about .about-image-card {
+    position: relative;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(143, 132, 101, 0.18);
+    border-radius: 28px;
+    box-shadow: 0 18px 44px rgba(47, 93, 80, 0.08);
+  }
+
+  .page-about .about-image-card::before {
+    content: "";
+    position: absolute;
+    right: -18px;
+    bottom: -18px;
+    width: 120px;
+    height: 120px;
+    border: 1px solid rgba(184, 135, 69, 0.26);
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  .page-about .about-headshot {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+  }
+
+  .page-about .about-caption {
+    margin-top: 16px;
+    padding: 18px 18px 16px;
+    background: rgba(247, 243, 236, 0.72);
+    border: 1px solid rgba(143, 132, 101, 0.14);
+    border-radius: 18px;
+  }
+
+  .page-about .about-caption strong {
+    display: block;
+    margin-bottom: 6px;
+    color: #2f5d50;
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+
+  .page-about .about-caption span {
+    display: block;
+    color: #565656;
+    font-size: 0.95rem;
+    line-height: 1.48;
+  }
+
+  .page-about .about-sidebar-cta {
+    margin-top: 16px;
+    padding: 24px 22px;
+    background: #2f5d50;
+    border-radius: 20px;
+    color: #ffffff;
+  }
+
+  .page-about .about-sidebar-cta h2 {
+    margin: 0 0 12px 0;
+    color: #ffffff;
+    font-size: 1.28rem;
+    line-height: 1.22;
+    letter-spacing: -0.01em;
+  }
+
+  .page-about .about-sidebar-cta p {
+    margin-bottom: 18px;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.98rem;
+    line-height: 1.58;
+  }
+
+  .page-about .about-sidebar-cta a {
+    display: inline-block;
+    padding: 11px 18px;
+    background: #ffffff;
+    color: #2f5d50;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .page-about .about-sidebar-cta a:hover {
+    color: #2f5d50;
+    opacity: 0.88;
+    text-decoration: none;
+  }
+
+  @media (max-width: 991px) {
+    .page-about .about-layout {
+      grid-template-columns: 1fr;
+      gap: 38px;
+    }
+
+    .page-about .about-visual {
+      position: relative;
+      top: auto;
+      max-width: 420px;
+    }
   }
 
   @media (max-width: 767px) {
-    .about-headshot {
-      max-width: 280px;
-      margin: 2rem auto 0 auto;
+    .header .container {
+      padding-left: 12px;
+    }
+
+    .header .logo {
+      margin-left: -6px;
+    }
+
+    .page-about .about-hero {
+      padding-top: 34px;
+      padding-bottom: 48px;
+    }
+
+    .page-about .about-hero::before {
+      right: -220px;
+      opacity: 0.20;
+    }
+
+    .page-about .about-hero::after {
+      display: none;
+    }
+
+    .page-about .title {
+      font-size: clamp(1.95rem, 9vw, 2.45rem);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .page-about .content > p:first-of-type {
+      padding: 20px 20px;
+      font-size: 1rem;
+      line-height: 1.58;
+    }
+
+    .page-about .about-proof-box {
+      padding: 22px 20px;
+      margin: 24px 0;
+    }
+
+    .page-about .content h2 {
+      display: block;
+      margin-top: 32px;
+      margin-bottom: 20px;
+    }
+
+    .page-about .content h2::after {
+      width: 72px;
+      height: 2px;
+      margin-top: 14px;
+      background: rgba(47, 93, 80, 0.28);
+    }
+
+    .page-about .content ul {
+      grid-template-columns: 1fr;
+    }
+
+    .page-about .about-image-card {
+      padding: 12px;
+      border-radius: 24px;
+    }
+
+    .page-about .about-headshot {
+      border-radius: 18px;
+    }
+
+    .page-about .about-sidebar-cta {
+      padding: 24px 20px;
+      border-radius: 18px;
     }
   }
 </style>
+
+<div class="about-hero">
+  <div class="container">
+    <div class="about-layout">
+
+      <div class="about-copy-panel">
+        <h1 class="title">{{ .Title }}</h1>
+
+        <div class="content">
+          {{ .Content }}
+        </div>
+      </div>
+
+      <div class="about-visual">
+        {{ with .Params.image }}
+          <div class="about-image-card">
+            <img
+              src="{{ . | relURL }}"
+              alt="Dr. Georgia Galanou Luchen"
+              class="about-headshot"
+            >
+
+            <div class="about-caption">
+              <strong>Dr. Georgia Galanou Luchen</strong>
+              <span>Founder and Principal, Galanou Consulting</span>
+            </div>
+
+            <div class="about-sidebar-cta">
+              <h2>Have a complex priority taking shape?</h2>
+              <p>
+                Let’s talk through what needs structure, alignment, or a clearer path forward.
+              </p>
+              <a href="/contact/">Start a conversation</a>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+
+    </div>
+  </div>
+</div>
 
 {{ end }}
