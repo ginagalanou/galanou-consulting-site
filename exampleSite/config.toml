@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://galanouconsulting.com/"
 themesDir = "../"
 theme = "."
 languageCode = "en-us"
@@ -17,33 +17,33 @@ title = "Galanou Consulting"
 
   [params.homepage]
     sticky_header = true
-    show_contact_box = true      # show / hide the contaxt box on the homepage
-    show_services_button = false # show / hide the "view all services" button
+    show_contact_box = false
+    show_services_button = true
 
 [params.logo]
   mobile = "images/logo/logo-mobile.svg"
   mobile_height = "64px"
   desktop = "images/logo/logo.svg"
-  desktop_height = "88px"
+  desktop_height = "72px"
   alt = "Galanou Consulting"
 
   [params.fonts]
     # sets the google font link in layouts/partials/google-fonts.html
-    google_fonts = 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Sans+Pro:wght@400;700&display=swap'
-    heading = "Playfair Display"
-    base = "Source Sans Pro"
+    google_fonts = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap'
+    heading = "Inter"
+    base = "Inter"
 
 [params.colors]
-  primary = "#2f5d50"
-  black = "#2f2f41"
+  primary = "#285347"
+  black = "#1f2933"
   white = "#ffffff"
-  white_offset = "#f7f3ec"
-  grey = "#5C5A5A"
+  white_offset = "#f6f2ea"
+  grey = "#53606a"
 
   [params.seo]
-    meta_twitter_site = "@zerostaticio"
-    meta_twitter_creator = "@zerostaticio"
-    meta_og_image = "https://www.zerostatic.io/theme/hugo-serif/hugo-serif-screenshot.png"
+    meta_twitter_site = ""
+    meta_twitter_creator = ""
+    meta_og_image = "images/photos/executive-workspace.png"
 
   [params.services]
     summary_truncate = 120 # How many characters to include in the summary of the services before truncating
@@ -53,6 +53,7 @@ title = "Galanou Consulting"
 
   [params.footer]
     copyright_text = '© Galanou Consulting. All rights reserved.'
+    positioning = "Independent strategic advisory for healthcare organizations, professional societies, and mission-driven teams."
 
 [menu]
   # Main Menu
@@ -68,7 +69,7 @@ title = "Galanou Consulting"
 
   [[menu.main]]
     name = "Thought Leadership"
-    url = "/thought-leadership/"
+    url = "/insights/"
     weight = 3
 
   [[menu.main]]
@@ -78,11 +79,21 @@ title = "Galanou Consulting"
 
   # Footer Menu
   [[menu.footer]]
-    name = "Home"
-    url = "/"
+    name = "Services"
+    url = "/services/"
     weight = 1
+
+  [[menu.footer]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+  [[menu.footer]]
+    name = "Thought Leadership"
+    url = "/insights/"
+    weight = 3
 
   [[menu.footer]]
     name = "Contact"
     url = "/contact/"
-    weight = 2
+    weight = 4
