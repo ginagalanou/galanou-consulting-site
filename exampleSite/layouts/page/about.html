@@ -3,406 +3,488 @@
 {{ define "main" }}
 
 <style>
-  .header {
-    background: #ffffff;
-    border-bottom: 1px solid rgba(47, 93, 80, 0.14);
+  .page-about {
+    --gc-ink: #17202a;
+    --gc-muted: #65707c;
+    --gc-cream: #f7f1e8;
+    --gc-teal: #3f7771;
+    --gc-border: rgba(23, 32, 42, 0.1);
+    --gc-shadow: 0 18px 48px rgba(23, 32, 42, 0.055);
+    color: var(--gc-ink);
+    background: linear-gradient(180deg, #fffdf8 0%, #f8f1e8 54%, #fffdf8 100%);
   }
 
-  .header .container {
-    padding-left: 10px;
+  .page-about .wrapper {
+    background: transparent;
   }
 
-  .header .logo {
-    margin-left: -12px;
+  .page-about .container {
+    width: min(1180px, calc(100% - 48px));
+    max-width: 1180px;
   }
 
-  .header .logo img {
+  .page-about .header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 0;
+    background: rgba(255, 253, 248, 0.9);
+    border-bottom: 1px solid rgba(23, 32, 42, 0.08);
+    backdrop-filter: saturate(140%) blur(16px);
+  }
+
+  .page-about .header.sticky {
+    position: fixed;
+  }
+
+  .page-about .header .container {
+    min-height: 76px;
+  }
+
+  .page-about .logo img {
     display: block;
+    width: auto;
+    max-width: 280px;
+    height: 52px;
   }
 
-  .page-about .about-hero {
-    position: relative;
-    overflow: hidden;
-    padding-top: 54px;
-    padding-bottom: 64px;
-    background:
-      linear-gradient(90deg, #ffffff 0%, #fcfaf6 58%, #f7f3ec 100%);
-    border-bottom: 1px solid rgba(143, 132, 101, 0.12);
+  .page-about h1,
+  .page-about h2,
+  .page-about h3 {
+    margin-top: 0;
+    color: var(--gc-ink);
+    font-family: Inter, "Source Sans Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    letter-spacing: 0;
   }
 
-  .page-about .about-hero::before {
-    content: "";
-    position: absolute;
-    top: -40px;
-    right: -120px;
-    width: 520px;
-    height: 420px;
-    background-image:
-      radial-gradient(circle, rgba(47, 93, 80, 0.18) 1.5px, transparent 1.5px),
-      radial-gradient(circle, rgba(184, 135, 69, 0.16) 1.3px, transparent 1.3px),
-      radial-gradient(circle, rgba(143, 132, 101, 0.14) 1.2px, transparent 1.2px);
-    background-size: 28px 28px, 42px 42px, 56px 56px;
-    background-position: 0 0, 14px 12px, 8px 24px;
-    opacity: 0.32;
-    pointer-events: none;
+  .page-about h1 {
+    margin-bottom: 24px;
+    font-size: 4.25rem;
+    line-height: 0.98;
   }
 
-  .page-about .about-hero::after {
-    content: "";
-    position: absolute;
-    right: 120px;
-    bottom: -120px;
-    width: 320px;
-    height: 320px;
-    border: 1px solid rgba(184, 135, 69, 0.18);
-    border-radius: 50%;
-    pointer-events: none;
+  .page-about h2 {
+    margin-bottom: 18px;
+    font-size: 2.45rem;
+    line-height: 1.06;
   }
 
-  .page-about .about-hero .container {
-    position: relative;
-    z-index: 1;
+  .page-about h3 {
+    margin-bottom: 10px;
+    font-size: 1.28rem;
+    line-height: 1.18;
   }
 
-  .page-about .about-layout {
+  .page-about p {
+    color: #3d4854;
+    line-height: 1.56;
+  }
+
+  .page-about .about-eyebrow,
+  .page-about .about-tag {
+    display: inline-flex;
+    margin: 0 0 18px;
+    color: var(--gc-teal);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  .page-about .about-lead {
+    max-width: 780px;
+    color: #384450;
+    font-size: 1.25rem;
+    line-height: 1.46;
+  }
+
+  .page-about .about-micro {
+    color: var(--gc-muted);
+    font-size: 0.82rem;
+  }
+
+  .page-about .about-page-hero {
+    padding: 84px 0 42px;
+  }
+
+  .page-about .about-hero-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.88fr);
-    gap: 56px;
+    grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
+    gap: 46px;
+    align-items: center;
+  }
+
+  .page-about .about-page-kicker {
+    max-width: 820px;
+    padding-left: 18px;
+    color: #3f4b56;
+    border-left: 3px solid var(--gc-teal);
+  }
+
+  .page-about .about-portrait {
+    position: relative;
+    min-height: 360px;
+    overflow: hidden;
+    background: #e9ded1;
+    border: 1px solid rgba(23, 32, 42, 0.12);
+    border-radius: 8px;
+    box-shadow: 0 24px 64px rgba(23, 32, 42, 0.12);
+  }
+
+  .page-about .about-portrait img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .page-about .about-portrait-caption {
+    position: absolute;
+    right: 22px;
+    bottom: 22px;
+    left: 22px;
+    padding: 14px 16px;
+    color: var(--gc-ink);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    font-weight: 700;
+    backdrop-filter: blur(10px);
+  }
+
+  .page-about .about-page-body {
+    padding: 24px 0 58px;
+  }
+
+  .page-about .about-grid-aside {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 38px;
     align-items: start;
   }
 
-  .page-about .about-copy-panel {
-    max-width: 790px;
+  .page-about .about-side-nav {
+    position: sticky;
+    top: 104px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.68);
+    border: 1px solid var(--gc-border);
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(23, 32, 42, 0.045);
   }
 
-  .page-about .title {
-    margin-top: 0;
-    margin-bottom: 24px;
-    font-size: clamp(2.35rem, 4.4vw, 3.55rem);
-    line-height: 1.08;
-    letter-spacing: -0.025em;
-  }
-
-  .page-about .content {
-    color: #3f3f3f;
-  }
-
-  .page-about .content > p:first-of-type {
-    margin-bottom: 20px;
-    padding: 24px 28px;
-    background: rgba(255, 255, 255, 0.74);
-    border: 1px solid rgba(143, 132, 101, 0.17);
-    border-left: 4px solid rgba(47, 93, 80, 0.42);
-    border-radius: 20px;
-    color: #353535;
-    font-size: 1.08rem;
-    line-height: 1.64;
-    box-shadow: 0 14px 34px rgba(47, 93, 80, 0.05);
-    backdrop-filter: blur(2px);
-  }
-
-  .page-about .content p {
-    color: #3f3f3f;
-    font-size: 1.02rem;
-    line-height: 1.68;
-  }
-
-  .page-about .about-proof-box {
-    margin: 28px 0;
-    padding: 24px 26px;
-    background: rgba(247, 243, 236, 0.70);
-    border: 1px solid rgba(143, 132, 101, 0.18);
-    border-left: 4px solid #2f5d50;
-    border-radius: 20px;
-    box-shadow: 0 12px 30px rgba(47, 93, 80, 0.04);
-  }
-
-  .page-about .about-proof-box strong {
+  .page-about .about-side-nav strong {
     display: block;
-    margin-bottom: 10px;
-    color: #2f5d50;
-    font-size: 0.78rem;
-    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--gc-teal);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    letter-spacing: 0.11em;
   }
 
-  .page-about .about-proof-box p {
-    margin-bottom: 0;
-    color: #3f3f3f;
-    line-height: 1.6;
-  }
-
-  .page-about .content h2 {
-    display: flex;
-    align-items: center;
-    gap: 22px;
-    margin-top: 38px;
-    margin-bottom: 24px;
-    color: #2f5d50;
-    letter-spacing: -0.01em;
-  }
-
-  .page-about .content h2::after {
-    content: "";
+  .page-about .about-side-nav a {
     display: block;
-    flex: 1;
-    height: 1px;
-    background: rgba(143, 132, 101, 0.24);
+    padding: 9px 0;
+    color: #45515d;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-top: 1px solid rgba(23, 32, 42, 0.08);
   }
 
-  .page-about .content ul {
+  .page-about .about-side-nav a:hover {
+    color: var(--gc-ink);
+    text-decoration: none;
+  }
+
+  .page-about .about-section {
+    padding: 58px 0;
+  }
+
+  .page-about .about-section:first-child {
+    padding-top: 0;
+  }
+
+  .page-about .about-card {
+    padding: 28px;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid var(--gc-border);
+    border-radius: 8px;
+    box-shadow: var(--gc-shadow);
+  }
+
+  .page-about .about-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .page-about .about-card-soft {
+    background: rgba(247, 241, 232, 0.78);
+  }
+
+  .page-about .about-grid-2,
+  .page-about .about-grid-3 {
     display: grid;
+    gap: 18px;
+  }
+
+  .page-about .about-grid-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
+  }
+
+  .page-about .about-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .page-about .about-list {
     margin: 0;
     padding: 0;
     list-style: none;
   }
 
-  .page-about .content li {
-    position: relative;
-    margin: 0;
-    padding: 15px 16px 15px 34px;
-    background: rgba(255, 255, 255, 0.72);
-    border: 1px solid rgba(143, 132, 101, 0.16);
-    border-radius: 16px;
-    color: #3f3f3f;
-    line-height: 1.42;
+  .page-about .about-list li {
+    padding: 12px 0;
+    color: #3d4650;
+    border-top: 1px solid rgba(23, 32, 42, 0.1);
   }
 
-  .page-about .content li::before {
-    content: "";
-    position: absolute;
-    top: 1.25em;
-    left: 16px;
-    width: 7px;
-    height: 7px;
-    background: #b88745;
-    border-radius: 50%;
+  .page-about .about-cta-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 32px;
+    align-items: center;
+    padding: 38px;
+    color: #ffffff;
+    background: var(--gc-ink);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    box-shadow: 0 24px 70px rgba(23, 32, 42, 0.16);
   }
 
-  .page-about .about-visual {
-    position: sticky;
-    top: 104px;
+  .page-about .about-cta-copy {
+    max-width: 780px;
   }
 
-  .page-about .about-image-card {
-    position: relative;
-    padding: 16px;
-    background: rgba(255, 255, 255, 0.72);
-    border: 1px solid rgba(143, 132, 101, 0.18);
-    border-radius: 28px;
-    box-shadow: 0 18px 44px rgba(47, 93, 80, 0.08);
-  }
-
-  .page-about .about-image-card::before {
-    content: "";
-    position: absolute;
-    right: -18px;
-    bottom: -18px;
-    width: 120px;
-    height: 120px;
-    border: 1px solid rgba(184, 135, 69, 0.26);
-    border-radius: 50%;
-    z-index: -1;
-  }
-
-  .page-about .about-headshot {
-    width: 100%;
-    max-width: none;
-    height: auto;
-    display: block;
-    border-radius: 20px;
-  }
-
-  .page-about .about-caption {
-    margin-top: 16px;
-    padding: 18px 18px 16px;
-    background: rgba(247, 243, 236, 0.72);
-    border: 1px solid rgba(143, 132, 101, 0.14);
-    border-radius: 18px;
-  }
-
-  .page-about .about-caption strong {
-    display: block;
-    margin-bottom: 6px;
-    color: #2f5d50;
-    font-size: 1rem;
-    line-height: 1.25;
-  }
-
-  .page-about .about-caption span {
-    display: block;
-    color: #565656;
-    font-size: 0.95rem;
-    line-height: 1.48;
-  }
-
-  .page-about .about-sidebar-cta {
-    margin-top: 16px;
-    padding: 24px 22px;
-    background: #2f5d50;
-    border-radius: 20px;
+  .page-about .about-cta-panel h2,
+  .page-about .about-cta-panel p {
     color: #ffffff;
   }
 
-  .page-about .about-sidebar-cta h2 {
-    margin: 0 0 12px 0;
+  .page-about .about-cta-panel h2 {
+    margin-bottom: 12px;
+    font-size: 2rem;
+  }
+
+  .page-about .about-cta-panel .about-eyebrow {
+    color: #b9d5d1;
+  }
+
+  .page-about .about-cta-panel .about-lead {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 1.08rem;
+  }
+
+  .page-about .about-cta-action {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    padding: 13px 18px;
     color: #ffffff;
-    font-size: 1.28rem;
-    line-height: 1.22;
-    letter-spacing: -0.01em;
-  }
-
-  .page-about .about-sidebar-cta p {
-    margin-bottom: 18px;
-    color: rgba(255, 255, 255, 0.88);
-    font-size: 0.98rem;
-    line-height: 1.58;
-  }
-
-  .page-about .about-sidebar-cta a {
-    display: inline-block;
-    padding: 11px 18px;
-    background: #ffffff;
-    color: #2f5d50;
+    border: 1px solid #ffffff;
     border-radius: 999px;
+    font-size: 0.95rem;
     font-weight: 700;
+    line-height: 1.2;
     text-decoration: none;
+    transition: transform 160ms ease, background-color 160ms ease, color 160ms ease;
   }
 
-  .page-about .about-sidebar-cta a:hover {
-    color: #2f5d50;
-    opacity: 0.88;
+  .page-about .about-cta-action:hover {
+    color: var(--gc-ink);
+    background: #ffffff;
     text-decoration: none;
+    transform: translateY(-1px);
   }
 
-  @media (max-width: 991px) {
-    .page-about .about-layout {
+  @media (max-width: 1000px) {
+    .page-about .about-hero-grid,
+    .page-about .about-grid-aside,
+    .page-about .about-grid-2,
+    .page-about .about-grid-3 {
       grid-template-columns: 1fr;
-      gap: 38px;
     }
 
-    .page-about .about-visual {
+    .page-about .about-side-nav {
       position: relative;
-      top: auto;
-      max-width: 420px;
+      top: 0;
+    }
+
+    .page-about .about-page-hero {
+      padding: 64px 0 34px;
+    }
+
+    .page-about h1 {
+      font-size: 2.75rem;
+      line-height: 1.05;
+    }
+
+    .page-about h2 {
+      font-size: 2rem;
+    }
+
+    .page-about .about-cta-panel {
+      grid-template-columns: 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .page-about .about-cta-action {
+      width: fit-content;
     }
   }
 
   @media (max-width: 767px) {
-    .header .container {
-      padding-left: 12px;
+    .page-about .container {
+      width: min(100% - 30px, 1180px);
     }
 
-    .header .logo {
-      margin-left: -6px;
+    .page-about .header .container {
+      min-height: 68px;
     }
 
-    .page-about .about-hero {
-      padding-top: 34px;
-      padding-bottom: 48px;
+    .page-about .logo img {
+      max-width: 220px;
+      height: 44px;
     }
 
-    .page-about .about-hero::before {
-      right: -220px;
-      opacity: 0.20;
+    .page-about h1 {
+      font-size: 2.35rem;
     }
 
-    .page-about .about-hero::after {
-      display: none;
+    .page-about .about-lead {
+      font-size: 1.06rem;
     }
 
-    .page-about .title {
-      font-size: clamp(1.95rem, 9vw, 2.45rem);
-      line-height: 1.1;
-      margin-bottom: 20px;
+    .page-about .about-card,
+    .page-about .about-cta-panel {
+      padding: 24px 22px;
     }
 
-    .page-about .content > p:first-of-type {
-      padding: 20px 20px;
-      font-size: 1rem;
-      line-height: 1.58;
+    .page-about .about-cta-action {
+      width: 100%;
+      white-space: normal;
+      text-align: center;
     }
 
-    .page-about .about-proof-box {
-      padding: 22px 20px;
-      margin: 24px 0;
+    .page-about .footer .footer-inner,
+    .page-about .footer .footer-actions {
+      align-items: flex-start;
     }
 
-    .page-about .content h2 {
-      display: block;
-      margin-top: 32px;
-      margin-bottom: 20px;
-    }
-
-    .page-about .content h2::after {
-      width: 72px;
-      height: 2px;
-      margin-top: 14px;
-      background: rgba(47, 93, 80, 0.28);
-    }
-
-    .page-about .content ul {
-      grid-template-columns: 1fr;
-    }
-
-    .page-about .about-image-card {
-      padding: 12px;
-      border-radius: 24px;
-    }
-
-    .page-about .about-headshot {
-      border-radius: 18px;
-    }
-
-    .page-about .about-sidebar-cta {
-      padding: 24px 20px;
-      border-radius: 18px;
+    .page-about .footer ul {
+      flex-wrap: wrap;
+      justify-content: flex-start;
     }
   }
 </style>
 
-<div class="about-hero">
-  <div class="container">
-    <div class="about-layout">
+<section class="about-page-hero" aria-labelledby="about-title">
+  <div class="container about-hero-grid">
+    <div>
+      <p class="about-eyebrow">About</p>
+      <h1 id="about-title">Strategy, alignment, and execution for complex healthcare work.</h1>
+      <p class="about-lead about-page-kicker">Dr. Georgia Galanou Luchen is a healthcare strategist and advisor with a pharmacy background and experience helping professional organizations move complex priorities from idea to execution.</p>
+    </div>
 
-      <div class="about-copy-panel">
-        <h1 class="title">{{ .Title }}</h1>
-
-        <div class="content">
-          {{ .Content }}
-        </div>
+    <div class="about-portrait">
+      <img src="{{ .Params.image | default "images/team/Galanou_Georgia.png" | relURL }}" alt="Dr. Georgia Galanou Luchen">
+      <div class="about-portrait-caption">
+        Dr. Georgia Galanou Luchen<br>
+        <span class="about-micro">Founder and Principal, Galanou Consulting</span>
       </div>
-
-      <div class="about-visual">
-        {{ with .Params.image }}
-          <div class="about-image-card">
-            <img
-              src="{{ . | relURL }}"
-              alt="Dr. Georgia Galanou Luchen"
-              class="about-headshot"
-            >
-
-            <div class="about-caption">
-              <strong>Dr. Georgia Galanou Luchen</strong>
-              <span>Founder and Principal, Galanou Consulting</span>
-            </div>
-
-            <div class="about-sidebar-cta">
-              <h2>Have a complex priority taking shape?</h2>
-              <p>
-                Let’s talk through what needs structure, alignment, or a clearer path forward.
-              </p>
-              <a href="/contact/">Start a conversation</a>
-            </div>
-          </div>
-        {{ end }}
-      </div>
-
     </div>
   </div>
-</div>
+</section>
+
+<section class="about-page-body">
+  <div class="container about-grid-aside">
+    <aside class="about-side-nav">
+      <strong>On this page</strong>
+      <a href="#background">Background</a>
+      <a href="#approach">How this translates</a>
+      <a href="#focus">Areas of focus</a>
+      <a href="#cta">Contact</a>
+    </aside>
+
+    <div>
+      <section class="about-section" id="background" aria-label="Background">
+        <div class="about-card">
+          <p>Her work focuses on the intersection of healthcare strategy, AI and digital transformation, professional education, and organizational change. She helps organizations move from recognizing that an issue matters to defining what should happen next, who needs to be involved, and how the work will get done.</p>
+          <p>Most recently, Dr. Galanou Luchen worked with the American Society of Health-System Pharmacists, a national professional association representing more than 60,000 pharmacy professionals. In that role, she supported work across digital health, data, AI strategy, strategic planning, professional education, stakeholder engagement, board and executive communications, and new program development.</p>
+          <p>That experience shaped her approach to helping professional organizations identify emerging priorities, align internal and external stakeholders, communicate value to members, and turn ideas into deliverables that last beyond a single meeting or report.</p>
+          <p>Now based in Greece, Dr. Galanou Luchen brings a Greek-American perspective to her work. Her background is rooted in U.S. health-system pharmacy and association leadership, but her current focus is broader. She helps healthcare organizations, professional societies, and mission-driven teams navigate transformation in ways that are clear, credible, and executable.</p>
+        </div>
+      </section>
+
+      <section class="about-section" id="approach" aria-labelledby="about-approach-title">
+        <p class="about-eyebrow">How this translates into advisory work</p>
+        <h2 id="about-approach-title">Focused strategic capacity for work that needs shape.</h2>
+        <p class="about-lead">Galanou Consulting provides focused strategic capacity for healthcare organizations, professional societies, and mission-driven teams that need help shaping priorities, aligning stakeholders, and turning ideas into credible plans, programs, and materials.</p>
+
+        <div class="about-grid-3">
+          <article class="about-card about-card-soft">
+            <h3>Clarify what matters</h3>
+            <p>Move from a broad priority or emerging issue to a sharper strategic frame.</p>
+          </article>
+          <article class="about-card about-card-soft">
+            <h3>Align the right people</h3>
+            <p>Bring structure to work that depends on executives, staff, board members, volunteers, partners, or external stakeholders.</p>
+          </article>
+          <article class="about-card about-card-soft">
+            <h3>Produce usable outputs</h3>
+            <p>Create the briefs, frameworks, roadmaps, narratives, and materials needed to keep work moving.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="about-section" id="focus" aria-labelledby="about-focus-title">
+        <p class="about-eyebrow">Areas of focus</p>
+        <h2 id="about-focus-title">The work most often sits here.</h2>
+
+        <div class="about-grid-2">
+          <div class="about-card">
+            <ul class="about-list">
+              <li>Strategy and organizational transformation</li>
+              <li>Digital health and AI readiness</li>
+              <li>Professional education and workforce development</li>
+              <li>Stakeholder alignment and convening</li>
+            </ul>
+          </div>
+          <div class="about-card">
+            <ul class="about-list">
+              <li>Member value and engagement</li>
+              <li>Executive communication and board-facing materials</li>
+              <li>Program development and implementation planning</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" id="cta" aria-labelledby="about-cta-title">
+        <div class="about-cta-panel">
+          <div class="about-cta-copy">
+            <p class="about-eyebrow">Have a complex priority taking shape?</p>
+            <h2 id="about-cta-title">Let's define what needs structure, alignment, and a practical next step.</h2>
+            <p class="about-lead">Share the decision, initiative, or stakeholder challenge that needs to move from discussion to action.</p>
+          </div>
+          <a class="about-cta-action" href="{{ "contact/" | relURL }}">Start a conversation</a>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
 
 {{ end }}
