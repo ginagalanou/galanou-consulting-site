@@ -3,263 +3,217 @@
 {{ define "main" }}
 
 <style>
-  .header {
-    background: #ffffff;
-    border-bottom: 1px solid rgba(47, 93, 80, 0.14);
+  .page-services-list {
+    --gc-ink: #17202a;
+    --gc-muted: #65707c;
+    --gc-cream: #f7f1e8;
+    --gc-teal: #3f7771;
+    --gc-plum: #7a3952;
+    --gc-gold: #b98e47;
+    --gc-border: rgba(23, 32, 42, 0.1);
+    --gc-shadow: 0 18px 48px rgba(23, 32, 42, 0.055);
+    color: var(--gc-ink);
+    background: linear-gradient(180deg, #fffdf8 0%, #f8f1e8 54%, #fffdf8 100%);
   }
 
-  .header .container {
-    padding-left: 10px;
+  .page-services-list .wrapper {
+    background: transparent;
   }
 
-  .header .logo {
-    margin-left: -12px;
+  .page-services-list .container {
+    width: min(1180px, calc(100% - 48px));
+    max-width: 1180px;
   }
 
-  .header .logo img {
+  .page-services-list .header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 0;
+    background: rgba(255, 253, 248, 0.9);
+    border-bottom: 1px solid rgba(23, 32, 42, 0.08);
+    backdrop-filter: saturate(140%) blur(16px);
+  }
+
+  .page-services-list .header.sticky {
+    position: fixed;
+  }
+
+  .page-services-list .header .container {
+    min-height: 76px;
+  }
+
+  .page-services-list .logo img {
     display: block;
+    width: auto;
+    max-width: 280px;
+    height: 52px;
   }
 
-  .page-services-list .services-hero {
-    position: relative;
-    overflow: hidden;
-    padding-top: 46px;
-    padding-bottom: 44px;
-    background:
-      linear-gradient(90deg, #ffffff 0%, #fcfaf6 58%, #f7f3ec 100%);
-    border-bottom: 1px solid rgba(143, 132, 101, 0.12);
+  .page-services-list h1,
+  .page-services-list h2,
+  .page-services-list h3 {
+    margin-top: 0;
+    color: var(--gc-ink);
+    font-family: Inter, "Source Sans Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    letter-spacing: 0;
   }
 
-  .page-services-list .services-hero::before {
-    content: "";
-    position: absolute;
-    top: -52px;
-    right: -110px;
-    width: 760px;
-    height: 460px;
-    background-image: url('{{ "images/graphics/services-structured-signal.svg" | relURL }}');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: right center;
-    opacity: 0.56;
-    pointer-events: none;
+  .page-services-list h1 {
+    margin-bottom: 24px;
+    font-size: 4.25rem;
+    line-height: 0.98;
   }
 
-  .page-services-list .services-hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.88) 44%, rgba(252, 250, 246, 0.58) 100%),
-      radial-gradient(circle at 84% 24%, rgba(184, 135, 69, 0.10), transparent 28%),
-      radial-gradient(circle at 90% 72%, rgba(47, 93, 80, 0.09), transparent 30%);
-    pointer-events: none;
+  .page-services-list h2 {
+    margin-bottom: 18px;
+    font-size: 2.45rem;
+    line-height: 1.06;
   }
 
-  .page-services-list .services-hero .container {
-    position: relative;
-    z-index: 1;
+  .page-services-list h3 {
+    margin-bottom: 10px;
+    font-size: 1.28rem;
+    line-height: 1.18;
   }
 
-  .page-services-list .services-intro-content {
+  .page-services-list p {
+    color: #3d4854;
+    line-height: 1.56;
+  }
+
+  .page-services-list .services-eyebrow,
+  .page-services-list .services-tag {
+    display: inline-flex;
+    margin: 0 0 18px;
+    color: var(--gc-teal);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  .page-services-list .services-tag {
+    margin-bottom: 16px;
+    letter-spacing: 0.09em;
+  }
+
+  .page-services-list .services-lead {
+    max-width: 780px;
+    color: #384450;
+    font-size: 1.25rem;
+    line-height: 1.46;
+  }
+
+  .page-services-list .services-page-hero {
+    padding: 84px 0 42px;
+  }
+
+  .page-services-list .services-page-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 380px);
+    gap: 56px;
+    align-items: end;
+  }
+
+  .page-services-list .services-page-kicker {
     max-width: 820px;
+    padding-left: 18px;
+    color: #3f4b56;
+    border-left: 3px solid var(--gc-teal);
   }
 
-  .page-services-list .services-intro-content h1 {
-    max-width: 520px;
-    margin: 0 0 28px 0;
-    font-size: clamp(2.35rem, 4.4vw, 3.55rem);
-    line-height: 1.08;
-    letter-spacing: -0.025em;
+  .page-services-list .services-card {
+    padding: 28px;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid var(--gc-border);
+    border-radius: 8px;
+    box-shadow: var(--gc-shadow);
   }
 
-  .page-services-list .services-intro-content p {
-    max-width: 760px;
-    margin-bottom: 0;
-    padding: 24px 28px;
-    background: rgba(255, 255, 255, 0.74);
-    border: 1px solid rgba(143, 132, 101, 0.17);
-    border-left: 4px solid rgba(47, 93, 80, 0.42);
-    border-radius: 20px;
-    color: #3f3f3f;
-    font-size: 1.04rem;
-    line-height: 1.62;
-    box-shadow: 0 14px 34px rgba(47, 93, 80, 0.05);
-    backdrop-filter: blur(2px);
+  .page-services-list .services-card-soft {
+    background: rgba(247, 241, 232, 0.78);
   }
 
-  .page-services-list .services-main {
-    background: #ffffff;
+  .page-services-list .services-page-body {
+    padding: 24px 0 58px;
+  }
+
+  .page-services-list .services-grid-aside {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 38px;
+    align-items: start;
+  }
+
+  .page-services-list .services-side-nav {
+    position: sticky;
+    top: 104px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.68);
+    border: 1px solid var(--gc-border);
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(23, 32, 42, 0.045);
+  }
+
+  .page-services-list .services-side-nav strong {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--gc-teal);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .page-services-list .services-side-nav a {
+    display: block;
+    padding: 9px 0;
+    color: #45515d;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-top: 1px solid rgba(23, 32, 42, 0.08);
+  }
+
+  .page-services-list .services-side-nav a:hover {
+    color: var(--gc-ink);
+    text-decoration: none;
   }
 
   .page-services-list .services-section {
-    padding-top: 42px;
-    padding-bottom: 48px;
+    padding: 58px 0;
   }
 
-  .page-services-list .services-section-heading,
-  .page-services-list .examples-section-heading {
+  .page-services-list .services-section:first-child {
+    padding-top: 0;
+  }
+
+  .page-services-list .services-section-title {
     display: flex;
-    align-items: center;
-    gap: 22px;
-    margin-bottom: 30px;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 28px;
   }
 
-  .page-services-list .services-section-heading::after,
-  .page-services-list .examples-section-heading::after {
-    content: "";
-    display: block;
-    flex: 1;
-    height: 1px;
-    background: rgba(143, 132, 101, 0.24);
-  }
-
-  .page-services-list .services-section-heading h2,
-  .page-services-list .examples-section-heading h2 {
-    margin: 0;
-    letter-spacing: -0.01em;
-  }
-
-  .page-services-list .service-card {
-    position: relative;
-    height: 100%;
-    padding: 30px 28px 28px;
-    background: rgba(247, 243, 236, 0.48);
-    border: 1px solid rgba(143, 132, 101, 0.16);
-    border-radius: 22px;
-    transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
-  }
-
-  .page-services-list .service-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 28px;
-    width: 58px;
-    height: 3px;
-    background: #2f5d50;
-    border-radius: 0 0 4px 4px;
-  }
-
-  .page-services-list .services-cards-row > div:nth-child(2) .service-card::before {
-    background: #b88745;
-  }
-
-  .page-services-list .services-cards-row > div:nth-child(3) .service-card::before {
-    background: #8f8465;
-  }
-
-  .page-services-list .services-cards-row > div:nth-child(4) .service-card::before {
-    background: #2f5d50;
-  }
-
-  .page-services-list .service-card:hover {
-    transform: translateY(-3px);
-    background: #ffffff;
-    border-color: rgba(47, 93, 80, 0.20);
-    box-shadow: 0 16px 38px rgba(47, 93, 80, 0.07);
-  }
-
-  .page-services-list .service-card h3 {
-    margin-top: 0;
-    margin-bottom: 12px;
-    color: #2f5d50;
-    font-size: 1.28rem;
-    line-height: 1.22;
-    letter-spacing: -0.01em;
-  }
-
-  .page-services-list .service-card p {
+  .page-services-list .services-section-title p {
+    max-width: 620px;
     margin-bottom: 0;
-    color: #444;
-    line-height: 1.6;
   }
 
-  .page-services-list .examples-section {
-    position: relative;
-    overflow: hidden;
-    padding-top: 54px;
-    padding-bottom: 60px;
-    background:
-      linear-gradient(180deg, #fcfaf6 0%, #f7f3ec 100%);
-    border-top: 1px solid rgba(143, 132, 101, 0.12);
-    border-bottom: 1px solid rgba(143, 132, 101, 0.12);
+  .page-services-list .services-grid-2,
+  .page-services-list .services-grid-3 {
+    display: grid;
+    gap: 18px;
   }
 
-  .page-services-list .examples-section::before {
-    content: "";
-    position: absolute;
-    top: -28px;
-    right: -70px;
-    width: 360px;
-    height: 240px;
-    background-image: url('{{ "images/graphics/services-structured-signal.svg" | relURL }}');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: right top;
-    opacity: 0.08;
-    pointer-events: none;
+  .page-services-list .services-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .page-services-list .examples-section .container {
-    position: relative;
-    z-index: 1;
-  }
-
-  .page-services-list .examples-intro {
-    max-width: 820px;
-    margin-bottom: 30px;
-  }
-
-  .page-services-list .examples-intro p {
-    margin-bottom: 0;
-    color: #444;
-    font-size: 1.03rem;
-    line-height: 1.62;
-  }
-
-  .page-services-list .example-card {
-    position: relative;
-    height: 100%;
-    padding: 32px 28px 30px;
-    background: rgba(255, 255, 255, 0.84);
-    border: 1px solid rgba(143, 132, 101, 0.18);
-    border-radius: 22px;
-    box-shadow: 0 12px 30px rgba(47, 93, 80, 0.04);
-    transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
-  }
-
-  .page-services-list .example-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 28px;
-    width: 52px;
-    height: 3px;
-    background: #b88745;
-    border-radius: 0 0 4px 4px;
-  }
-
-  .page-services-list .examples-cards-row > div:nth-child(2) .example-card::before {
-    background: #2f5d50;
-  }
-
-  .page-services-list .examples-cards-row > div:nth-child(3) .example-card::before {
-    background: #8f8465;
-  }
-
-  .page-services-list .example-card:hover {
-    transform: translateY(-3px);
-    background: #ffffff;
-    box-shadow: 0 16px 38px rgba(47, 93, 80, 0.06);
-  }
-
-  .page-services-list .example-card h3 {
-    margin-top: 0;
-    margin-bottom: 18px;
-    color: #2f5d50;
-    font-size: 1.18rem;
-    line-height: 1.25;
+  .page-services-list .services-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .page-services-list .services-list {
@@ -269,438 +223,319 @@
   }
 
   .page-services-list .services-list li {
+    padding: 12px 0;
+    color: #3d4650;
+    border-top: 1px solid rgba(23, 32, 42, 0.1);
+  }
+
+  .page-services-list .services-check-list li {
     position: relative;
-    margin-bottom: 12px;
-    padding-left: 22px;
-    color: #3f3f3f;
-    line-height: 1.55;
+    padding-left: 28px;
   }
 
-  .page-services-list .services-list li:last-child {
-    margin-bottom: 0;
-  }
-
-  .page-services-list .services-list li::before {
+  .page-services-list .services-check-list li::before {
     content: "";
     position: absolute;
-    top: 0.68em;
+    top: 18px;
     left: 0;
-    width: 7px;
-    height: 7px;
-    background: #b88745;
+    width: 10px;
+    height: 10px;
+    background: var(--gc-teal);
     border-radius: 50%;
   }
 
-  .page-services-list .best-fit-section {
-    padding-top: 54px;
-    padding-bottom: 62px;
-    background: #ffffff;
-  }
-
-  .page-services-list .best-fit-card {
-    position: relative;
-    overflow: hidden;
-    padding: 0;
-    background: #ffffff;
-    border: 1px solid rgba(143, 132, 101, 0.18);
-    border-radius: 26px;
-    box-shadow: 0 14px 36px rgba(47, 93, 80, 0.05);
-  }
-
-  .page-services-list .best-fit-card::before {
-    content: "";
-    position: absolute;
-    top: -70px;
-    right: -80px;
-    width: 280px;
-    height: 280px;
-    background: radial-gradient(circle, rgba(47, 93, 80, 0.07), transparent 68%);
-    pointer-events: none;
-  }
-
-  .page-services-list .best-fit-content {
-    position: relative;
-    z-index: 1;
-    padding: 38px 36px 0;
-  }
-
-  .page-services-list .best-fit-layout {
+  .page-services-list .services-cta-panel {
     display: grid;
-    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
-    gap: 42px;
-    align-items: start;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 32px;
+    align-items: center;
+    padding: 38px;
+    color: #ffffff;
+    background: var(--gc-ink);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    box-shadow: 0 24px 70px rgba(23, 32, 42, 0.16);
   }
 
-  .page-services-list .best-fit-heading h2 {
-    max-width: 340px;
-    margin-top: 0;
-    margin-bottom: 0;
-    color: #2f5d50;
-    font-size: clamp(1.8rem, 3vw, 2.35rem);
-    line-height: 1.15;
-    letter-spacing: -0.015em;
-  }
-
-  .page-services-list .best-fit-list {
-    margin-bottom: 0;
-  }
-
-  .page-services-list .best-fit-list li {
-    margin-bottom: 14px;
-    break-inside: avoid;
-  }
-
-  .page-services-list .best-fit-list li::before {
-    background: #2f5d50;
-  }
-
-  .page-services-list .services-cta {
-    position: relative;
-    z-index: 1;
-    margin-top: 34px;
-    padding: 34px 32px;
-    background: #2f5d50;
-    border-radius: 0 0 26px 26px;
-    color: #fff;
-  }
-
-  .page-services-list .services-cta::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 260px;
-    height: 100%;
-    background-image: url('{{ "images/graphics/services-structured-signal.svg" | relURL }}');
-    background-repeat: no-repeat;
-    background-size: 260px auto;
-    background-position: right center;
-    opacity: 0.08;
-    pointer-events: none;
-  }
-
-  .page-services-list .services-cta h2 {
-    position: relative;
-    z-index: 1;
-    margin-top: 0;
-    margin-bottom: 14px;
-    color: #fff;
-    font-size: 1.65rem;
-    line-height: 1.2;
-  }
-
-  .page-services-list .services-cta p {
-    position: relative;
-    z-index: 1;
+  .page-services-list .services-cta-copy {
     max-width: 760px;
-    margin-bottom: 22px;
-    color: rgba(255, 255, 255, 0.88);
-    line-height: 1.65;
   }
 
-  .page-services-list .services-cta-button {
-    position: relative;
-    z-index: 1;
-    display: inline-block;
-    padding: 12px 20px;
-    background: #fff;
-    color: #2f5d50;
+  .page-services-list .services-cta-panel h2,
+  .page-services-list .services-cta-panel p {
+    color: #ffffff;
+  }
+
+  .page-services-list .services-cta-panel h2 {
+    margin-bottom: 12px;
+    font-size: 2rem;
+  }
+
+  .page-services-list .services-cta-panel .services-eyebrow {
+    color: #b9d5d1;
+  }
+
+  .page-services-list .services-cta-panel .services-lead {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 1.08rem;
+  }
+
+  .page-services-list .services-cta-action {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    padding: 13px 18px;
+    color: #ffffff;
+    border: 1px solid #ffffff;
     border-radius: 999px;
+    font-size: 0.95rem;
     font-weight: 700;
+    line-height: 1.2;
     text-decoration: none;
+    transition: transform 160ms ease, background-color 160ms ease, color 160ms ease;
   }
 
-  .page-services-list .services-cta-button:hover {
-    color: #2f5d50;
-    opacity: 0.88;
+  .page-services-list .services-cta-action:hover {
+    color: var(--gc-ink);
+    background: #ffffff;
     text-decoration: none;
+    transform: translateY(-1px);
   }
 
-  @media (max-width: 991px) {
-    .page-services-list .services-hero::before {
-      right: -210px;
-      width: 680px;
-      opacity: 0.36;
-    }
-
-    .page-services-list .best-fit-layout {
+  @media (max-width: 1000px) {
+    .page-services-list .services-page-hero-grid,
+    .page-services-list .services-grid-aside,
+    .page-services-list .services-grid-2,
+    .page-services-list .services-grid-3 {
       grid-template-columns: 1fr;
-      gap: 24px;
     }
 
-    .page-services-list .best-fit-heading h2 {
-      max-width: 620px;
+    .page-services-list .services-side-nav {
+      position: relative;
+      top: 0;
+    }
+
+    .page-services-list .services-page-hero {
+      padding: 64px 0 34px;
+    }
+
+    .page-services-list h1 {
+      font-size: 2.75rem;
+      line-height: 1.05;
+    }
+
+    .page-services-list h2 {
+      font-size: 2rem;
+    }
+
+    .page-services-list .services-cta-panel {
+      grid-template-columns: 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .page-services-list .services-cta-action {
+      width: fit-content;
     }
   }
 
   @media (max-width: 767px) {
-    .header .container {
-      padding-left: 12px;
+    .page-services-list .container {
+      width: min(100% - 30px, 1180px);
     }
 
-    .header .logo {
-      margin-left: -6px;
+    .page-services-list .header .container {
+      min-height: 68px;
     }
 
-    .page-services-list .services-hero {
-      padding-top: 34px;
-      padding-bottom: 42px;
+    .page-services-list .logo img {
+      max-width: 220px;
+      height: 44px;
     }
 
-    .page-services-list .services-hero::before {
-      top: -20px;
-      right: -250px;
-      width: 540px;
-      height: 320px;
-      opacity: 0.18;
+    .page-services-list h1 {
+      font-size: 2.35rem;
     }
 
-    .page-services-list .services-intro-content h1 {
-      font-size: clamp(1.95rem, 9vw, 2.45rem);
-      line-height: 1.1;
-      margin-bottom: 20px;
+    .page-services-list .services-lead {
+      font-size: 1.06rem;
     }
 
-    .page-services-list .services-intro-content p {
-      padding: 20px 20px;
-      font-size: 1rem;
-      line-height: 1.58;
-    }
-
-    .page-services-list .services-section {
-      padding-top: 40px;
-      padding-bottom: 40px;
-    }
-
-    .page-services-list .services-section-heading,
-    .page-services-list .examples-section-heading {
+    .page-services-list .services-section-title {
       display: block;
-      margin-bottom: 24px;
     }
 
-    .page-services-list .services-section-heading::after,
-    .page-services-list .examples-section-heading::after {
-      width: 72px;
-      height: 2px;
-      margin-top: 14px;
-      background: rgba(47, 93, 80, 0.28);
+    .page-services-list .services-section-title p {
+      margin-top: 10px;
     }
 
-    .page-services-list .service-card {
-      padding: 28px 24px 26px;
-      margin-bottom: 16px;
+    .page-services-list .services-card,
+    .page-services-list .services-cta-panel {
+      padding: 24px 22px;
     }
 
-    .page-services-list .service-card::before {
-      left: 24px;
-      width: 52px;
+    .page-services-list .services-cta-action {
+      width: 100%;
+      white-space: normal;
+      text-align: center;
     }
 
-    .page-services-list .service-card:hover {
-      transform: none;
-      box-shadow: none;
+    .page-services-list .footer .footer-inner,
+    .page-services-list .footer .footer-actions {
+      align-items: flex-start;
     }
 
-    .page-services-list .examples-section {
-      padding-top: 44px;
-      padding-bottom: 48px;
-    }
-
-    .page-services-list .examples-intro {
-      margin-bottom: 24px;
-    }
-
-    .page-services-list .example-card {
-      padding: 28px 24px 26px;
-      margin-bottom: 16px;
-    }
-
-    .page-services-list .example-card::before {
-      left: 24px;
-      width: 52px;
-    }
-
-    .page-services-list .example-card:hover {
-      transform: none;
-      box-shadow: none;
-    }
-
-    .page-services-list .best-fit-section {
-      padding-top: 44px;
-      padding-bottom: 52px;
-    }
-
-    .page-services-list .best-fit-content {
-      padding: 30px 24px 0;
-    }
-
-    .page-services-list .best-fit-heading h2 {
-      font-size: clamp(1.65rem, 8vw, 2rem);
-    }
-
-    .page-services-list .services-cta {
-      margin-top: 28px;
-      padding: 30px 24px;
-      border-radius: 0 0 22px 22px;
-    }
-
-    .page-services-list .services-cta::before {
-      width: 220px;
-      background-size: 220px auto;
-      opacity: 0.07;
+    .page-services-list .footer ul {
+      flex-wrap: wrap;
+      justify-content: flex-start;
     }
   }
 </style>
 
-<div class="services-hero">
-  <div class="container">
-    <div class="services-intro-content">
-      {{ .Content }}
+<section class="services-page-hero" aria-labelledby="services-title">
+  <div class="container services-page-hero-grid">
+    <div>
+      <p class="services-eyebrow">{{ .Params.hero_eyebrow | default "Services" }}</p>
+      <h1 id="services-title">{{ .Params.hero_title | default .Title }}</h1>
+      <p class="services-lead services-page-kicker">{{ .Params.hero_lead | default .Params.description }}</p>
     </div>
+
+    <aside class="services-card">
+      <span class="services-tag">Best fit</span>
+      <p>Use this page to quickly determine whether the work you need is strategic, stakeholder-heavy, execution-oriented, and ready for focused advisory support.</p>
+    </aside>
   </div>
-</div>
+</section>
 
-<div class="services-main">
+<section class="services-page-body">
+  <div class="container services-grid-aside">
+    <aside class="services-side-nav">
+      <strong>On this page</strong>
+      <a href="#areas">Areas of support</a>
+      <a href="#formats">Engagement formats</a>
+      <a href="#examples">Examples of support</a>
+      <a href="#fit">Best fit</a>
+      <a href="#cta">Contact</a>
+    </aside>
 
-  <div class="services-section">
-    <div class="container">
+    <div>
+      <section class="services-section" id="areas" aria-labelledby="services-areas-title">
+        <div class="services-section-title">
+          <div>
+            <p class="services-eyebrow">Areas of support</p>
+            <h2 id="services-areas-title">Four ways the work usually takes shape.</h2>
+          </div>
+        </div>
 
-      <div class="services-section-heading">
-        <h2>Areas of support</h2>
-      </div>
-
-      <div class="row services-cards-row">
-
-        <div class="col-12 col-md-6 mb-4">
-          <div class="service-card">
+        <div class="services-grid-2">
+          <article class="services-card">
+            <span class="services-tag">01</span>
             <h3>Strategy &amp; Transformation</h3>
-            <p>
-              Support for emerging priorities, strategic planning efforts, new initiatives, and organizational shifts that need structure, synthesis, and a clear path forward.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 mb-4">
-          <div class="service-card">
+            <p>Support for emerging priorities, strategic planning efforts, new initiatives, and organizational shifts that need structure, synthesis, and a clear path forward.</p>
+          </article>
+          <article class="services-card">
+            <span class="services-tag">02</span>
             <h3>Digital Health &amp; AI Readiness</h3>
-            <p>
-              Helping healthcare teams translate AI and digital health questions into practical strategy, education, governance, and member-facing resources.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 mb-4">
-          <div class="service-card">
+            <p>Helping healthcare teams translate AI and digital health questions into practical strategy, education, governance, and member-facing resources.</p>
+          </article>
+          <article class="services-card">
+            <span class="services-tag">03</span>
             <h3>Stakeholder Alignment &amp; Execution</h3>
-            <p>
-              Designing the working structure, communications, decision points, and deliverables needed to move cross-functional or volunteer-driven work forward.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 mb-4">
-          <div class="service-card">
+            <p>Designing the working structure, communications, decision points, and deliverables needed to move cross-functional or volunteer-driven work forward.</p>
+          </article>
+          <article class="services-card">
+            <span class="services-tag">04</span>
             <h3>Grants &amp; Program Development</h3>
-            <p>
-              Turning early ideas into fundable concepts, partner narratives, program plans, and proposal-ready materials.
-            </p>
-          </div>
+            <p>Turning early ideas into fundable concepts, partner narratives, program plans, and proposal-ready materials.</p>
+          </article>
         </div>
+      </section>
 
-      </div>
-    </div>
-  </div>
+      <section class="services-section" id="formats" aria-labelledby="services-formats-title">
+        <p class="services-eyebrow">Engagement formats</p>
+        <h2 id="services-formats-title">Structured to match the priority.</h2>
+        <p class="services-lead">Engagements can be structured as focused projects, defined workstreams, or fractional strategic capacity.</p>
 
-  <div class="examples-section">
-    <div class="container">
-
-      <div class="examples-intro">
-        <div class="examples-section-heading">
-          <h2>Examples of support</h2>
+        <div class="services-grid-3">
+          <article class="services-card services-card-soft">
+            <h3>Focused projects</h3>
+            <p>For a specific strategic question, deliverable, grant concept, briefing, or initiative that needs definition and movement.</p>
+          </article>
+          <article class="services-card services-card-soft">
+            <h3>Defined workstreams</h3>
+            <p>For multi-step work that requires stakeholder input, synthesis, decision points, and practical materials.</p>
+          </article>
+          <article class="services-card services-card-soft">
+            <h3>Fractional strategic capacity</h3>
+            <p>For organizations that need senior strategic support without building a permanent internal role around the need.</p>
+          </article>
         </div>
+      </section>
 
-        <p>
-          Engagements can be structured as focused projects, defined workstreams, or fractional strategic capacity. Depending on the priority, support may include:
-        </p>
-      </div>
+      <section class="services-section" id="examples" aria-labelledby="services-examples-title">
+        <p class="services-eyebrow">Examples of support</p>
+        <h2 id="services-examples-title">Practical outputs, not just conversation.</h2>
 
-      <div class="row examples-cards-row">
-
-        <div class="col-12 col-md-4 mb-4">
-          <div class="example-card">
+        <div class="services-grid-3">
+          <article class="services-card">
             <h3>Strategy and executive materials</h3>
             <ul class="services-list">
               <li>Strategic briefs and recommendations</li>
               <li>Board and executive materials</li>
               <li>Program plans and implementation roadmaps</li>
             </ul>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-4 mb-4">
-          <div class="example-card">
+          </article>
+          <article class="services-card">
             <h3>Stakeholder and member-facing work</h3>
             <ul class="services-list">
               <li>Stakeholder convening support</li>
               <li>Working group design and synthesis</li>
               <li>Member-facing tools and frameworks</li>
             </ul>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-4 mb-4">
-          <div class="example-card">
+          </article>
+          <article class="services-card">
             <h3>Digital health, AI, and funding support</h3>
             <ul class="services-list">
               <li>AI or digital health education resources</li>
               <li>Grant concepts and proposal narratives</li>
               <li>Partner materials and funding concepts</li>
             </ul>
-          </div>
+          </article>
         </div>
+      </section>
 
-      </div>
+      <section class="services-section" id="fit" aria-labelledby="services-fit-title">
+        <p class="services-eyebrow">Best fit if your organization</p>
+        <h2 id="services-fit-title">When this advisory model is most useful.</h2>
+
+        <div class="services-card">
+          <ul class="services-list services-check-list">
+            <li>Has an important initiative that is new, cross-functional, or still taking shape</li>
+            <li>Needs to align staff, executives, board members, volunteers, partners, or external stakeholders</li>
+            <li>Is navigating AI, digital health, workforce, member value, education, or organizational change</li>
+            <li>Has a promising idea that needs structure, narrative, funding strategy, or implementation planning</li>
+            <li>Needs executive-ready materials, not just conversation</li>
+            <li>Wants an advisor who can synthesize ambiguity and produce usable deliverables</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="services-section" id="cta" aria-labelledby="services-cta-title">
+        <div class="services-cta-panel">
+          <div class="services-cta-copy">
+            <p class="services-eyebrow">Does this sound like your organization?</p>
+            <h2 id="services-cta-title">Let's clarify the problem and the next phase of work.</h2>
+            <p class="services-lead">A short conversation can identify where focused strategic support would help, what needs to be organized first, and what a useful engagement could produce.</p>
+          </div>
+          <a class="services-cta-action" href="{{ "contact/" | relURL }}">Contact Galanou Consulting</a>
+        </div>
+      </section>
     </div>
   </div>
-
-  <div class="best-fit-section">
-    <div class="container">
-      <div class="best-fit-card">
-
-        <div class="best-fit-content">
-          <div class="best-fit-layout">
-
-            <div class="best-fit-heading">
-              <h2>Best fit if your organization</h2>
-            </div>
-
-            <div>
-              <ul class="services-list best-fit-list">
-                <li>Has an important initiative that is new, cross-functional, or still taking shape</li>
-                <li>Needs to align staff, executives, board members, volunteers, partners, or external stakeholders</li>
-                <li>Is navigating AI, digital health, workforce, member value, education, or organizational change</li>
-                <li>Has a promising idea that needs structure, narrative, funding strategy, or implementation planning</li>
-                <li>Needs executive-ready materials, not just conversation</li>
-                <li>Wants an advisor who can synthesize ambiguity and produce usable deliverables</li>
-              </ul>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="services-cta">
-          <h2>Does this sound like your organization?</h2>
-          <p>
-            Let’s discuss where focused strategic support could help clarify the problem, organize the work, and move the next phase forward.
-          </p>
-          <a class="services-cta-button" href="/contact/">Contact Galanou Consulting</a>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-</div>
+</section>
 
 {{ end }}
 
