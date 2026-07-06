@@ -138,7 +138,7 @@ sections:
     link: "https://www.nursingworld.org/globalassets/organizational-programs/accreditation/2023-appfa-application-manual.pdf"
     link_text: "View manual"
 
-   - label: "Advisory"
+  - label: "Advisory"
     title: "School of Pharmacy Dean's Advisory Council"
     organization: "University of Kansas"
     year: "2024-Present"
