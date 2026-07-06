@@ -87,7 +87,8 @@
     align-items: start;
   }
 
-  .page-contact .contact-eyebrow {
+  .page-contact .contact-eyebrow,
+  .page-contact .contact-tag {
     margin: 0 0 18px;
     color: var(--gc-teal);
     font-size: 0.75rem;
@@ -95,6 +96,12 @@
     letter-spacing: 0.15em;
     line-height: 1.35;
     text-transform: uppercase;
+  }
+
+  .page-contact .contact-tag {
+    display: inline-flex;
+    margin-bottom: 16px;
+    letter-spacing: 0.09em;
   }
 
   .page-contact .contact-intro h1 {
@@ -134,29 +141,106 @@
     gap: 18px;
   }
 
-  .page-contact .contact-card {
+  .page-contact .contact-card,
+  .page-contact .schedule-card {
     position: relative;
     overflow: hidden;
-    padding: 34px 32px;
-    color: #ffffff;
-    background: var(--gc-ink);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 30px 28px;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(23, 32, 42, 0.10);
     border-radius: 8px;
-    box-shadow: 0 24px 70px rgba(23, 32, 42, 0.16);
+    box-shadow: 0 18px 48px rgba(23, 32, 42, 0.055);
   }
 
-  .page-contact .contact-card h2 {
-    margin-bottom: 24px;
+  .page-contact .contact-card::before,
+  .page-contact .schedule-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 28px;
+    width: 54px;
+    height: 3px;
+    background: var(--gc-teal);
+    border-radius: 0 0 4px 4px;
+  }
+
+  .page-contact .contact-card h2,
+  .page-contact .schedule-card h2 {
+    margin-bottom: 16px;
+    color: var(--gc-ink);
+    font-size: 1.65rem;
+    line-height: 1.12;
+  }
+
+  .page-contact .contact-card p,
+  .page-contact .schedule-card p {
+    margin-bottom: 18px;
+    color: #3d4854;
+  }
+
+  .page-contact .schedule-card {
+    background: rgba(223, 236, 234, 0.56);
+    border: 1px solid rgba(63, 119, 113, 0.24);
+    box-shadow: none;
+  }
+
+  .page-contact .schedule-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .page-contact .contact-button,
+  .page-contact .schedule-button,
+  .page-contact .secondary-button {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 18px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: transform 160ms ease, background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+  }
+
+  .page-contact .schedule-button,
+  .page-contact .contact-button {
     color: #ffffff;
-    font-size: 2rem;
-    line-height: 1.1;
+    background: var(--gc-ink);
+    border: 1px solid var(--gc-ink);
+  }
+
+  .page-contact .schedule-button:hover,
+  .page-contact .contact-button:hover {
+    color: var(--gc-ink);
+    background: transparent;
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+
+  .page-contact .secondary-button {
+    color: var(--gc-ink);
+    background: transparent;
+    border: 1px solid rgba(23, 32, 42, 0.22);
+  }
+
+  .page-contact .secondary-button:hover {
+    color: #ffffff;
+    background: var(--gc-ink);
+    border-color: var(--gc-ink);
+    text-decoration: none;
+    transform: translateY(-1px);
   }
 
   .page-contact .contact-detail {
-    margin-bottom: 20px;
-    padding-top: 18px;
-    color: rgba(255, 255, 255, 0.82);
-    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    margin-bottom: 18px;
+    padding-top: 16px;
+    color: #3d4854;
+    border-top: 1px solid rgba(23, 32, 42, 0.10);
     line-height: 1.55;
   }
 
@@ -168,7 +252,7 @@
   .page-contact .contact-detail strong {
     display: block;
     margin-bottom: 6px;
-    color: rgba(255, 255, 255, 0.68);
+    color: var(--gc-muted);
     font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 0.15em;
@@ -176,69 +260,24 @@
   }
 
   .page-contact .contact-detail a {
-    color: #ffffff;
+    color: var(--gc-ink);
     font-weight: 700;
     text-decoration: none;
   }
 
   .page-contact .contact-detail a:hover {
-    color: #ffffff;
-    opacity: 0.86;
+    color: var(--gc-teal);
     text-decoration: none;
-  }
-
-  .page-contact .contact-button {
-    display: inline-flex;
-    min-height: 48px;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    padding: 13px 18px;
-    color: var(--gc-ink);
-    background: #ffffff;
-    border: 1px solid #ffffff;
-    border-radius: 999px;
-    font-size: 0.95rem;
-    font-weight: 700;
-    line-height: 1.2;
-    text-decoration: none;
-    transition: transform 160ms ease, opacity 160ms ease;
-  }
-
-  .page-contact .contact-button:hover {
-    color: var(--gc-ink);
-    opacity: 0.88;
-    text-decoration: none;
-    transform: translateY(-1px);
   }
 
   .page-contact .contact-note {
-    margin-top: 20px;
+    margin-top: 18px;
     margin-bottom: 0;
-    padding-top: 20px;
-    color: rgba(255, 255, 255, 0.70);
-    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    padding-top: 18px;
+    color: var(--gc-muted);
+    border-top: 1px solid rgba(23, 32, 42, 0.10);
     font-size: 0.95rem;
     line-height: 1.5;
-  }
-
-  .page-contact .contact-context-card {
-    padding: 28px;
-    background: rgba(255, 255, 255, 0.78);
-    border: 1px solid rgba(23, 32, 42, 0.1);
-    border-radius: 8px;
-    box-shadow: 0 18px 48px rgba(23, 32, 42, 0.055);
-  }
-
-  .page-contact .contact-context-card h3 {
-    margin-bottom: 12px;
-    font-size: 1.28rem;
-    line-height: 1.18;
-  }
-
-  .page-contact .contact-context-card p {
-    margin-bottom: 0;
-    color: #3d4854;
   }
 
   @media (max-width: 1000px) {
@@ -257,8 +296,8 @@
       line-height: 1.05;
     }
 
-    .page-contact .contact-card {
-      max-width: 560px;
+    .page-contact .contact-side {
+      max-width: 620px;
     }
   }
 
@@ -297,15 +336,18 @@
     }
 
     .page-contact .contact-card,
-    .page-contact .contact-context-card {
+    .page-contact .schedule-card {
       padding: 24px 22px;
     }
 
-    .page-contact .contact-card h2 {
-      font-size: 1.65rem;
+    .page-contact .contact-card::before,
+    .page-contact .schedule-card::before {
+      left: 22px;
     }
 
-    .page-contact .contact-button {
+    .page-contact .schedule-button,
+    .page-contact .contact-button,
+    .page-contact .secondary-button {
       width: 100%;
       white-space: normal;
       text-align: center;
@@ -329,8 +371,28 @@
       </div>
 
       <aside class="contact-side">
+        {{ $calendly := .Site.Data.contact.calendly | default "" }}
+
+        <div class="schedule-card">
+          <span class="contact-tag">Next step</span>
+          <h2>Schedule a conversation.</h2>
+          <p>Choose a time for a brief introductory call to discuss the question, initiative, or organizational priority you are working through.</p>
+
+          <div class="schedule-actions">
+            {{ if $calendly }}
+              <a class="schedule-button" href="{{ $calendly }}" target="_blank" rel="noopener noreferrer">Schedule a call</a>
+            {{ else if .Site.Data.contact.contact_button_link }}
+              <a class="schedule-button" href="{{ .Site.Data.contact.contact_button_link }}">Email Galanou Consulting</a>
+            {{ end }}
+
+            {{ if and $calendly .Site.Data.contact.contact_button_link }}
+              <a class="secondary-button" href="{{ .Site.Data.contact.contact_button_link }}">Email instead</a>
+            {{ end }}
+          </div>
+        </div>
+
         <div class="contact-card">
-          <h2>Contact</h2>
+          <h2>Contact details</h2>
 
           {{ if .Site.Data.contact.email }}
             <div class="contact-detail">
@@ -360,16 +422,7 @@
             </div>
           {{ end }}
 
-          {{ if .Site.Data.contact.contact_button_link }}
-            <a class="contact-button" href="{{ .Site.Data.contact.contact_button_link }}">Email Galanou Consulting</a>
-          {{ end }}
-
-          <p class="contact-note">Conversations can begin by email or LinkedIn.</p>
-        </div>
-
-        <div class="contact-context-card">
-          <h3>A brief note is enough.</h3>
-          <p>Share the question, initiative, or organizational priority you are working through, and we can determine whether focused advisory support would be useful.</p>
+          <p class="contact-note">Conversations can begin by scheduled call, email, or LinkedIn.</p>
         </div>
       </aside>
 
