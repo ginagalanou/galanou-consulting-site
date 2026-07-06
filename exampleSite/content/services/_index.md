@@ -6,8 +6,8 @@ intro_image: "images/photos/general-office.png"
 intro_image_absolute: false
 intro_image_hide_on_mobile: false
 hero_eyebrow: "Services"
-hero_title: "Focused strategic support for complex initiatives."
-hero_lead: "Focused strategic support for healthcare organizations, professional societies, and mission-driven teams navigating complex priorities."
+hero_title: "Focused strategic support for complex priorities."
+hero_lead: "Advisory support for healthcare organizations, professional societies, and mission-driven teams navigating strategic, stakeholder-heavy, or execution-critical work."
 ---
 
 # Services
