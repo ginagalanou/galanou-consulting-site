@@ -135,6 +135,21 @@
     margin-bottom: 0;
   }
 
+  .page-services-list .services-hero-graphic {
+    margin-top: 22px;
+    padding: 16px;
+    background: rgba(255, 253, 248, 0.72);
+    border: 1px solid rgba(23, 32, 42, 0.10);
+    border-radius: 8px;
+  }
+
+  .page-services-list .services-hero-graphic img {
+    display: block;
+    width: 100%;
+    max-height: 190px;
+    object-fit: contain;
+    opacity: 0.88;
+  }
   .page-services-list .services-card {
     padding: 28px;
     background: rgba(255, 255, 255, 0.78);
@@ -417,6 +432,10 @@
 <aside class="services-card">
   <span class="services-tag">Best fit</span>
   <p>When an important priority needs stakeholder alignment, clearer structure, and a practical path from decision to execution.</p>
+
+  <div class="services-hero-graphic" aria-hidden="true">
+    <img src="{{ "images/graphics/blueprint-linework.svg" | relURL }}" alt="">
+  </div>
 </aside>
   </div>
 </section>
