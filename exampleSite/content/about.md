@@ -14,7 +14,7 @@ Her work focuses on the intersection of healthcare strategy, AI and digital tran
   <p>Strategic planning, board-facing materials, AI and digital health initiatives, national convenings, member-facing programs, working group design, and executive communications — including work for a 60,000-member healthcare association.</p>
 </div>
 
-Most recently, Dr. Galanou Luchen worked with the American Society of Health-System Pharmacists, a national professional association representing more than 60,000 pharmacy professionals. In that role, she supported work across digital health, data, AI strategy, strategic planning, professional education, stakeholder engagement, board and executive communications, and new program development.
+Most recently, Dr. Galanou Luchen worked with the American Society of Health-System Pharmacists, a national professional association representing more than 65,000 pharmacy professionals. In that role, she supported work across digital health, data, AI strategy, strategic planning, professional education, stakeholder engagement, board and executive communications, and new program development.
 
 That experience shaped her approach to helping professional organizations identify emerging priorities, align internal and external stakeholders, communicate value to members, and turn ideas into deliverables that last beyond a single meeting or report.
 
