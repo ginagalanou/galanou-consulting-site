@@ -5,7 +5,7 @@ layout: "about"
 image: "images/team/Galanou_Georgia.png"
 ---
 
-Dr. Georgia Galanou Luchen is a healthcare strategist and advisor with a pharmacy background and experience helping professional organizations move complex priorities from idea to execution.
+Dr. Georgia Galanou Luchen is a healthcare strategist and advisor with a pharmacy background and experience helping professional organizations move complex priorities from idea to execution. As a founder-led advisory practice, engagements are designed around direct senior involvement, clear deliverables, and practical movement from ambiguity to action
 
 Her work focuses on the intersection of healthcare strategy, AI and digital transformation, professional education, and organizational change. She helps organizations move from recognizing that an issue matters to defining what should happen next, who needs to be involved, and how the work will get done.
 
