@@ -116,9 +116,12 @@
 
   .page-thought-leadership .thought-featured {
     position: relative;
-    padding-top: 24px;
-    padding-bottom: 58px;
-    background: transparent;
+    margin-left: calc((100vw - 100%) / -2);
+    margin-right: calc((100vw - 100%) / -2);
+    padding: 58px calc((100vw - 100%) / 2);
+    background: linear-gradient(180deg, rgba(223, 236, 234, 0.72) 0%, rgba(247, 241, 232, 0.62) 100%);
+    border-top: 1px solid rgba(23, 32, 42, 0.08);
+    border-bottom: 1px solid rgba(23, 32, 42, 0.08);
   }
 
   .page-thought-leadership .thought-section-heading {
@@ -237,8 +240,8 @@
   .page-thought-leadership .thought-card-featured {
     min-height: 340px;
     color: var(--gc-ink);
-    background: rgba(255, 255, 255, 0.86);
-    border: 1px solid var(--gc-line);
+    background: rgba(255, 253, 248, 0.92);
+    border: 1px solid rgba(23, 32, 42, 0.10);
     box-shadow: 0 18px 48px rgba(23, 32, 42, 0.055);
   }
 
@@ -252,7 +255,7 @@
     left: 26px;
     width: 46px;
     height: 2px;
-    background: var(--gc-ink);
+    background: #3f7771;
   }
 
   .page-thought-leadership .thought-card > * {
