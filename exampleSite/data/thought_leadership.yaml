@@ -99,8 +99,8 @@ sections:
     year: "2025-Present"
     role: "External Advisory Board Member"
     description: "Advisory board service supporting European health data collaboration and digital health transformation."
-    link: ""
-    link_text: ""
+    link: "https://www.uphillhealth.com/i2x"
+    link_text: "View Initiative"
 
   - label: "Expert Forum"
     title: "Clinicians’ Forum on AI in Health & Medicine"
