@@ -7,7 +7,8 @@
   <title>{{ block "title" . }}{{ .Params.meta_title | default (printf "%s - %s" .Title .Site.Title) }}{{ end }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="{{ .Site.Params.favicon | relURL }}">
-
+  <link rel="canonical" href="{{ .Permalink }}">
+  
   {{ partial "google-fonts.html" . }}
 
   <!-- CSS-->
@@ -27,7 +28,14 @@
     <meta property="og:url" content="{{ .Permalink }}"/>
     {{ with .Params.image | default .Site.Params.seo.meta_og_image }}<meta property="og:image" content="{{ . | absURL }}"/>{{ end }}
     {{ with .Params.description }}<meta property="og:description" content="{{ . }}"/>{{ end }}
-    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="{{ .Params.meta_title | default .Title }}"/>
+    {{ with .Params.description }}
+    <meta name="twitter:description" content="{{ . }}"/>
+    {{ end }}
+    {{ with .Params.image | default .Site.Params.seo.meta_og_image }}
+    <meta name="twitter:image" content="{{ . | absURL }}"/>
+    {{ end }}
     {{ with .Site.Params.seo.meta_twitter_site }}<meta name="twitter:site" content="{{ . }}"/>{{ end }}
     {{ with .Site.Params.seo.meta_twitter_creator }}<meta name="twitter:creator" content="{{ . }}"/>{{ end }}
   {{ end }}
