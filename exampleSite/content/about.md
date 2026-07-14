@@ -20,7 +20,7 @@ That experience shaped her approach to helping professional organizations identi
 
 Now based in Greece, Dr. Galanou Luchen brings a Greek-American perspective to her work. Her background is rooted in U.S. health-system pharmacy and association leadership, but her current focus is broader. She helps healthcare organizations, professional societies, and mission-driven teams navigate transformation in ways that are clear, credible, and executable.
 
-Galanou Consulting provides focused strategic capacity for healthcare organizations, professional societies, and mission-driven teams that need help shaping priorities, aligning stakeholders, and turning ideas into credible plans, programs, and materials.
+Galanou Consulting provides focused strategic capacity for healthcare organizations, professional societies, and mission-driven teams that need help shaping priorities, aligning stakeholders, and turning ideas into credible plans, programs, and materials. As a founder-led practice, each engagement benefits from Dr. Galanou Luchen’s direct involvement in shaping the approach, working with stakeholders, and developing the final recommendations and materials.
 
 ## Areas of focus
 
