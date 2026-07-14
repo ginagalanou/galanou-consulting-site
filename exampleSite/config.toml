@@ -43,7 +43,7 @@ title = "Galanou Consulting"
   [params.seo]
     meta_twitter_site = ""
     meta_twitter_creator = ""
-    meta_og_image = "images/photos/executive-workspace.png"
+    meta_og_image = "images/social/galanou-consulting-social-preview.png"
 
   [params.services]
     summary_truncate = 120 # How many characters to include in the summary of the services before truncating
