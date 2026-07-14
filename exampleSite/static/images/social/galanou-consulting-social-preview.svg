@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200"
+     height="630"
+     viewBox="0 0 1200 630"
+     role="img"
+     aria-labelledby="title desc">
+
+  <title id="title">Galanou Consulting social preview</title>
+  <desc id="desc">A refined social preview card for Galanou Consulting.</desc>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#F6F2EA"/>
+  <rect x="835" width="365" height="630" fill="#EEE8DD"/>
+
+  <!-- Quiet editorial structure -->
+  <line
+    x1="86"
+    y1="86"
+    x2="86"
+    y2="544"
+    stroke="#B88745"
+    stroke-width="2"
+  />
+
+  <!-- Positioning eyebrow -->
+  <text
+    x="122"
+    y="112"
+    fill="#8F8465"
+    font-family="Inter, Arial, sans-serif"
+    font-size="17"
+    font-weight="600"
+    letter-spacing="2.8"
+  >
+    STRATEGIC ADVISORY FOR HEALTHCARE LEADERSHIP
+  </text>
+
+  <!-- Wordmark -->
+  <text
+    x="116"
+    y="284"
+    fill="#263B2D"
+    font-family="'EB Garamond', Georgia, serif"
+    font-size="96"
+    font-weight="400"
+    letter-spacing="-2"
+  >
+    Galanou
+  </text>
+
+  <text
+    x="116"
+    y="376"
+    fill="#263B2D"
+    font-family="'EB Garamond', Georgia, serif"
+    font-size="96"
+    font-weight="400"
+    letter-spacing="-2"
+  >
+    Consulting
+  </text>
+
+  <!-- Core promise -->
+  <text
+    x="122"
+    y="438"
+    fill="#53606A"
+    font-family="Inter, Arial, sans-serif"
+    font-size="29"
+    font-weight="500"
+  >
+    From blueprint to execution.
+  </text>
+
+  <!-- Website -->
+  <text
+    x="122"
+    y="534"
+    fill="#2F5D50"
+    font-family="Inter, Arial, sans-serif"
+    font-size="18"
+    font-weight="650"
+    letter-spacing="1.1"
+  >
+    GALANOUCONSULTING.COM
+  </text>
+
+  <!-- Monogram -->
+  <circle
+    cx="1015"
+    cy="315"
+    r="218"
+    fill="none"
+    stroke="#263B2D"
+    stroke-width="3.5"
+  />
+
+  <text
+    x="1007"
+    y="380"
+    text-anchor="middle"
+    fill="#263B2D"
+    font-family="'EB Garamond', Georgia, serif"
+    font-size="204"
+    font-weight="400"
+    letter-spacing="-10"
+  >
+    GC
+  </text>
+
+</svg>
