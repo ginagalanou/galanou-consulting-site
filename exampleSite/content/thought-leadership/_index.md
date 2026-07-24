@@ -1,4 +1,4 @@
 ---
-title: "Experience"
-description: "Selected publications, media, and professional contributions from Dr. Georgia Galanou Luchen’s prior roles and external service, reflecting the experience base that informs Galanou Consulting’s advisory work."
+title: "Leading Change."
+description: "Selected examples from prior roles, publications, media, and external service. These inform the advisory perspective behind Galanou Consulting and are not presented as Galanou Consulting client engagements."
 ---
