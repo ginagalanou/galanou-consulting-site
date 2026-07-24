@@ -49,11 +49,11 @@ title = "Galanou Consulting"
     summary_truncate = 120 # How many characters to include in the summary of the services before truncating
 
   [params.team]
-    summary_large_truncate = 120 # How many characters to include in the summary of the team bios (large layout) before truncating
+    summary_large_truncate = 120 # How many characters to include in the summary of the team bios (large layout)
 
   [params.footer]
     copyright_text = '© Galanou Consulting. All rights reserved.'
-    positioning = "Independent strategic advisory for healthcare organizations, professional societies, and mission-driven teams."
+    positioning = "Independent strategic advisor for healthcare organizations, professional societies, and mission-driven teams."
 
 [menu]
   # Main Menu
