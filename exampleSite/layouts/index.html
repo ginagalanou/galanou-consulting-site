@@ -410,9 +410,8 @@
   }
 </style>
 
-{{ $hasBooking := ne (.Site.Data.contact.booking_url | default "") "" }}
-{{ $bookingHref := cond $hasBooking .Site.Data.contact.booking_url ("/contact/#inquiry" | relURL) }}
-{{ $bookingText := cond $hasBooking "Book a Strategy Call" "Contact Galanou Consulting" }}
+{{ $bookingHref := "contact/" | relURL }}
+{{ $bookingText := "Start a conversation" }}
 
 <section class="home-hero" aria-labelledby="home-hero-title">
   <div class="container home-hero-grid">
@@ -464,7 +463,7 @@
   <div class="container">
     <div class="home-cta-panel">
       <div>
-        <p class="home-eyebrow">Ready to move forward?</p>
+        <p class="home-eyebrow">Start a conversation</p>
         <h2 id="home-contact-heading">Have a priority that is ready to move forward?</h2>
         <p class="lead">Let's discuss where focused strategic support could help clarify the problem, organize the work, and move the next phase forward.</p>
       </div>
