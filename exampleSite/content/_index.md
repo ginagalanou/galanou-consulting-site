@@ -1,7 +1,6 @@
 ---
-
-title: 'Homepage'
-meta_title: 'Strategic Advisor for Healthcare Leadership | Galanou Consulting'
+title: "Homepage"
+meta_title: "Independent Strategic Advisor | Galanou Consulting"
 description: "Turning complex priorities into action."
 image: "images/team/Galanou_Georgia.png"
 intro_image: "images/team/Galanou_Georgia.png"
@@ -9,6 +8,6 @@ intro_image_absolute: false
 intro_image_hide_on_mobile: true
 hero_eyebrow: "Independent strategic advisor"
 hero_title: "Turning complex priorities into action."
-hero_lead: "Dr. Georgia Galanou Luchen is a healthcare strategist with a pharmacy background and experience in transformation, digital health, AI, and professional education."
-hero_support: "She helps organizations define priorities, align stakeholders, and turn ideas into practical plans and executive-ready materials."
--------------------------------------------------------------------------------------------------------------------------------------------------
+hero_lead: "Dr. Georgia Galanou Luchen helps organizations clarify complex priorities, structure the work, and move strategic initiatives, programs, and products toward execution."
+hero_support: "Support ranges from focused advisory projects and grant strategy to defined workstreams and fractional product or program leadership."
+---
