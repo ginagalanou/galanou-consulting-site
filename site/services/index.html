@@ -287,31 +287,78 @@
     border-left: 3px solid var(--gc-teal);
   }
 
-  .page-services-list .services-page-hero .services-card {
+  .page-services-list .services-domains-triad {
     margin-top: 8px;
-    background: rgba(223, 236, 234, 0.56);
-    border-color: rgba(63, 119, 113, 0.24);
-    box-shadow: none;
-  }
-
-  .page-services-list .services-page-hero .services-card p {
-    margin-bottom: 0;
-  }
-
-  .page-services-list .services-hero-graphic {
-    margin-top: 22px;
-    padding: 16px;
-    background: rgba(255, 253, 248, 0.72);
-    border: 1px solid rgba(23, 32, 42, 0.10);
+    padding: 24px 24px 26px;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid var(--gc-border);
     border-radius: 8px;
+    box-shadow: var(--gc-shadow);
   }
 
-  .page-services-list .services-hero-graphic img {
-    display: block;
+  .page-services-list .services-domains-intro {
+    margin: 0;
+    color: #4a5661;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .page-services-list .services-triad-canvas {
+    position: relative;
+    min-height: 310px;
+    margin-top: 20px;
+  }
+
+  .page-services-list .services-triad-lines {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    max-height: 190px;
-    object-fit: contain;
-    opacity: 0.88;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+  }
+
+  .page-services-list .services-triad-lines line {
+    stroke: rgba(63, 119, 113, 0.26);
+    stroke-width: 1.5;
+  }
+
+  .page-services-list .services-triad-node {
+    position: absolute;
+    width: 205px;
+    padding: 12px 12px 0;
+    background: rgba(255, 253, 248, 0.94);
+  }
+
+  .page-services-list .services-triad-node h3 {
+    margin-bottom: 6px;
+    font-size: 0.98rem;
+    line-height: 1.22;
+  }
+
+  .page-services-list .services-triad-node p {
+    margin: 0;
+    color: #4a5661;
+    font-size: 0.88rem;
+    line-height: 1.42;
+  }
+
+  .page-services-list .services-triad-node-top {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .page-services-list .services-triad-node-left {
+    bottom: 0;
+    left: 0;
+  }
+
+  .page-services-list .services-triad-node-right {
+    right: 0;
+    bottom: 0;
+    text-align: right;
   }
   .page-services-list .services-card {
     padding: 28px;
@@ -324,23 +371,7 @@
   .page-services-list .services-card-soft {
     background: rgba(247, 241, 232, 0.78);
   }
-
-    .page-services-list .services-card-accent {
-    background: rgba(223, 236, 234, 0.56);
-    border-color: rgba(63, 119, 113, 0.24);
-    box-shadow: none;
-  }
-
-  .page-services-list .services-card-accent p:last-child {
-    margin-bottom: 0;
-  }
-
-.page-services-list .services-expertise-card {
-  margin-top: 0;
-  margin-bottom: 42px;
-}
-  
-  .page-services-list .services-page-body {
+.page-services-list .services-page-body {
     padding: 24px 0 58px;
   }
 
@@ -538,6 +569,14 @@
       grid-template-columns: 1fr;
     }
 
+    .page-services-list .services-domains-triad {
+      max-width: 620px;
+    }
+
+    .page-services-list .services-triad-node {
+      width: 210px;
+    }
+
     .page-services-list .services-side-nav {
       position: relative;
       top: 0;
@@ -571,11 +610,7 @@
     .page-services-list .container {
       width: min(100% - 30px, 1180px);
     }
-
-.page-services-list .services-expertise-card {
-  margin-bottom: 30px;
-} 
-    .page-services-list .header .container {
+.page-services-list .header .container {
       min-height: 68px;
     }
 
@@ -594,6 +629,39 @@
 
     .page-services-list .services-lead {
       font-size: 1.06rem;
+    }
+
+    .page-services-list .services-domains-triad {
+      padding: 24px 22px;
+    }
+
+    .page-services-list .services-triad-canvas {
+      display: grid;
+      min-height: auto;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .page-services-list .services-triad-lines {
+      display: none;
+    }
+
+    .page-services-list .services-triad-node {
+      position: static;
+      width: auto;
+      padding: 14px 0 0;
+      background: transparent;
+      border-top: 1px solid rgba(23, 32, 42, 0.10);
+      text-align: left;
+    }
+
+    .page-services-list .services-triad-node:first-of-type {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .page-services-list .services-triad-node-top {
+      transform: none;
     }
 
     .page-services-list .services-section-title {
@@ -635,12 +703,31 @@
       <p class="services-lead services-page-kicker">Supporting health start-ups, professional associations, and mission-driven teams to bridge the gap between clinical reality, emerging technology, and operational execution.</p>
     </div>
 
-<aside class="services-card">
-  <span class="services-tag">Best fit</span>
-  <p>For organizations navigating a complex 0-to-1 launch, securing funding for a new initiative, or needing to translate dense clinical realities into clear, authoritative messaging.</p>
+<aside class="services-domains-triad" id="domains" aria-labelledby="services-domains-title">
+  <span class="services-tag" id="services-domains-title">Core Domains</span>
+  <p class="services-domains-intro">The work most often sits across three linked domains.</p>
 
-  <div class="services-hero-graphic" aria-hidden="true">
-    <img src="/images/graphics/blueprint-linework.svg" alt="">
+  <div class="services-triad-canvas">
+    <svg class="services-triad-lines" viewBox="0 0 600 310" aria-hidden="true" focusable="false">
+      <line x1="300" y1="58" x2="118" y2="252"></line>
+      <line x1="300" y1="58" x2="482" y2="252"></line>
+      <line x1="118" y1="252" x2="482" y2="252"></line>
+    </svg>
+
+    <article class="services-triad-node services-triad-node-top">
+      <h3>Digital Health &amp; Clinical Tech</h3>
+      <p>Product roadmaps, patient journeys, and clinical translation.</p>
+    </article>
+
+    <article class="services-triad-node services-triad-node-left">
+      <h3>Emerging Issues &amp; Policy</h3>
+      <p>AI, evolving care models, and strategic ambiguity.</p>
+    </article>
+
+    <article class="services-triad-node services-triad-node-right">
+      <h3>Professional Associations</h3>
+      <p>Membership value, workforce education, and public health grants.</p>
+    </article>
   </div>
 </aside>
   </div>
@@ -652,31 +739,11 @@
       <strong>On this page</strong>
       <a href="#areas">Areas of support</a>
       <a href="#formats">Engagement formats</a>
-      <a href="#examples">Core domains</a>
+      <a href="#domains">Core domains</a>
       <a href="#speaking">Speaking &amp; workshops</a>
       <a href="#cta">Contact</a>
     </aside>
 
-    <div>
-      <div class="services-card services-card-accent services-expertise-card" id="examples">
-        <span class="services-tag">Core Domains</span>
-
-        <p>
-          <strong>Digital Health &amp; Clinical Tech:</strong>
-          Guiding product roadmaps, mapping patient journeys, and aligning technology with clinical realities.
-        </p>
-
-        <p>
-          <strong>Emerging Issues &amp; Policy:</strong>
-          Structuring frameworks for complex shifts, including the implications of AI on patient care, humanitarian health initiatives, and evolving clinical models.
-        </p>
-
-        <p>
-          <strong>Professional Associations:</strong>
-          Driving membership value, workforce education, and public health grants.
-        </p>
-      </div>
-    
     <div>
       <section class="services-section" id="areas" aria-labelledby="services-areas-title">
         <div class="services-section-title">
