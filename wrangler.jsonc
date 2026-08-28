@@ -1,14 +1,10 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
   "name": "galanou-consulting-site",
   "compatibility_date": "2026-05-19",
+  "assets": {
+    "directory": "site"
+  },
   "observability": {
     "enabled": true
-  },
-  "assets": {
-    "directory": "layouts"
-  },
-  "compatibility_flags": [
-    "nodejs_compat"
-  ]
+  }
 }
