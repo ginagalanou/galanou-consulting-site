@@ -491,7 +491,28 @@
     transform: translateY(-1px);
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1199px) {
+    .page-about h1 {
+      font-size: 4rem;
+      line-height: 1.02;
+    }
+
+    .page-about h2 {
+      font-size: 2.45rem;
+    }
+
+    .page-about .about-hero-grid {
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.78fr);
+      gap: 36px;
+    }
+
+    .page-about .about-grid-aside {
+      grid-template-columns: 240px minmax(0, 1fr);
+      gap: 28px;
+    }
+  }
+
+  @media (max-width: 1100px) {
     .page-about .about-hero-grid,
     .page-about .about-grid-aside,
     .page-about .about-grid-2,

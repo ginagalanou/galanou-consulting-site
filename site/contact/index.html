@@ -263,7 +263,7 @@
   .page-contact .contact-intro h1 {
     max-width: 760px;
     margin-bottom: 24px;
-    font-size: 4.25rem;
+    font-size: 4.85rem;
     line-height: 0.98;
   }
 
@@ -433,7 +433,19 @@
     line-height: 1.5;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1199px) {
+    .page-contact .contact-grid {
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.78fr);
+      gap: 40px;
+    }
+
+    .page-contact .contact-intro h1 {
+      font-size: 4rem;
+      line-height: 1.02;
+    }
+  }
+
+  @media (max-width: 1100px) {
     .page-contact .contact-page {
       padding-top: 64px;
       padding-bottom: 58px;
@@ -445,8 +457,8 @@
     }
 
     .page-contact .contact-intro h1 {
-      font-size: 2.75rem;
-      line-height: 1.05;
+      font-size: 3.15rem;
+      line-height: 1.02;
     }
 
     .page-contact .contact-side {
@@ -479,7 +491,8 @@
     }
 
     .page-contact .contact-intro h1 {
-      font-size: 2.35rem;
+      font-size: 2.55rem;
+      line-height: 1.05;
     }
 
     .page-contact .contact-intro .content,
