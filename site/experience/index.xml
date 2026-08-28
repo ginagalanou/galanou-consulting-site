@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Leading Change. on Galanou Consulting</title>
-		<link>https://galanouconsulting.com/thought-leadership/</link>
+		<link>https://galanouconsulting.com/experience/</link>
 		<description>Recent content in Leading Change. on Galanou Consulting</description>
 		<language>en-us</language>
 		
 		
 		
 		
-			<atom:link href="https://galanouconsulting.com/thought-leadership/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://galanouconsulting.com/experience/index.xml" rel="self" type="application/rss+xml" />
 	</channel>
 </rss>

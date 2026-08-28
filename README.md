@@ -11,8 +11,7 @@ site/
   index.html                  Homepage
   about/index.html            About page
   services/index.html         Services page
-  thought-leadership/index.html
-                              Experience / thought leadership page
+  experience/index.html       Experience page
   contact/index.html          Contact page
   404.html                    Netlify 404 page
   _redirects                  Netlify redirects and 404 fallback
@@ -34,7 +33,7 @@ Edit the files in `site/` directly. Keep public URLs stable where possible:
 - `/`
 - `/about/`
 - `/services/`
-- `/thought-leadership/`
+- `/experience/`
 - `/contact/`
 
 If an old URL is removed, add a redirect in `site/_redirects`.
@@ -53,7 +52,7 @@ Then open `http://localhost:8080/`.
 
 Before publishing changes, verify:
 
-- primary routes load: `/`, `/about/`, `/services/`, `/thought-leadership/`, `/contact/`, `/404.html`
+- primary routes load: `/`, `/about/`, `/services/`, `/experience/`, `/contact/`, `/404.html`
 - CSS and JavaScript load from `/css/style.css` and `/js/scripts.js`
 - images referenced by pages exist under `site/images/`
 - mobile navigation opens and closes
