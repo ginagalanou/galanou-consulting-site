@@ -595,10 +595,172 @@
     .page-home .home-cta-panel {
       padding: 24px 22px;
     }
+
+    <style>
+  .page-home .home-proof-roller {
+    padding: 10px 0 58px;
+  }
+
+  .page-home .home-proof-shell {
+    padding: 34px 34px 30px;
+    background: rgba(255, 255, 255, 0.76);
+    border: 1px solid rgba(23, 32, 42, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 18px 48px rgba(23, 32, 42, 0.055);
+  }
+
+  .page-home .home-proof-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 24px;
+    align-items: end;
+    margin-bottom: 24px;
+  }
+
+  .page-home .home-proof-header h2 {
+    margin-bottom: 0;
+    font-size: 2.1rem;
+    line-height: 1.08;
+  }
+
+  .page-home .home-proof-header p {
+    margin-bottom: 0;
+    max-width: 620px;
+  }
+
+  .page-home .home-proof-window {
+    position: relative;
+    min-height: 190px;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(247, 241, 232, 0.72) 0%, rgba(223, 236, 234, 0.52) 100%);
+    border: 1px solid rgba(23, 32, 42, 0.08);
+    border-radius: 8px;
+  }
+
+  .page-home .home-proof-track {
+    transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+
+  .page-home .home-proof-item {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 28px;
+    align-items: center;
+    min-height: 190px;
+    padding: 26px 30px;
+  }
+
+  .page-home .home-proof-number {
+    color: var(--gc-ink);
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+  }
+
+  .page-home .home-proof-label {
+    color: #2f3b46;
+    font-size: 1.32rem;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+
+  .page-home .home-proof-subtle {
+    display: block;
+    margin-top: 8px;
+    color: var(--gc-muted);
+    font-size: 0.92rem;
+    line-height: 1.45;
+    font-weight: 400;
+  }
+
+  .page-home .home-proof-dots {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 18px;
+  }
+
+  .page-home .home-proof-dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(23, 32, 42, 0.18);
+    border-radius: 999px;
+    transition: transform 180ms ease, background-color 180ms ease;
+  }
+
+  .page-home .home-proof-dot.active {
+    background: var(--gc-teal);
+    transform: scale(1.15);
+  }
+
+  @media (max-width: 1100px) {
+    .page-home .home-proof-header {
+      grid-template-columns: 1fr;
+    }
+
+    .page-home .home-proof-header h2 {
+      font-size: 1.9rem;
+    }
+
+    .page-home .home-proof-item {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      align-content: center;
+    }
+
+    .page-home .home-proof-number {
+      font-size: 3rem;
+    }
+
+    .page-home .home-proof-label {
+      font-size: 1.15rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .page-home .home-proof-roller {
+      padding: 4px 0 42px;
+    }
+
+    .page-home .home-proof-shell {
+      padding: 24px 22px 22px;
+    }
+
+    .page-home .home-proof-header h2 {
+      font-size: 1.65rem;
+    }
+
+    .page-home .home-proof-window {
+      min-height: 210px;
+    }
+
+    .page-home .home-proof-item {
+      min-height: 210px;
+      padding: 22px 20px;
+    }
+
+    .page-home .home-proof-number {
+      font-size: 2.6rem;
+    }
+
+    .page-home .home-proof-label {
+      font-size: 1.04rem;
+      line-height: 1.35;
+    }
+
+    .page-home .home-proof-subtle {
+      font-size: 0.88rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .page-home .home-proof-track {
+      transition: none;
+    }
   }
 </style>
-
-
 
 
 <section class="home-hero" aria-labelledby="home-hero-title">
@@ -641,6 +803,63 @@
     <div class="home-scan-item">
       <span class="home-tag">Fractional Leadership</span>
       <p>Providing senior thought partnership and operational momentum to turn abstract goals into executed realities.</p>
+    </div>
+  </div>
+</section>
+
+    <section class="home-proof-roller" aria-labelledby="home-proof-title">
+  <div class="container">
+    <div class="home-proof-shell">
+      <div class="home-proof-header">
+        <div>
+          <p class="home-eyebrow">At a glance</p>
+          <h2 id="home-proof-title">A snapshot of scale, context, and perspective.</h2>
+        </div>
+        <p class="micro">A rotating view of the breadth behind the advisory work.</p>
+      </div>
+
+      <div class="home-proof-window" aria-live="polite">
+        <div class="home-proof-track" id="homeProofTrack">
+          <article class="home-proof-item">
+            <div class="home-proof-number">65K+</div>
+            <div class="home-proof-label">
+              Member enterprise strategic planning
+              <span class="home-proof-subtle">Experience supporting strategy at national organizational scale.</span>
+            </div>
+          </article>
+
+          <article class="home-proof-item">
+            <div class="home-proof-number">$60M+</div>
+            <div class="home-proof-label">
+              Executive performance context
+              <span class="home-proof-subtle">Experience translating priorities and performance into leadership and board-level decision support.</span>
+            </div>
+          </article>
+
+          <article class="home-proof-item">
+            <div class="home-proof-number">1,600+</div>
+            <div class="home-proof-label">
+              National AI summit convening
+              <span class="home-proof-subtle">Leadership behind large-scale education and cross-stakeholder engagement.</span>
+            </div>
+          </article>
+
+          <article class="home-proof-item">
+            <div class="home-proof-number">PharmD</div>
+            <div class="home-proof-label">
+              Clinical foundation
+              <span class="home-proof-subtle">A healthcare strategy perspective grounded in clinical training, patient care, and real-world implementation.</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="home-proof-dots" id="homeProofDots" aria-hidden="true">
+        <span class="home-proof-dot active"></span>
+        <span class="home-proof-dot"></span>
+        <span class="home-proof-dot"></span>
+        <span class="home-proof-dot"></span>
+      </div>
     </div>
   </div>
 </section>
@@ -761,7 +980,62 @@
   <script type="text/javascript" src="/js/scripts.js"></script>
 
   
+<script>
+  (function () {
+    const track = document.getElementById("homeProofTrack");
+    const dotsWrap = document.getElementById("homeProofDots");
 
+    if (!track || !dotsWrap) return;
+
+    const items = Array.from(track.children);
+    const dots = Array.from(dotsWrap.children);
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let currentIndex = 0;
+    let intervalId = null;
+
+    function getItemHeight() {
+      return items[0].offsetHeight;
+    }
+
+    function updateDots(index) {
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
+    }
+
+    function goToSlide(index) {
+      const itemHeight = getItemHeight();
+      track.style.transform = "translateY(-" + (itemHeight * index) + "px)";
+      updateDots(index);
+    }
+
+    function startRotation() {
+      if (reduceMotion) return;
+      intervalId = setInterval(function () {
+        currentIndex = (currentIndex + 1) % items.length;
+        goToSlide(currentIndex);
+      }, 3500);
+    }
+
+    function stopRotation() {
+      if (intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+      }
+    }
+
+    window.addEventListener("resize", function () {
+      goToSlide(currentIndex);
+    });
+
+    track.parentElement.addEventListener("mouseenter", stopRotation);
+    track.parentElement.addEventListener("mouseleave", startRotation);
+
+    goToSlide(0);
+    startRotation();
+  })();
+</script>
   
 
 </body>
