@@ -370,6 +370,62 @@
     margin-bottom: 0;
   }
 
+  .page-about .about-bio-card {
+    padding: 36px 40px;
+  }
+
+  .page-about .about-bio-intro {
+    margin-bottom: 32px;
+    color: #384450;
+    font-size: 1.08rem;
+    line-height: 1.65;
+  }
+
+  .page-about .about-bio-section {
+    padding: 26px 0 22px;
+    border-top: 1px solid rgba(23, 32, 42, 0.1);
+  }
+
+  .page-about .about-bio-section:last-child {
+    padding-bottom: 0;
+  }
+
+  .page-about .about-bio-section h3 {
+    margin-bottom: 10px;
+    color: var(--gc-ink);
+    font-size: 1.12rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .page-about .about-bio-section > p {
+    margin-bottom: 14px;
+  }
+
+  .page-about .about-bio-list {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  .page-about .about-bio-list li {
+    margin-bottom: 10px;
+    padding-left: 4px;
+    color: #3d4854;
+    line-height: 1.58;
+  }
+
+  .page-about .about-bio-list li:last-child {
+    margin-bottom: 0;
+  }
+
+  .page-about .about-bio-list li::marker {
+    color: var(--gc-teal);
+  }
+
+  .page-about .about-bio-location {
+    margin-bottom: 0;
+  }
+
   .page-about .about-card-soft {
     background: rgba(247, 241, 232, 0.78);
   }
@@ -529,6 +585,14 @@
       padding: 24px 22px;
     }
 
+    .page-about .about-bio-card {
+      padding: 26px 22px;
+    }
+
+    .page-about .about-bio-intro {
+      font-size: 1rem;
+    }
+
     .page-about .about-cta-action {
       width: 100%;
       white-space: normal;
@@ -576,34 +640,46 @@
 
     <div>
       <section class="about-section" id="background" aria-label="Background">
-        <div class="about-card">
-          Dr. Georgia Galanou Luchen is a clinical strategist and Doctor of Pharmacy (Pharm.D.) specializing in digital health, AI policy, and professional association strategy. She partners with healthcare leaders to bridge the critical gap between clinical practice, emerging technology, and measurable execution.</p>
+        <div class="about-card about-bio-card">
+          <p class="about-bio-intro">
+            Dr. Georgia Galanou Luchen is a clinical strategist and Doctor of Pharmacy (Pharm.D.) specializing in digital health, AI policy, and professional association strategy. She partners with healthcare leaders to bridge the critical gap between clinical practice, emerging technology, and measurable execution.
+          </p>
 
-          <p><strong>National Leadership at Scale (65,000+ members)</strong><br>
-          During her tenure as Director of Digital Health & Data for the American Society of Health-System Pharmacists (ASHP), she partnered with the COO and Senior Leadership Team to translate rapid market shifts into enterprise execution:</p>
-          <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
-            <li style="margin-bottom: 0.5rem;">Built the institutional response to AI and digital health transformation, creating an executive roadmap and cross-functional operating model.</li>
-            <li style="margin-bottom: 0.5rem;">Designed and launched the inaugural AI in Pharmacy Summit, convening 1,600+ registrants and establishing a new digital health growth platform.</li>
-            <li style="margin-bottom: 0.5rem;">Operationalized performance management for a $60M+ organization, distilling complex goals into board-ready executive summaries.</li>
-          </ul>
+          <div class="about-bio-section">
+            <h3>National Leadership at Scale (65,000+ members)</h3>
+            <p>During her tenure as Director of Digital Health &amp; Data for the American Society of Health-System Pharmacists (ASHP), she partnered with the COO and Senior Leadership Team to translate rapid market shifts into enterprise execution:</p>
 
-          <p><strong>Fractional Product Leadership & Advisory</strong><br>
-          She helps organizations navigate the critical phase between concept and execution, serving as a clinical translator and fractional leader:</p>
-          <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
-            <li style="margin-bottom: 0.5rem;"><strong>Clinical-to-Product Translation:</strong> Translating partner strategy, clinical needs, and business objectives into defined product roadmaps and user journeys.</li>
-            <li style="margin-bottom: 0.5rem;"><strong>Lean Delivery & Alignment:</strong> Leading cross-functional teams through discovery, scoping, and iteration, ensuring product decisions reflect user value, clinical feasibility, and organizational goals.</li>
-            <li style="margin-bottom: 0.5rem;"><strong>Governance & Implementation:</strong> Advising leaders on building the governance, communication, and implementation structures necessary to move AI, digital health, and growth initiatives from abstract ideas to launched realities.</li>
-          </ul>
+            <ul class="about-bio-list">
+              <li>Built the institutional response to AI and digital health transformation, creating an executive roadmap and cross-functional operating model.</li>
+              <li>Designed and launched the inaugural AI in Pharmacy Summit, convening 1,600+ registrants and establishing a new digital health growth platform.</li>
+              <li>Operationalized performance management for a $60M+ organization, distilling complex goals into board-ready executive summaries.</li>
+            </ul>
+          </div>
 
-          <p><strong>Thought Leadership & Global Perspective</strong><br>
-          Her work extends beyond internal leadership to shape the broader healthcare dialogue:</p>
-          <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
-            <li style="margin-bottom: 0.5rem;"><strong>Advisory:</strong> Member of the NAM Forum on Clinicians & AI and the i2x-Connecting EU Health Data External Advisory Board.</li>
-            <li style="margin-bottom: 0.5rem;"><strong>Publications:</strong> Author of peer-reviewed literature and textbook chapters on digital health transformation.</li>
-          </ul>
+          <div class="about-bio-section">
+            <h3>Fractional Product Leadership &amp; Advisory</h3>
+            <p>She helps organizations navigate the critical phase between concept and execution, serving as a clinical translator and fractional leader:</p>
 
-          <p style="margin-bottom: 0;"><strong>Operating globally from Athens</strong><br>
-          Today, she is based in Athens, Greece, working seamlessly across US and EU time zones. Pairing her US clinical foundation with a nuanced understanding of international healthcare dynamics, she partners with health-tech startups and mission-driven teams across continents.</p>
+            <ul class="about-bio-list">
+              <li><strong>Clinical-to-Product Translation:</strong> Translating partner strategy, clinical needs, and business objectives into defined product roadmaps and user journeys.</li>
+              <li><strong>Lean Delivery &amp; Alignment:</strong> Leading cross-functional teams through discovery, scoping, and iteration, ensuring product decisions reflect user value, clinical feasibility, and organizational goals.</li>
+              <li><strong>Governance &amp; Implementation:</strong> Advising leaders on building the governance, communication, and implementation structures necessary to move AI, digital health, and growth initiatives from abstract ideas to launched realities.</li>
+            </ul>
+          </div>
+
+          <div class="about-bio-section">
+            <h3>Thought Leadership &amp; Global Perspective</h3>
+
+            <ul class="about-bio-list">
+              <li><strong>Advisory:</strong> Member of the NAM Forum on Clinicians &amp; AI and the i2x-Connecting EU Health Data External Advisory Board.</li>
+              <li><strong>Publications:</strong> Author of peer-reviewed literature and textbook chapters on digital health transformation.</li>
+            </ul>
+          </div>
+
+          <div class="about-bio-section">
+            <h3>Operating globally from Athens</h3>
+            <p class="about-bio-location">Today, she is based in Athens, Greece, working seamlessly across US and EU time zones. Pairing her US clinical foundation with a nuanced understanding of international healthcare dynamics, she partners with health-tech startups and mission-driven teams across continents.</p>
+          </div>
         </div>
       </section>
 
