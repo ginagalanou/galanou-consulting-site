@@ -282,7 +282,7 @@
     margin-left: calc((100vw - 100%) / -2);
     margin-right: calc((100vw - 100%) / -2);
     padding: 58px calc((100vw - 100%) / 2);
-    background: linear-gradient(180deg, rgba(223, 236, 234, 0.72) 0%, rgba(247, 241, 232, 0.62) 100%);
+    background: rgba(223, 236, 234, 0.56);
     border-top: 1px solid rgba(23, 32, 42, 0.08);
     border-bottom: 1px solid rgba(23, 32, 42, 0.08);
   }
@@ -338,6 +338,36 @@
     gap: 18px;
   }
 
+.page-experience .experience-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid rgba(63, 119, 113, 0.20);
+  border-bottom: 1px solid rgba(63, 119, 113, 0.20);
+}
+
+.page-experience .experience-impact-item {
+  padding: 24px 24px 22px;
+  border-left: 1px solid rgba(63, 119, 113, 0.20);
+}
+
+.page-experience .experience-impact-item:first-child {
+  border-left: 0;
+}
+
+.page-experience .experience-impact-item h3 {
+  margin: 0 0 12px;
+  color: var(--gc-ink);
+  font-size: 1.16rem;
+  line-height: 1.25;
+}
+
+.page-experience .experience-impact-item p {
+  margin: 0;
+  color: #45525d;
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+  
   .page-experience .experience-card-rail {
     display: grid;
     grid-auto-flow: column;
@@ -698,6 +728,25 @@
       width: min(100% - 30px, 1180px);
     }
 
+    .page-experience .experience-impact-grid {
+  grid-template-columns: 1fr;
+}
+
+.page-experience .experience-impact-item {
+  padding: 20px 0;
+  border-left: 0;
+  border-top: 1px solid rgba(63, 119, 113, 0.20);
+}
+
+.page-experience .experience-impact-item:first-child {
+  border-top: 0;
+}
+
+.page-experience .experience-impact-item:nth-child(3),
+.page-experience .experience-impact-item:nth-child(4) {
+  border-left: 0;
+}
+    
     .page-experience .header .container {
       min-height: 68px;
       padding-left: 12px;
@@ -798,74 +847,46 @@
         <div class="experience-eyebrow">Publications, media &amp; advisory contributions</div>
         <h1>Leading Change.</h1>
         
-          <p>Selected examples from prior roles, publications, media, and external service. These inform the advisory perspective behind Galanou Consulting and are not presented as Galanou Consulting client engagements.</p>
+         <p>Selected examples from leadership roles, advisory work, publications, media, and external service. Together, they reflect the experience and perspective behind Galanou Consulting.</p>
         
       </div>
     </div>
   </div>
 
-  
-    <section class="experience-featured">
-      <div class="container">
-        <div class="experience-section-heading">
-          <div class="experience-heading-copy">
-            <h2>Featured Work</h2>
-            
-              <p>Representative examples from the broader body of work.</p>
-            
-          </div>
-          <div class="experience-scroll-note">Scroll to explore</div>
-        </div>
-
-        <div class="experience-featured-rail" aria-label="Featured experience">
-          
-            <article class="experience-card experience-card-featured">
-              <div class="experience-card-label">Featured Publication</div>
-              <h3>Pharmacy Futures: Summit on Artificial Intelligence in Pharmacy Practice</h3>
-              <div class="experience-card-meta">
-                <span>American Journal of Health-System Pharmacy</span>
-                <span>2024 | Primary Author</span>
-              </div>
-              <p class="experience-card-description">National proceedings article outlining priorities, risks, and opportunities for AI in pharmacy practice.</p>
-              
-              
-                <a class="experience-card-link" href="https://doi.org/10.1093/ajhp/zxae279" target="_blank" rel="noopener noreferrer">View publication</a>
-              
-            </article>
-          
-            <article class="experience-card experience-card-featured">
-              <div class="experience-card-label">Expert Forum</div>
-              <h3>Clinicians’ Forum on AI in Health &amp; Medicine</h3>
-              <div class="experience-card-meta">
-                <span>National Academy of Medicine</span>
-                <span>2025 | Former Organizational Representative</span>
-              </div>
-              <p class="experience-card-description">Forum engaging health professional societies, associations, AI developers, patients, and stakeholders on responsible AI use, clinician-developer collaboration, and health system transformation.</p>
-              
-              
-                <a class="experience-card-link" href="https://nam.edu/our-work/programs/leadership-consortium/evidence-digital-health/clinicians-forum-on-ai-in-health-medicine/" target="_blank" rel="noopener noreferrer">View</a>
-              
-            </article>
-          
-            <article class="experience-card experience-card-featured">
-              <div class="experience-card-label">Featured Media</div>
-              <h3>Q&amp;A: AI is playing a pivotal role in health system pharmacy</h3>
-              <div class="experience-card-meta">
-                <span>MobiHealthNews</span>
-                <span>2025 | Interviewee</span>
-              </div>
-              <p class="experience-card-description">Interview on AI readiness, governance, and professional engagement in health-system pharmacy.</p>
-              
-              
-                <a class="experience-card-link" href="https://www.mobihealthnews.com/news/qa-ai-playing-pivotal-role-health-system-pharmacy" target="_blank" rel="noopener noreferrer">Read feature</a>
-              
-            </article>
-          
-        </div>
+<section class="experience-featured">
+  <div class="container">
+    <div class="experience-section-heading">
+      <div class="experience-heading-copy">
+        <h2>Selected Leadership &amp; Impact</h2>
+        <p>Representative examples of enterprise, portfolio, growth, and product leadership.</p>
       </div>
-    </section>
-  
+    </div>
 
+    <div class="experience-impact-grid" aria-label="Selected leadership and impact">
+
+      <article class="experience-impact-item">
+        <h3>Enterprise Strategy &amp; Executive Alignment</h3>
+        <p>Led five-year strategic planning for a 65K+ member organization, aligning senior leadership, board, staff, and member perspectives into measurable enterprise priorities.</p>
+      </article>
+
+      <article class="experience-impact-item">
+        <h3>AI &amp; Digital Health Portfolio Development</h3>
+        <p>Built an enterprise AI and digital health portfolio spanning executive strategy, policy engagement, new programming, and a national summit reaching 1,600 registrants.</p>
+      </article>
+
+      <article class="experience-impact-item">
+        <h3>Growth &amp; New Program Development</h3>
+        <p>Built and led professional communities and new product lines serving 10K+ members, alongside 40+ podcasts and a broad portfolio of educational resources and programming.</p>
+      </article>
+
+      <article class="experience-impact-item">
+        <h3>Fractional Product Leadership</h3>
+        <p>Lead strategy-to-product translation for digital health initiatives, turning clinical, partner, and business priorities into roadmaps, user journeys, release priorities, and coordinated delivery with lean technical teams.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
   
     <div class="experience-sections">
       <div class="container">
