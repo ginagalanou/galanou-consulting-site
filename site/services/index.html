@@ -464,6 +464,54 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  /* Speaking & Workshops */
+.page-services-list .services-speaking-layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.82fr) minmax(0, 1.18fr);
+  gap: 42px;
+  align-items: start;
+}
+
+.page-services-list .services-speaking-copy h2 {
+  margin-bottom: 16px;
+}
+
+.page-services-list .services-speaking-intro {
+  max-width: 440px;
+  margin-bottom: 0;
+  color: #53606a;
+}
+
+.page-services-list .services-speaking-topics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid rgba(23, 32, 42, 0.12);
+}
+
+.page-services-list .services-speaking-topic {
+  padding: 20px 22px 20px 0;
+  border-bottom: 1px solid rgba(23, 32, 42, 0.12);
+}
+
+.page-services-list .services-speaking-topic:nth-child(even) {
+  padding-right: 0;
+  padding-left: 22px;
+  border-left: 1px solid rgba(23, 32, 42, 0.12);
+}
+
+.page-services-list .services-speaking-topic h3 {
+  margin-bottom: 8px;
+  font-size: 1.06rem;
+  line-height: 1.28;
+}
+
+.page-services-list .services-speaking-topic p {
+  margin: 0;
+  color: #53606a;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+  
   .page-services-list .services-list {
     margin: 0;
     padding: 0;
@@ -640,6 +688,21 @@
       font-size: 1.06rem;
     }
 
+    .page-services-list .services-speaking-layout {
+  grid-template-columns: 1fr;
+  gap: 26px;
+}
+
+.page-services-list .services-speaking-topics {
+  grid-template-columns: 1fr;
+}
+
+.page-services-list .services-speaking-topic,
+.page-services-list .services-speaking-topic:nth-child(even) {
+  padding: 18px 0;
+  border-left: 0;
+}
+
     .page-services-list .services-domains-panel {
       max-width: none;
       padding: 24px 22px 20px;
@@ -780,21 +843,40 @@
         </div>
       </section>
 
-      <section class="services-section" id="speaking" aria-labelledby="services-speaking-title">
-        <p class="services-eyebrow">Speaking &amp; Workshops</p>
-        <h2 id="services-speaking-title">Equipping teams for technological and organizational shifts.</h2>
+     <section class="services-section" id="speaking" aria-labelledby="services-speaking-title">
+  <div class="services-speaking-layout">
 
-        <div class="services-card">
-          <p>Georgia is available for conference talks, leadership sessions, workshops, and facilitated discussions on:</p>
+    <div class="services-speaking-copy">
+      <p class="services-eyebrow">Speaking &amp; Workshops</p>
+      <h2 id="services-speaking-title">Talks for leaders navigating change, technology, and judgment.</h2>
+      <p class="services-speaking-intro">Georgia is available for conferences, leadership sessions, workshops, and facilitated discussions.</p>
+    </div>
 
-          <ul class="services-list">
-            <li>Navigating emerging issues, ethical healthcare challenges, and strategic ambiguity.</li>
-            <li>The human implications of AI and technology on patient care.</li>
-            <li>Leadership and judgment in tech-enabled work.</li>
-            <li>Strategy, execution, and leading across stakeholders.</li>
-          </ul>
-        </div>
-      </section>
+    <div class="services-speaking-topics" aria-label="Speaking topics">
+
+      <article class="services-speaking-topic">
+        <h3>Emerging Issues &amp; Strategic Ambiguity</h3>
+        <p>Navigating uncertainty, ethical questions, and evolving healthcare priorities.</p>
+      </article>
+
+      <article class="services-speaking-topic">
+        <h3>AI, Judgment &amp; Patient Care</h3>
+        <p>Exploring where technology changes—but does not replace—human judgment.</p>
+      </article>
+
+      <article class="services-speaking-topic">
+        <h3>Leadership in Tech-Enabled Work</h3>
+        <p>Leading teams and making decisions as technology reshapes how work gets done.</p>
+      </article>
+
+      <article class="services-speaking-topic">
+        <h3>Strategy, Stakeholders &amp; Execution</h3>
+        <p>Moving complex priorities from discussion to aligned action.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
 
       <section class="services-section" id="cta" aria-labelledby="services-cta-title">
         <div class="services-cta-panel">
