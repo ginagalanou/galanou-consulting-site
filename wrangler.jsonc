@@ -1,10 +1,5 @@
 {
   "name": "galanou-consulting-site",
   "compatibility_date": "2026-05-19",
-  "assets": {
-    "directory": "site"
-  },
-  "observability": {
-    "enabled": true
-  }
+  "pages_build_output_dir": "site"
 }

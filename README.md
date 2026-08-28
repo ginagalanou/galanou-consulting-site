@@ -22,7 +22,7 @@ site/
   images/                     Production images and social assets
 
 netlify.toml                  Netlify deploy configuration
-wrangler.jsonc                Cloudflare Workers static asset configuration
+wrangler.jsonc                Cloudflare Pages deploy configuration
 LICENSE                       Original theme license retained for attribution
 ```
 
@@ -63,6 +63,6 @@ Before publishing changes, verify:
 
 Netlify publishes the `site/` directory directly. There is no build command.
 
-Cloudflare Workers static asset configuration also points to `site/`.
+Cloudflare Pages uses `wrangler.jsonc` with `pages_build_output_dir` set to `site/`.
 
 The production/default Git branch is `master`. Cleanup and future work should happen on feature branches and be merged into `master` only after validation.
