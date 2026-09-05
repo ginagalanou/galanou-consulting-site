@@ -1,0 +1,48 @@
+[
+  {
+    "scenario": "disabled",
+    "pass": true,
+    "googleRequests": 0
+  },
+  {
+    "scenario": "missing-id",
+    "pass": true,
+    "googleRequests": 0
+  },
+  {
+    "scenario": "preview",
+    "pass": true,
+    "googleRequests": 0
+  },
+  {
+    "scenario": "rejected",
+    "pass": true,
+    "googleRequests": 0
+  },
+  {
+    "scenario": "accepted",
+    "pass": true,
+    "checks": "one page_view, one contact event, no URL query/hash, no duplicate on resave, withdrawal reload blocks further load"
+  },
+  {
+    "event": "calendly_click",
+    "count": 1,
+    "pass": true
+  },
+  {
+    "event": "email_click",
+    "count": 2,
+    "pass": true
+  },
+  {
+    "event": "publication_click",
+    "count": 5,
+    "pass": true
+  },
+  {
+    "reducedMotionMenuVisible": true
+  },
+  {
+    "noJavaScriptProof": true
+  }
+]
