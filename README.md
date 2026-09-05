@@ -66,3 +66,9 @@ Netlify publishes the `site/` directory directly. There is no build command.
 Cloudflare Pages uses `wrangler.jsonc` with `pages_build_output_dir` set to `site/`.
 
 The production/default Git branch is `master`. Cleanup and future work should happen on feature branches and be merged into `master` only after validation.
+
+## Launch review and measurement
+
+The launch-update branch preserves the direct static implementation. Shared launch refinements are in `site/css/launch.css`; measurement configuration and consent behavior are in `site/js/analytics-config.js` and `site/js/analytics.js`. Tracking is disabled by default and is blocked on local and preview hosts.
+
+Read `docs/analytics-setup.md` before any separately authorized activation. See `docs/review.md` for the implementation checks and screenshots. Browser check scripts use Playwright with locally installed Chrome; run from the repository root with `node docs/check-browser.cjs` and `node docs/check-analytics.cjs` (set `PLAYWRIGHT_MODULE` to an installed Playwright module if it is not on the normal module path). The local server must run on port 8080. No package manager or build step is required for the website.

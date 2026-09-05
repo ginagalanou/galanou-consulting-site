@@ -1,0 +1,179 @@
+[
+  {
+    "route": "/",
+    "width": 390,
+    "overflow": false,
+    "heading": "Turning complexity into action.",
+    "images": [],
+    "errors": []
+  },
+  {
+    "route": "/services/",
+    "width": 390,
+    "overflow": false,
+    "heading": "Strategic support for healthcare products, programs, and organizations.",
+    "images": [],
+    "errors": []
+  },
+  {
+    "route": "/about/",
+    "width": 390,
+    "overflow": false,
+    "heading": "Clinical perspective. Strategic range.",
+    "images": [],
+    "errors": []
+  },
+  {
+    "route": "/experience/",
+    "width": 390,
+    "overflow": false,
+    "heading": "Leading change.",
+    "images": [],
+    "errors": []
+  },
+  {
+    "route": "/contact/",
+    "width": 390,
+    "overflow": false,
+    "heading": "Let’s start a conversation.",
+    "images": [],
+    "errors": []
+  },
+  {
+    "route": "/",
+    "width": 768,
+    "overflow": false,
+    "heading": "Turning complexity into action.",
+    "images": [],
+    "errors": []
+  },
+  {
+    "route": "/services/",
+    "width": 768,
+    "overflow": false,
+    "heading": "Strategic support for healthcare products, programs, and organizations.",
+    "images": [],
+    "errors": []
+  },
+  {
+    "route": "/about/",
+    "width": 768,
+    "overflow": false,
+    "heading": "Clinical perspective. Strategic range.",
+    "images": [],
+    "errors": []
+  },
+  {
+    "route": "/experience/",
+    "width": 768,
+    "overflow": false,
+    "heading": "Leading change.",
+    "images": [],
+    "errors": []
+  },
+  {
+    "route": "/contact/",
+    "width": 768,
+    "overflow": false,
+    "heading": "Let’s start a conversation.",
+    "images": [],
+    "errors": []
+  },
+  {
+    "route": "/",
+    "width": 1024,
+    "overflow": false,
+    "heading": "Turning complexity into action.",
+    "images": [],
+    "errors": []
+  },
+  {
+    "route": "/services/",
+    "width": 1024,
+    "overflow": false,
+    "heading": "Strategic support for healthcare products, programs, and organizations.",
+    "images": [],
+    "errors": []
+  },
+  {
+    "route": "/about/",
+    "width": 1024,
+    "overflow": false,
+    "heading": "Clinical perspective. Strategic range.",
+    "images": [],
+    "errors": []
+  },
+  {
+    "route": "/experience/",
+    "width": 1024,
+    "overflow": false,
+    "heading": "Leading change.",
+    "images": [],
+    "errors": []
+  },
+  {
+    "route": "/contact/",
+    "width": 1024,
+    "overflow": false,
+    "heading": "Let’s start a conversation.",
+    "images": [],
+    "errors": []
+  },
+  {
+    "route": "/",
+    "width": 1440,
+    "overflow": false,
+    "heading": "Turning complexity into action.",
+    "images": [],
+    "errors": []
+  },
+  {
+    "route": "/services/",
+    "width": 1440,
+    "overflow": false,
+    "heading": "Strategic support for healthcare products, programs, and organizations.",
+    "images": [],
+    "errors": []
+  },
+  {
+    "route": "/about/",
+    "width": 1440,
+    "overflow": false,
+    "heading": "Clinical perspective. Strategic range.",
+    "images": [],
+    "errors": []
+  },
+  {
+    "route": "/experience/",
+    "width": 1440,
+    "overflow": false,
+    "heading": "Leading change.",
+    "images": [],
+    "errors": []
+  },
+  {
+    "route": "/contact/",
+    "width": 1440,
+    "overflow": false,
+    "heading": "Let’s start a conversation.",
+    "images": [],
+    "errors": []
+  },
+  {
+    "menuOpen": "true",
+    "menuFocus": "Home"
+  },
+  {
+    "menuEscape": "false"
+  },
+  {
+    "previewAnalyticsRequests": []
+  },
+  {
+    "anchorTop": 200.296875,
+    "headerBottom": 69
+  },
+  {
+    "railScroll": 286
+  }
+]
