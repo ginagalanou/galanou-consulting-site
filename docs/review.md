@@ -41,3 +41,5 @@ A real GA4 measurement ID, account-owner configuration choices, Enhanced measure
 - [Consent interface](screenshots/consent-mobile.png)
 
 External availability check: the digital/telehealth framework DOI resolved to the expected Oxford Academic article. Automated web retrieval could not complete the Calendly page or several other DOI destinations, so live availability of every external endpoint is not certified. Their original destinations are preserved exactly. Email was checked as a `mailto:` destination, without sending a message.
+
+Follow-up: removed the ASHP marks on the lectern and slide and the left microphone at the user’s request. The page uses localized texture edits from the original photograph; the speaker’s face is unchanged. See `speaking-image-edit.md` for pixel-verification details. The Services screenshots have been refreshed.
