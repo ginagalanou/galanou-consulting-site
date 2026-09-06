@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#285347"/>
+<path d="M744 72V558" stroke="#78988b" stroke-width="1"/>
+<text x="82" y="102" fill="#f7f1e8" font-family="Arial,sans-serif" font-size="17" font-weight="600" letter-spacing="1.5">INDEPENDENT HEALTHCARE STRATEGY ADVISOR</text>
+<g fill="#fffdf8" font-family="Georgia,serif" font-size="86" letter-spacing="-2"><text x="78" y="236">Galanou</text><text x="78" y="327">Consulting</text></g>
+<text x="82" y="417" fill="#f7f1e8" font-family="Arial,sans-serif" font-size="33">Turning complexity into action.</text>
+<path d="M82 477H136" stroke="#b9d5d1" stroke-width="2"/>
+<text x="82" y="536" fill="#f7f1e8" font-family="Arial,sans-serif" font-size="19" letter-spacing="1.2">GALANOUCONSULTING.COM</text>
+<circle cx="944" cy="307" r="146" fill="none" stroke="#b9d5d1" stroke-width="2"/>
+<text x="944" y="344" fill="#fffdf8" text-anchor="middle" font-family="Georgia,serif" font-size="114" letter-spacing="-6">GC</text>
+</svg>
