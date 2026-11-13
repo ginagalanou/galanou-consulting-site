@@ -844,6 +844,78 @@
       text-align: center;
     }
   }
+
+  .page-experience .newsletter-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.65fr);
+    align-items: center;
+    gap: 48px;
+    margin-top: 36px;
+    padding-top: 42px;
+    border-top: 1px solid var(--gc-line);
+  }
+  .page-experience .newsletter-cover img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+  .page-experience .newsletter-eyebrow {
+    margin: 0 0 18px;
+    color: #3f7771;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1.5;
+  }
+  .page-experience .newsletter-feature h3 {
+    margin: 0 0 16px;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    line-height: 1.15;
+  }
+  .page-experience .newsletter-description {
+    max-width: 640px;
+    margin: 0 0 20px;
+    color: #45525d;
+    line-height: 1.6;
+  }
+  .page-experience .newsletter-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 44px;
+    padding: 10px 20px;
+    border: 1px solid #2f5d50;
+    border-radius: 999px;
+    color: #2f5d50;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .page-experience .newsletter-link:hover {
+    color: #fffdf8;
+    background: #2f5d50;
+  }
+  .page-experience .newsletter-feature a:focus-visible {
+    outline: 3px solid #3f7771;
+    outline-offset: 5px;
+  }
+  .page-experience .newsletter-byline {
+    margin: 14px 0 0;
+    color: var(--gc-muted);
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+  @media (max-width: 767px) {
+    .page-experience .newsletter-feature {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 26px;
+      margin-top: 24px;
+      padding-top: 30px;
+    }
+    .page-experience .newsletter-cover { max-width: 480px; }
+  }
+
 </style>
 
 <link rel="stylesheet" href="/css/launch.css"><main id="main-content"><div class="experience-page">
@@ -994,6 +1066,19 @@
                 </article>
 
                 </div>
+
+            <aside class="newsletter-feature" aria-labelledby="newsletter-title">
+              <a class="newsletter-cover" href="https://www.linkedin.com/newsletters/human-judgment-innovation-7515844616911417345/" target="_blank" rel="noopener noreferrer" aria-label="Read Human Judgment &amp; Innovation on LinkedIn (opens in a new tab)">
+                <img src="/images/human-judgment-innovation.jpg" alt="Human Judgment and Innovation — a woman overlooking a sunlit landscape at dawn" width="1672" height="941" loading="lazy" decoding="async">
+              </a>
+              <div>
+                <p class="newsletter-eyebrow">Independent perspectives · Monthly LinkedIn newsletter</p>
+                <h3 id="newsletter-title">Human Judgment &amp; Innovation</h3>
+                <p class="newsletter-description">Exploring how human judgment helps us navigate change, shape innovation, and decide what progress should mean.</p>
+                <a class="newsletter-link" href="https://www.linkedin.com/newsletters/human-judgment-innovation-7515844616911417345/" target="_blank" rel="noopener noreferrer" aria-label="Read the newsletter on LinkedIn (opens in a new tab)">Read the newsletter <span aria-hidden="true">↗</span></a>
+                <p class="newsletter-byline">By Georgia Galanou Luchen, PharmD</p>
+              </div>
+            </aside>
           </section>
         
           <section class="experience-section">
